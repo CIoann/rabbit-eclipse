@@ -1,0 +1,165 @@
+From 0a36dfa04bc96ffea8cd99b354a37cafd5c70974 Mon Sep 17 00:00:00 2001
+From: CIoann <ioannou.connie@gmail.com>
+Date: Tue, 31 Oct 2017 10:56:33 +0100
+Subject: [PATCH] begin
+
+---
+ fix.patch | 146 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 146 insertions(+)
+ create mode 100644 fix.patch
+
+diff --git a/fix.patch b/fix.patch
+new file mode 100644
+index 0000000..e4bc1c9
+--- /dev/null
++++ b/fix.patch
+@@ -0,0 +1,146 @@
++diff --git a/rabbit.data.handler.test/META-INF/MANIFEST.MF b/rabbit.data.handler.test/META-INF/MANIFEST.MF
++index 7bd3bea..c4b4911 100644
++--- a/rabbit.data.handler.test/META-INF/MANIFEST.MF
+++++ b/rabbit.data.handler.test/META-INF/MANIFEST.MF
++@@ -5,6 +5,6 @@ Bundle-SymbolicName: rabbit.data.handler.test
++ Bundle-Version: 1.0.0.qualifier
++ Fragment-Host: rabbit.data.handler
++ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
++-Require-Bundle: org.junit4,
+++Require-Bundle: org.junit,
++  rabbit.data
++ Export-Package: rabbit.data.handler
++diff --git a/rabbit.data.test/META-INF/MANIFEST.MF b/rabbit.data.test/META-INF/MANIFEST.MF
++index 1690398..29e10b9 100644
++--- a/rabbit.data.test/META-INF/MANIFEST.MF
+++++ b/rabbit.data.test/META-INF/MANIFEST.MF
++@@ -5,7 +5,7 @@ Bundle-SymbolicName: rabbit.data.test
++ Bundle-Version: 1.2.0.qualifier
++ Fragment-Host: rabbit.data
++ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
++-Require-Bundle: org.junit4,
+++Require-Bundle: org.junit,
++  org.eclipse.ui,
++  org.eclipse.debug.core,
++  org.eclipse.core.runtime,
++diff --git a/rabbit.data.xml.test/META-INF/MANIFEST.MF b/rabbit.data.xml.test/META-INF/MANIFEST.MF
++index 057620e..5eca989 100644
++--- a/rabbit.data.xml.test/META-INF/MANIFEST.MF
+++++ b/rabbit.data.xml.test/META-INF/MANIFEST.MF
++@@ -8,7 +8,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
++ Require-Bundle: rabbit.data,
++  org.eclipse.ui,
++  org.eclipse.debug.core,
++- org.junit4,
+++ org.junit,
++  org.eclipse.core.runtime,
++  rabbit.common,
++  org.eclipse.mylyn.tasks.core,
++diff --git a/rabbit.data.xml.ui.test/META-INF/MANIFEST.MF b/rabbit.data.xml.ui.test/META-INF/MANIFEST.MF
++index 2851ada..0c1a382 100644
++--- a/rabbit.data.xml.ui.test/META-INF/MANIFEST.MF
+++++ b/rabbit.data.xml.ui.test/META-INF/MANIFEST.MF
++@@ -8,6 +8,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
++ Require-Bundle: org.eclipse.swtbot.eclipse.finder,
++  org.eclipse.swtbot.junit4_x,
++  org.eclipse.core.runtime,
++- org.junit4,
+++ org.junit,
++  org.eclipse.ui
++ Export-Package: rabbit.data.internal.xml.ui
++diff --git a/rabbit.tracking.java.test/META-INF/MANIFEST.MF b/rabbit.tracking.java.test/META-INF/MANIFEST.MF
++index 069ef08..8e4ec3a 100644
++--- a/rabbit.tracking.java.test/META-INF/MANIFEST.MF
+++++ b/rabbit.tracking.java.test/META-INF/MANIFEST.MF
++@@ -11,7 +11,7 @@ Require-Bundle: org.eclipse.ui,
++  org.eclipse.jdt.ui,
++  org.eclipse.jdt.core,
++  org.eclipse.core.resources,
++- org.junit4,
+++ org.junit,
++  org.eclipse.ui.ide,
++  org.eclipse.jface.text,
++  org.eclipse.ui.editors
++diff --git a/rabbit.tracking.mylyn.test/META-INF/MANIFEST.MF b/rabbit.tracking.mylyn.test/META-INF/MANIFEST.MF
++index 291de25..51a2946 100644
++--- a/rabbit.tracking.mylyn.test/META-INF/MANIFEST.MF
+++++ b/rabbit.tracking.mylyn.test/META-INF/MANIFEST.MF
++@@ -5,7 +5,7 @@ Bundle-SymbolicName: rabbit.tracking.mylyn.test
++ Bundle-Version: 1.0.0.qualifier
++ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
++ Require-Bundle: rabbit.data.handler,
++- org.junit4,
+++ org.junit,
++  org.eclipse.core.resources,
++  org.eclipse.ui,
++  org.eclipse.mylyn.tasks.core,
++diff --git a/rabbit.tracking.test/META-INF/MANIFEST.MF b/rabbit.tracking.test/META-INF/MANIFEST.MF
++index 86f7819..91ba89b 100644
++--- a/rabbit.tracking.test/META-INF/MANIFEST.MF
+++++ b/rabbit.tracking.test/META-INF/MANIFEST.MF
++@@ -7,7 +7,7 @@ Fragment-Host: rabbit.tracking
++ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
++ Require-Bundle: org.eclipse.core.runtime,
++  org.eclipse.ui,
++- org.junit4,
+++ org.junit,
++  org.eclipse.core.resources,
++  org.eclipse.ui.ide,
++  org.eclipse.debug.core,
++diff --git a/rabbit.ui.java.test/META-INF/MANIFEST.MF b/rabbit.ui.java.test/META-INF/MANIFEST.MF
++index 3600f0c..ad11995 100644
++--- a/rabbit.ui.java.test/META-INF/MANIFEST.MF
+++++ b/rabbit.ui.java.test/META-INF/MANIFEST.MF
++@@ -5,7 +5,7 @@ Bundle-SymbolicName: rabbit.ui.java.test
++ Bundle-Version: 1.0.0.qualifier
++ Require-Bundle: org.eclipse.ui,
++  org.eclipse.core.runtime,
++- org.junit4,
+++ org.junit,
++  org.eclipse.jdt.ui,
++  org.eclipse.jdt.core,
++  org.eclipse.core.resources,
++diff --git a/rabbit.ui.mylyn.test/META-INF/MANIFEST.MF b/rabbit.ui.mylyn.test/META-INF/MANIFEST.MF
++index 614d8ae..04316b5 100644
++--- a/rabbit.ui.mylyn.test/META-INF/MANIFEST.MF
+++++ b/rabbit.ui.mylyn.test/META-INF/MANIFEST.MF
++@@ -13,7 +13,7 @@ Require-Bundle: rabbit.data,
++  org.eclipse.core.resources,
++  org.eclipse.mylyn.tasks.core,
++  org.eclipse.ui.ide,
++- org.junit4,
+++ org.junit,
++  rabbit.common,
++  rabbit.common.testing
++ Fragment-Host: rabbit.ui.mylyn
++diff --git a/rabbit.ui.mylyn/src/rabbit/ui/internal/util/UnrecognizedTask.java b/rabbit.ui.mylyn/src/rabbit/ui/internal/util/UnrecognizedTask.java
++index f43b092..53d2782 100644
++--- a/rabbit.ui.mylyn/src/rabbit/ui/internal/util/UnrecognizedTask.java
+++++ b/rabbit.ui.mylyn/src/rabbit/ui/internal/util/UnrecognizedTask.java
++@@ -207,4 +207,13 @@ public final class UnrecognizedTask implements ITask {
++   public String toString() {
++     return getClass().getSimpleName() + ": " + taskId.toString();
++   }
+++
+++  @Override
+++  public String getOwnerId() {
+++    return null;
+++  }
+++
+++  @Override
+++  public void setOwnerId(String ownerId) {
+++  }
++ }
++diff --git a/rabbit.ui.test/META-INF/MANIFEST.MF b/rabbit.ui.test/META-INF/MANIFEST.MF
++index 109d435..b421d00 100644
++--- a/rabbit.ui.test/META-INF/MANIFEST.MF
+++++ b/rabbit.ui.test/META-INF/MANIFEST.MF
++@@ -8,7 +8,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
++ Require-Bundle: org.eclipse.core.resources,
++  rabbit.data,
++  rabbit.data.handler,
++- org.junit4,
+++ org.junit,
++  org.eclipse.core.runtime,
++  org.eclipse.ui,
++  org.eclipse.swtbot.eclipse.finder,
+-- 
+2.12.2
+

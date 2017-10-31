@@ -5,7 +5,7 @@ Bundle-SymbolicName: rabbit.data.test
 Bundle-Version: 1.2.0.qualifier
 Fragment-Host: rabbit.data
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.junit4,
+Require-Bundle: org.junit,
  org.eclipse.ui,
  org.eclipse.debug.core,
  org.eclipse.core.runtime,

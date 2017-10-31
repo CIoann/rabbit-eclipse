@@ -8,6 +8,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.swtbot.eclipse.finder,
  org.eclipse.swtbot.junit4_x,
  org.eclipse.core.runtime,
- org.junit4,
+ org.junit,
  org.eclipse.ui
 Export-Package: rabbit.data.internal.xml.ui

@@ -5,7 +5,7 @@ Bundle-SymbolicName: rabbit.ui.java.test
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.junit4,
+ org.junit,
  org.eclipse.jdt.ui,
  org.eclipse.jdt.core,
  org.eclipse.core.resources,

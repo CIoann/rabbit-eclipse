@@ -207,4 +207,13 @@ public final class UnrecognizedTask implements ITask {
   public String toString() {
     return getClass().getSimpleName() + ": " + taskId.toString();
   }
+
+  @Override
+  public String getOwnerId() {
+    return null;
+  }
+
+  @Override
+  public void setOwnerId(String ownerId) {
+  }
 }
