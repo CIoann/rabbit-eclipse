@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.1" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="rabbit.data.access.model.IPerspectiveData" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/IPerspectiveData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="250" x="117" y="112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="2" language="java" name="rabbit.data.access.model.ITaskData" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/ITaskData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="250" x="407" y="112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="3" language="java" name="rabbit.data.access.model.WorkspaceStorage" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/WorkspaceStorage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="209" width="196" x="987" y="448"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" language="java" name="rabbit.data.access.model.IKey" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/IKey.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="65" width="122" x="1492" y="751"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="5" language="java" name="rabbit.data.access.model.IFileData" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/IFileData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="250" x="697" y="112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="6" language="java" name="rabbit.data.access.model.Key" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/Key.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="122" x="1223" y="448"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="rabbit.data.access.model.LaunchConfigurationDescriptor" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/LaunchConfigurationDescriptor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="263" width="334" x="2147" y="448"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="8" language="java" name="rabbit.data.access.model.ICommandData" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/ICommandData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="250" x="987" y="112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="9" language="java" name="rabbit.data.access.model.ILaunchData" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/ILaunchData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="173" width="339" x="2147" y="112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="10" language="java" name="rabbit.data.access.model.IPartData" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/IPartData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="250" x="1277" y="112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="11" language="java" name="rabbit.data.access.model.Keys" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/Keys.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="122" x="1471" y="325"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="12" language="java" name="rabbit.data.access.model.ISessionData" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/ISessionData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="250" x="1567" y="112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="13" language="java" name="rabbit.data.access.model.IJavaData" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/IJavaData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="250" x="1857" y="112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="14" language="java" name="rabbit.data.access.model.IData" project="rabbit.data" 
+    file="/rabbit.data/src/rabbit/data/access/model/IData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="122" x="1407" y="-11"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <dependency id="15">    
+    <bendpoint x="865" y="325"/>    
+    <bendpoint x="865" y="448"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="16">    
+    <bendpoint x="1828" y="325"/>    
+    <bendpoint x="1828" y="448"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="17">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="18">    
+    <bendpoint x="778" y="325"/>    
+    <bendpoint x="778" y="448"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="19">    
+    <bendpoint x="956" y="325"/>    
+    <bendpoint x="956" y="448"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="20">    
+    <bendpoint x="1627" y="325"/>    
+    <bendpoint x="1627" y="448"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="21">    
+    <bendpoint x="1419" y="325"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <dependency id="23">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="24">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="25">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="26">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="27">    
+    <bendpoint x="1286" y="325"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="28">    
+    <bendpoint x="1543" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="29" name="WORKSPACE"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="31">    
+    <bendpoint x="2156" y="325"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="32">    
+    <bendpoint x="1440" y="325"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <realization id="35">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <dependency id="36">    
+    <bendpoint x="2516" y="112"/>    
+    <bendpoint x="2516" y="325"/>    
+    <bendpoint x="2516" y="448"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="37">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="38">    
+    <bendpoint x="799" y="325"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="39">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <association id="40">    
+    <bendpoint x="1585" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="41" name="FILES"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="43">    
+    <bendpoint x="996" y="325"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="44">    
+    <bendpoint x="907" y="325"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="45">    
+    <bendpoint x="1375" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="46" name="FILE"/>      
+      <multiplicity id="47" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <dependency id="50">    
+    <bendpoint x="757" y="325"/>    
+    <bendpoint x="757" y="448"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="51">    
+    <bendpoint x="886" y="325"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <dependency id="53">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="54">    
+    <bendpoint x="1606" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="55" name="DATE"/>      
+      <multiplicity id="56" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="57">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <association id="58">    
+    <bendpoint x="1396" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="59" name="LAUNCH_CONFIG"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="61">    
+    <bendpoint x="1459" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="62" name="PERSPECTIVE_ID"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="64">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <association id="65">    
+    <bendpoint x="1522" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="66" name="DURATION"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <dependency id="69">    
+    <bendpoint x="1684" y="325"/>    
+    <bendpoint x="1684" y="448"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="70">    
+    <bendpoint x="1417" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="71" name="COMMAND"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="73">    
+    <bendpoint x="1141" y="325"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <generalization id="74">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <association id="75">    
+    <bendpoint x="1501" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="76" name="TASK_ID"/>      
+      <multiplicity id="77" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="78">    
+    <bendpoint x="1648" y="325"/>    
+    <bendpoint x="1648" y="448"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="79">    
+    <bendpoint x="1564" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="80" name="JAVA_ELEMENT"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <bendpoint x="1438" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="83" name="PART_ID"/>      
+      <multiplicity id="84" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="85">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <association id="86">    
+    <bendpoint x="1480" y="448"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="87" name="COUNT"/>      
+      <multiplicity id="88" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
