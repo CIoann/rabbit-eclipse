@@ -451,6 +451,7 @@ public class RabbitView extends ViewPart {
     IAction refresh = new Action("Refresh") {
       @Override
       public void run() {
+    	  System.out.println("Test0: Refresh button - Update" );
         updateView();
       }
     };

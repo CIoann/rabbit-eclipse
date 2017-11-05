@@ -32,7 +32,8 @@ public abstract class AbstractTracker<T> implements ITracker<T> {
 
   /** Variable to indicate whether this tracker is activated. */
   private boolean isEnabled;
-
+ // private int id;
+//Test 0 : insert id
   private Set<T> data;
 
   private IStorer<T> storer;
@@ -41,10 +42,11 @@ public abstract class AbstractTracker<T> implements ITracker<T> {
    * Constructs a new tracker.
    */
   public AbstractTracker() {
-    isEnabled = false;
+     isEnabled = false;
     data = new LinkedHashSet<T>();
     storer = createDataStorer();
     Assert.isNotNull(storer);
+   // id = 5;
   }
 
   /**
@@ -65,7 +67,10 @@ public abstract class AbstractTracker<T> implements ITracker<T> {
   public Collection<T> getData() {
     return Collections.unmodifiableSet(data);
   }
-
+//  @Override
+//  public int getID() {
+//	  return id;
+//  }
   @Override
   public boolean isEnabled() {
     return isEnabled;

@@ -199,5 +199,6 @@ public class RabbitViewTest {
     Method update = RabbitView.class.getDeclaredMethod("updateView");
     update.setAccessible(true);
     update.invoke(view);
+    //System.out.println("Test0: Just a print in update - RabbitViewTest");
   }
 }

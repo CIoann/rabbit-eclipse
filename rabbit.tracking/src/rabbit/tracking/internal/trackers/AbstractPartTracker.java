@@ -130,6 +130,7 @@ public abstract class AbstractPartTracker<E> extends AbstractTracker<E> {
         long start = recorder.getLastRecord().getStartTimeMillis();
         long end = recorder.getLastRecord().getEndTimeMillis();
         IWorkbenchPart part = recorder.getLastRecord().getUserData();
+        System.out.println("Test 0: AbstratPartTracker triggered");
         E event = tryCreateEvent(start, end, part);
         if (event != null) {
           addData(event);

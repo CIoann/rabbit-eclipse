@@ -102,7 +102,9 @@ public class TrackingPlugin extends AbstractUIPlugin implements
    * All data will be saved and flushed from the trackers.
    */
   public void saveCurrentData() {
+	  System.out.println("Test0: Refresh button - update - saveCurrentData");
     for (ITracker<?> tracker : trackers) {
+   // 	System.out.println("Test 0: Tracker" + tracker.getID());
       tracker.setEnabled(false);
       tracker.flushData();
       tracker.setEnabled(true);
@@ -146,7 +148,7 @@ public class TrackingPlugin extends AbstractUIPlugin implements
 
     final ImmutableSet.Builder<ITracker<?>> builder = ImmutableSet.builder();
     for (final IConfigurationElement e : elements) {
-
+    	System.out.println("Test 0: Creating Trackers");
       SafeRunner.run(new ISafeRunnable() {
         @Override
         public void handleException(Throwable e) {

@@ -22,6 +22,7 @@ import java.util.Collection;
  */
 public interface ITracker<T> {
 
+	//public int getID();
   /**
    * Flushes the data collected by this tracker.
    */
