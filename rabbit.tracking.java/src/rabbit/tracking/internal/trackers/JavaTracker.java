@@ -24,7 +24,9 @@ import rabbit.tracking.internal.util.Recorder;
 import rabbit.tracking.internal.util.WorkbenchUtil;
 
 import com.google.common.collect.Sets;
-
+import java.lang.Object;
+import java.util.Date;
+import java.sql.Timestamp;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.ITypeRoot;
@@ -184,7 +186,13 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
         long end = recorder.getLastRecord().getEndTimeMillis();
         IJavaElement element = recorder.getLastRecord().getUserData();
         if (element != null) {
-          addData(new JavaEvent(new Interval(start, end), element));
+        	// another test
+        	System.out.println("Test 0: Time to set Before filtering data");
+        	Timestamp start_time = new Timestamp(start);
+        	Timestamp end_time = new Timestamp(end);
+        	System.out.println("Test 0:\n Time start: " +start_time.toString() + "\nTime end: "+end_time.toString());
+        	addData(new JavaEvent(new Interval(start, end),start_time,end_time, element));
+        //  addData(new JavaEvent(new Interval(start, end), element));
         }
       }
     }
@@ -355,6 +363,7 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
       // modifiable in a JavaEditor, so no need to check them:
       if (!e.exists()) {
         for (; !e.exists() && !(e instanceof ITypeRoot); e = e.getParent());
+        
         filteredData.add(new JavaEvent(event.getInterval(), e));
 
       } else {
@@ -369,6 +378,7 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
         if (actual == null) {
           filteredData.add(event);
         } else {
+        
           filteredData.add(new JavaEvent(event.getInterval(), actual));
         }
       }

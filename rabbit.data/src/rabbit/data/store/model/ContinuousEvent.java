@@ -17,6 +17,8 @@ package rabbit.data.store.model;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.sql.Timestamp;
+
 import org.joda.time.Interval;
 
 /**
@@ -25,6 +27,7 @@ import org.joda.time.Interval;
 public class ContinuousEvent extends DiscreteEvent {
 
   private final Interval interval;
+  private final Timestamp start,end;
 
   /**
    * Constructor.
@@ -35,8 +38,20 @@ public class ContinuousEvent extends DiscreteEvent {
   public ContinuousEvent(Interval interval) {
     super(checkNotNull(interval).getStart());
     this.interval = interval;
+    this.start= new Timestamp(0);
+    this.end= new Timestamp(0);
   }
-
+  
+  //! Test 0: Adding Timestamp
+  /**
+   * attempt to add start,end times
+   */
+  public ContinuousEvent(Timestamp start, Timestamp end, Interval interval) {
+	    super(checkNotNull(interval).getStart());
+	    this.interval = interval;
+	    this.start= start;
+	    this.end=end;
+	  }
   /**
    * Gets the interval of this event.
    * 

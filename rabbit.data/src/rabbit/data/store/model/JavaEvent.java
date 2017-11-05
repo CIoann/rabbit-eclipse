@@ -17,6 +17,8 @@ package rabbit.data.store.model;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.sql.Timestamp;
+
 import org.eclipse.jdt.core.IJavaElement;
 import org.joda.time.Interval;
 
@@ -38,7 +40,21 @@ public class JavaEvent extends ContinuousEvent {
     super(interval);
     this.element = checkNotNull(element);
   }
-
+  //! Test 0: Adding Timestamp
+  /**
+   * Constructs a new event, with start/end time.
+   * 
+   * @param start_time 
+   * @param end_time 
+   * @param element The Java element of the event.
+   * @throws NullPointerException If time is null, or element is null.
+   */
+  public JavaEvent(Interval interval, Timestamp start, Timestamp end, IJavaElement element) {
+    super(end,start,interval);
+    this.element = checkNotNull(element);
+  }
+  
+  
   /**
    * Gets the element of this event.
    * 
