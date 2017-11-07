@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.1" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="rabbit.data.internal.xml.access.FileDataAccessor" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/access/FileDataAccessor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="155" width="412" x="6338" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="rabbit.data.internal.xml.access.PartDataAccessor" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/access/PartDataAccessor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="417" x="4326" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="rabbit.data.internal.xml.access.PerspectiveDataAccessor" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/access/PerspectiveDataAccessor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="499" x="4783" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="rabbit.data.internal.xml.access.AbstractAccessor" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/access/AbstractAccessor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="209" width="388" x="5322" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="rabbit.data.internal.xml.access.TaskDataAccessor" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/access/TaskDataAccessor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="442" x="6790" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="rabbit.data.internal.xml.access.AccessorModule" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/access/AccessorModule.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="146" x="1351" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="rabbit.data.internal.xml.access.CommandDataAccessor" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/access/CommandDataAccessor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="155" width="484" x="5814" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="rabbit.data.internal.xml.access.LaunchDataAccessor" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/access/LaunchDataAccessor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="452" x="5322" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="rabbit.data.internal.xml.access.JavaDataAccessor" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/access/JavaDataAccessor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="424" x="3363" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="rabbit.data.internal.xml.access.SessionDataAccessor" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/access/SessionDataAccessor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="459" x="3827" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="rabbit.data.internal.xml.convert.ConverterModule" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/ConverterModule.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="147" x="881" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="rabbit.data.internal.xml.convert.PartEventConverter" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/PartEventConverter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="225" x="2733" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="rabbit.data.internal.xml.convert.TaskFileEventConverter" 
+    project="rabbit.data.xml" file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/TaskFileEventConverter.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="269" x="612" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="rabbit.data.internal.xml.convert.FileEventConverter" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/FileEventConverter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="219" x="1267" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="15" language="java" name="rabbit.data.internal.xml.convert.IConverter" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/IConverter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="147" x="7272" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="16" language="java" name="rabbit.data.internal.xml.convert.CommandEventConverter" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/CommandEventConverter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="291" x="2402" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="rabbit.data.internal.xml.convert.AbstractConverter" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/AbstractConverter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="119" width="183" x="2103" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="rabbit.data.internal.xml.convert.PerspectiveEventConverter" 
+    project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/PerspectiveEventConverter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="306" x="921" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="rabbit.data.internal.xml.convert.LaunchEventConverter" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/LaunchEventConverter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="259" x="2103" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="rabbit.data.internal.xml.convert.SessionEventConverter" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/SessionEventConverter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="266" x="1797" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="rabbit.data.internal.xml.convert.JavaEventConverter" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/convert/JavaEventConverter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="231" x="1526" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="rabbit.data.internal.xml.schema.events.JavaEventListType" 
+    project="rabbit.data.xml" file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/JavaEventListType.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="225" x="5538" y="995"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="rabbit.data.internal.xml.schema.events.TaskFileEventType" 
+    project="rabbit.data.xml" file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/TaskFileEventType.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="173" width="182" x="4943" y="1172"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="rabbit.data.internal.xml.schema.events.TaskIdType" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/TaskIdType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="191" width="273" x="4943" y="1547"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="rabbit.data.internal.xml.schema.events.DurationEventType" 
+    project="rabbit.data.xml" file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/DurationEventType.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="182" x="5316" y="995"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="rabbit.data.internal.xml.schema.events.JavaEventType" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/JavaEventType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="191" x="5387" y="1172"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="rabbit.data.internal.xml.schema.events.FileEventListType" 
+    project="rabbit.data.xml" file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/FileEventListType.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="213" x="5803" y="995"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="rabbit.data.internal.xml.schema.events.PartEventType" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/PartEventType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="182" x="4721" y="1172"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="rabbit.data.internal.xml.schema.events.CommandEventListType" 
+    project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/CommandEventListType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="285" x="6356" y="995"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="rabbit.data.internal.xml.schema.events.ObjectFactory" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/ObjectFactory.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="497" width="347" x="7799" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="rabbit.data.internal.xml.schema.events.SessionEventListType" 
+    project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/SessionEventListType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="260" x="6056" y="995"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="rabbit.data.internal.xml.schema.events.TaskFileEventListType" 
+    project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/TaskFileEventListType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="263" x="4673" y="995"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="rabbit.data.internal.xml.schema.events.CountEventType" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/CountEventType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="182" x="6681" y="995"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="rabbit.data.internal.xml.schema.events.PerspectiveEventListType" 
+    project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/PerspectiveEventListType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="300" x="4976" y="995"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="rabbit.data.internal.xml.schema.events.FileEventType" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/FileEventType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="182" x="5618" y="1172"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="rabbit.data.internal.xml.schema.events.EventListType" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/EventListType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="227" width="325" x="2998" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="rabbit.data.internal.xml.schema.events.LaunchEventListType" 
+    project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/LaunchEventListType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="101" width="253" x="6903" y="995"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="rabbit.data.internal.xml.schema.events.PartEventListType" 
+    project="rabbit.data.xml" file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/PartEventListType.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="219" x="4414" y="995"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="rabbit.data.internal.xml.schema.events.SessionEventType" 
+    project="rabbit.data.xml" file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/SessionEventType.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="182" x="5840" y="1172"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="rabbit.data.internal.xml.schema.events.EventGroupType" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/EventGroupType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="228" x="8186" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="rabbit.data.internal.xml.schema.events.PerspectiveEventType" 
+    project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/PerspectiveEventType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="182" x="5165" y="1172"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="rabbit.data.internal.xml.schema.events.CommandEventType" 
+    project="rabbit.data.xml" file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/CommandEventType.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="182" x="6518" y="1172"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="rabbit.data.internal.xml.schema.events.LaunchEventType" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/schema/events/LaunchEventType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="335" width="187" x="6792" y="1172"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="rabbit.data.internal.xml.store.TaskFileEventStorer" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/store/TaskFileEventStorer.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="611" x="11704" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="rabbit.data.internal.xml.store.StorerModule" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/store/StorerModule.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="137" x="1926" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="46" language="java" name="rabbit.data.internal.xml.store.AbstractStorer" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/store/AbstractStorer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="281" width="327" x="9706" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="47" language="java" name="rabbit.data.internal.xml.store.FileEventStorer" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/store/FileEventStorer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="512" x="9811" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="48" language="java" name="rabbit.data.internal.xml.store.SessionEventStorer" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/store/SessionEventStorer.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="605" x="11059" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="49" language="java" name="rabbit.data.internal.xml.store.JavaEventStorer" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/store/JavaEventStorer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="536" x="12918" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="50" language="java" name="rabbit.data.internal.xml.store.PerspectiveEventStorer" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/store/PerspectiveEventStorer.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="685" x="9086" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="51" language="java" name="rabbit.data.internal.xml.store.CommandEventStorer" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/store/CommandEventStorer.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="656" x="10363" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="52" language="java" name="rabbit.data.internal.xml.store.PartEventStorer" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/store/PartEventStorer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="523" x="12355" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="53" language="java" name="rabbit.data.internal.xml.store.LaunchEventStorer" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/store/LaunchEventStorer.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="592" x="8454" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="54" language="java" name="rabbit.data.internal.xml.IDataStore" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/IDataStore.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="191" width="300" x="7459" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="55" language="java" name="rabbit.data.internal.xml.StoreNamesModule" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/StoreNamesModule.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="155" x="686" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="56" language="java" name="rabbit.data.internal.xml.StoreNames" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/StoreNames.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="227" width="196" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="57" language="java" name="rabbit.data.internal.xml.JaxbUtil" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/JaxbUtil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="191" width="220" x="277" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="58" language="java" name="rabbit.data.internal.xml.XmlPlugin" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/XmlPlugin.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="371" width="233" x="1068" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="59" language="java" name="rabbit.data.internal.xml.DataStore" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/DataStore.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="371" width="300" x="7629" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="60" language="java" name="rabbit.data.internal.xml.DatatypeUtil" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/internal/xml/DatatypeUtil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="227" width="349" x="1537" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="61" language="java" name="rabbit.data.xml.XmlModule" project="rabbit.data.xml" 
+    file="/rabbit.data.xml/src/rabbit/data/xml/XmlModule.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="109" x="537" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="62">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="63" name="sessionEvents"/>      
+      <multiplicity id="64" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="65">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="67">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="68">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="69" name="store"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="71">    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <generalization id="72">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="73">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="74" name="fileEvent"/>      
+      <multiplicity id="75" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="76">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <generalization id="77">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="78">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="79" name="objectFactory"/>      
+      <multiplicity id="80" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="81">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="82" name="launchEvent"/>      
+      <multiplicity id="83" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="84">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="85">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="86">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <generalization id="87">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="88">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <realization id="89">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="15"/>  
+  </realization>  
+  <association id="90">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="91" name="perspectiveEvents"/>      
+      <multiplicity id="92" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="93">    
+    <end type="SOURCE" refId="58" navigable="false">      
+      <attribute id="94" name="plugin"/>      
+      <multiplicity id="95" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="96">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="97">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="33"/>  
+  </generalization>  
+  <generalization id="98">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="99">    
+    <end type="SOURCE" refId="53"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <association id="100">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="101" name="sessionEvent"/>      
+      <multiplicity id="102" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="103">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="104" name="fileEvents"/>      
+      <multiplicity id="105" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="106">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="107" name="store"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="109">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <realization id="110">    
+    <end type="SOURCE" refId="59"/>    
+    <end type="TARGET" refId="54"/>  
+  </realization>  
+  <association id="111">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="112" name="commandEvent"/>      
+      <multiplicity id="113" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="114">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="115">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="116">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="117">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="118">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="119">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="120">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="121">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="122">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="123">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="124">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <generalization id="125">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <generalization id="126">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="127">    
+    <end type="SOURCE" refId="52"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <association id="128">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="129" name="launchEvents"/>      
+      <multiplicity id="130" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="131">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="132" name="taskFileEvents"/>      
+      <multiplicity id="133" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="134">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="135" name="converter"/>      
+      <multiplicity id="136" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="137">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="138" name="taskId"/>      
+      <multiplicity id="139" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="140">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="141" name="data"/>      
+      <multiplicity id="142" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="143">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="144" name="partEvents"/>      
+      <multiplicity id="145" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="146">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="147" name="partEvent"/>      
+      <multiplicity id="148" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="149">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="150">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="33"/>  
+  </generalization>  
+  <generalization id="151">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="152">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="153">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="154" name="commandEvents"/>      
+      <multiplicity id="155" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="156">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <association id="157">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="158" name="javaEvents"/>      
+      <multiplicity id="159" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="160">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="161">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="162" name="perspectiveEvent"/>      
+      <multiplicity id="163" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="164">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="165">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="166">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="167" name="javaEvent"/>      
+      <multiplicity id="168" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="169">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="46"/>  
+  </generalization>  
+  <association id="170">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="171" name="taskFileEvent"/>      
+      <multiplicity id="172" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="173">    
+    <end type="SOURCE" refId="59" navigable="false">      
+      <attribute id="174" name="objectFactory"/>      
+      <multiplicity id="175" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
