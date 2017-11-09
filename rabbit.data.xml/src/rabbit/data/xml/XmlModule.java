@@ -20,5 +20,6 @@ public class XmlModule extends AbstractModule {
     install(new MergerModule());
     install(new StorerModule());
     install(new AccessorModule());
+ 
   }
 }

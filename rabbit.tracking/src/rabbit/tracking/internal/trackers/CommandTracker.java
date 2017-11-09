@@ -19,6 +19,8 @@ import rabbit.data.handler.DataHandler;
 import rabbit.data.store.IStorer;
 import rabbit.data.store.model.CommandEvent;
 
+import java.sql.Timestamp;
+
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IExecutionListener;
@@ -70,7 +72,8 @@ public class CommandTracker extends AbstractTracker<CommandEvent> implements
   public void postExecuteSuccess(String commandId, Object returnValue) {
     if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId)) {
       addData(new CommandEvent(new DateTime(), lastEvent));
-      System.out.println("Test0: CommandTracker, new command entered" );//+ lastEvent.);
+      System.out.println("Test 0: CommandTracker, new command entered" );//+ lastEvent.);
+      System.out.println("Test 1: CommandTracker - dates " + new Timestamp(new DateTime().getMillis()));
     }
   }
 

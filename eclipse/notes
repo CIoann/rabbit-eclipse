@@ -1,1 +1,33 @@
 --> What happens if we comment out JavaTracker?
+--------------------------------------------------------------------------------
+
+What happens when we press refresh()?
+-------------------------------------
+UpdateView() 
+TrackingPlugin
+AbstractTracker
+	saveData() - insert() - commit()
+AbstractStorer implements IStorer
+Different for each one of the event types.
+Test 2: Time spend in perspectives -> increament using the merger achieved.
+
+--------------------------------------------------------------------------------
+=> Fully understand how save works and updates. Achieved.
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+================================================================
+What to output?
+----------------
+TimeStamp TimeEnd Timestart duration type name description
+================================================================
+When to output?
+---------------
+On Refresh
+================================================================
+Which format to output?
+-----------------------
+CSV, XML, JSON --> Try XML first
+================================================================
+Next Step: Implement constructor of XML output

@@ -120,8 +120,11 @@ public class TrackingPlugin extends AbstractUIPlugin implements
       setEnableTrackers(trackers, false);
 
     getWorkbench().addWorkbenchListener(this);
+
+    System.out.println("Test 1: Create Trackers!");
     trackers = createTrackers();
     setEnableTrackers(trackers, true);
+    System.out.println("Test 1: Trackers are Enabled. Start Tracking!");
 
     idleDetector.setRunning(true);
   }
@@ -148,7 +151,7 @@ public class TrackingPlugin extends AbstractUIPlugin implements
 
     final ImmutableSet.Builder<ITracker<?>> builder = ImmutableSet.builder();
     for (final IConfigurationElement e : elements) {
-    	System.out.println("Test 0: Creating Trackers");
+    //	System.out.println("Test 0: Creating Trackers");
       SafeRunner.run(new ISafeRunnable() {
         @Override
         public void handleException(Throwable e) {

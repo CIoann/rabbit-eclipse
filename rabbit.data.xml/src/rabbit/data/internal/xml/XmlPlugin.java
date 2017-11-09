@@ -67,7 +67,9 @@ public class XmlPlugin extends AbstractUIPlugin {
   /** The settings. */
   private Properties properties = new Properties();
 
-  public XmlPlugin() {}
+  public XmlPlugin() {
+	  System.out.print("called");
+  }
 
   /**
    * Gets the full path to the storage location of this workspace. The returned

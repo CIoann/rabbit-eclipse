@@ -183,7 +183,7 @@ public class RabbitView extends ViewPart {
     stackLayout = new StackLayout();
     preferences = new Preference();
   }
-  
+  //! Creating the View for the tool
   @Override
   public void createPartControl(Composite parent) {
     Form form = toolkit.createForm(parent);

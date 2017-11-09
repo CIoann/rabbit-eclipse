@@ -17,6 +17,8 @@ package rabbit.data.store.model;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.sql.Timestamp;
+
 import org.joda.time.DateTime;
 
 /**
@@ -25,6 +27,7 @@ import org.joda.time.DateTime;
 public class DiscreteEvent {
 
   private final DateTime time;
+  private final Timestamp ts;
 
   /**
    * Constructs a new event.
@@ -34,6 +37,7 @@ public class DiscreteEvent {
    */
   public DiscreteEvent(DateTime time) {
     this.time = checkNotNull(time);
+    this.ts = new Timestamp(time.getMillis());
   }
 
   /**

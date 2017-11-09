@@ -30,6 +30,7 @@ public class FileEventTypeMerger extends AbstractMerger<FileEventType> {
     FileEventType result = new FileEventType();
     result.setFilePath(t1.getFilePath());
     result.setDuration(t1.getDuration() + t2.getDuration());
+    System.out.println("Test 1: Getting Duration for file");
     return result;
   }
 

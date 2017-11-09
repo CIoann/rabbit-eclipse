@@ -52,7 +52,9 @@ public class ContinuousEvent extends DiscreteEvent {
 	    this.start= start;
 	    this.end=end;
 	  }
-  /**
+
+
+/**
    * Gets the interval of this event.
    * 
    * @return The interval.
@@ -60,4 +62,11 @@ public class ContinuousEvent extends DiscreteEvent {
   public final Interval getInterval() {
     return interval;
   }
+  public final Timestamp getStart() {
+	return start;
+}
+
+public final Timestamp getEnd() {
+	return end;
+}
 }
