@@ -23,6 +23,7 @@ import org.eclipse.jdt.core.IJavaElement;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Set;
 
 /**
@@ -49,7 +50,15 @@ public class Keys {
    * Key for a duration.
    */
   public static final IKey<Duration> DURATION = Key.create();
-  
+  /**
+   * Key for a start time.
+   */
+  public static final IKey<Timestamp> TIMESTART = Key.create();
+  /**
+   * Key for a start time.
+   */
+  public static final IKey<Timestamp> TIMEND = Key.create();
+
   /**
    * Key for a file.
    */

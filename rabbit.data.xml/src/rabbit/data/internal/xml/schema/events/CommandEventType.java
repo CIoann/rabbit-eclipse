@@ -8,10 +8,14 @@
 
 package rabbit.data.internal.xml.schema.events;
 
+import java.sql.Timestamp;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+
+import org.joda.time.format.DateTimeFormat;
 
 
 /**
@@ -37,10 +41,26 @@ public class CommandEventType
     extends CountEventType
 {
 
+  //  protected Timestamp  ts1= new Timestamp(71885418);
     @XmlAttribute(required = true)
     protected String commandId;
+    @XmlAttribute(required = true)
+    protected String tsStart;
+    
+  //  @XmlAttribute(required = true)
+   // protected String ts = timestampAsString(ts1);
+    
 
-    /**
+
+    public String getTimeStamp() {
+		return tsStart;
+	}
+
+	public void setTimeStamp(String tsStart) {
+		this.tsStart = tsStart;
+	}
+
+	/**
      * Gets the value of the commandId property.
      * 
      * @return
@@ -63,5 +83,7 @@ public class CommandEventType
     public void setCommandId(String value) {
         this.commandId = value;
     }
+  
+   
 
 }

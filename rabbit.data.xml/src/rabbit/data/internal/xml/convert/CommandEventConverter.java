@@ -31,6 +31,10 @@ public class CommandEventConverter extends
   protected CommandEventType doConvert(CommandEvent element) {
     CommandEventType type = new CommandEventType();
     type.setCommandId(element.getExecutionEvent().getCommand().getId());
+    type.setTimeStamp(element.getTs().toString());
+    System.out.println("Test 2: Timestamp Control Action :ts: " + element.getTs().toString());
+   // System.out.println("Test 2: Timestamp Control Action :time: " + element.getTime().toString());
+   // System.out.println("Test 2: Timestamp Control Action :function " + element.timestampAsString());
     type.setCount(1);
     return type;
   }

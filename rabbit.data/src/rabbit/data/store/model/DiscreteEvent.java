@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import java.sql.Timestamp;
 
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 
 /**
  * Represents an event that happened at a particular time.
@@ -47,5 +48,13 @@ public class DiscreteEvent {
    */
   public final DateTime getTime() {
     return time;
+  }
+  
+  public final Timestamp getTs() {
+	    return ts;
+	  }
+  
+  public final String timestampAsString() {
+      return DateTimeFormat.forPattern("yyyyMMdd").print(ts.getTime());
   }
 }

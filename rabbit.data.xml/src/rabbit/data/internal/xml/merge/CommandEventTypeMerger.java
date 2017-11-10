@@ -29,6 +29,8 @@ public class CommandEventTypeMerger extends AbstractMerger<CommandEventType> {
   protected CommandEventType doMerge(CommandEventType t1, CommandEventType t2) {
     CommandEventType result = new CommandEventType();
     result.setCommandId(t1.getCommandId());
+    //Test 2
+    result.setTimeStamp(t1.getTimeStamp());
     result.setCount(t1.getCount() + t2.getCount());
     return result;
   }

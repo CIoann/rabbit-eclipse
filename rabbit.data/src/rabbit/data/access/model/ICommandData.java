@@ -15,7 +15,10 @@
  */
 package rabbit.data.access.model;
 
+import java.sql.Timestamp;
+
 import org.eclipse.core.commands.Command;
+import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
 /**
@@ -32,7 +35,11 @@ public interface ICommandData extends IData {
    * Key for the date.
    */
   static final IKey<LocalDate> DATE = Keys.DATE;
-
+  /**
+   * Key for the START.
+   */
+  static final IKey<Timestamp> TIMESTART = Keys.TIMESTART;
+  
   /**
    * Key for the workspace.
    */

@@ -25,6 +25,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import org.eclipse.core.commands.Command;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Map;
 
 import javax.annotation.Nullable;
@@ -48,7 +49,7 @@ public class CommandData implements ICommandData {
    * @throws NullPointerException If any of the arguments are null;
    * @throws IllegalArgumentException If {@code count < 1}.
    */
-  public CommandData(LocalDate date, 
+  public CommandData(LocalDate date, Timestamp tsStart,
                      WorkspaceStorage workspace, 
                      Command command, 
                      int count) {
@@ -57,6 +58,7 @@ public class CommandData implements ICommandData {
     
     data = new KeyMapBuilder()
         .put(DATE,      checkNotNull(date,      "date"))
+        .put(TIMESTART, checkNotNull(tsStart, "tstart"))
         .put(WORKSPACE, checkNotNull(workspace, "workspace"))
         .put(COMMAND,   checkNotNull(command,   "commandId"))
         .put(COUNT,     count)

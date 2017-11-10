@@ -16,7 +16,7 @@ Test 2: Time spend in perspectives -> increament using the merger achieved.
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
+C:\Users\connie\Rabbit\C.Users.connie.Desktop.Plugin1.runtime-c2
 ================================================================
 What to output?
 ----------------
@@ -31,3 +31,11 @@ Which format to output?
 CSV, XML, JSON --> Try XML first
 ================================================================
 Next Step: Implement constructor of XML output
+
+================================================================
+Class to write xml files
+------------------------
+DataStore.java 
+rabbit.data.xml/src/rabbit/data/internal/xml/DataStore.java
+
+================================================================

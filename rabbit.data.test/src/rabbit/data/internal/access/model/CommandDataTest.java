@@ -29,6 +29,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;
+import java.sql.Timestamp;
 
 /**
  * @see CommandData
@@ -38,6 +39,7 @@ public class CommandDataTest {
   /** Default value is > 1. */
   private int count;
   private LocalDate date;
+  private Timestamp tsStart;
   private WorkspaceStorage workspace;
   private Command command;
 
@@ -47,79 +49,82 @@ public class CommandDataTest {
     c.setAccessible(true);
     command = c.newInstance("id");
     date = new LocalDate();
+    long time = 1000;
+    tsStart = new Timestamp(time);
+    
     workspace = new WorkspaceStorage(new Path(""), new Path(""));
     count = 10;
   }
 
   @Test
   public void shouldReturnNullIfKeyIsNull() {
-    assertThat(create(date, workspace, command, 1).get(null), is(nullValue()));
+    assertThat(create(date,tsStart, workspace, command, 1).get(null), is(nullValue()));
   }
 
   @Test
   public void shouldAcceptIfConstructedWithCountOfOne() {
-    create(date, workspace, command, 1);
+    create(date, tsStart,workspace, command, 1);
   }
 
   @Test
   public void shouldReturnTheCommand() {
-    assertThat(create(date, workspace, command, count)
+    assertThat(create(date,tsStart, workspace, command, count)
         .get(ICommandData.COMMAND), is(command));
   }
 
   @Test
   public void shouldReturnTheCount() {
     assertThat(
-        create(date, workspace, command, count).get(ICommandData.COUNT),
+        create(date,tsStart, workspace, command, count).get(ICommandData.COUNT),
         is(count));
   }
 
   @Test
   public void shouldReturnTheDate() {
     assertThat(
-        create(date, workspace, command, count).get(ICommandData.DATE),
+        create(date,tsStart, workspace, command, count).get(ICommandData.DATE),
         is(date));
   }
 
   @Test
   public void shouldReturnTheWorkspace() {
     assertThat(
-        create(date, workspace, command, count).get(ICommandData.WORKSPACE),
+        create(date,tsStart, workspace, command, count).get(ICommandData.WORKSPACE),
         is(workspace));
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void shouldThrowIllegalArgumentExceptionIfConstructedWithCountOfZero() {
-    create(date, workspace, command, 0);
+    create(date,tsStart, workspace, command, 0);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void shouldThrowIllegalArgumentExceptionIfConstructedWithNegativeCount() {
-    create(date, workspace, command, -1);
+    create(date,tsStart, workspace, command, -1);
   }
 
   @Test(expected = NullPointerException.class)
   public void shouldThrowNullPointerExceptionIfConstructedWithoutACommand() {
-    create(date, workspace, null, count);
+    create(date,tsStart, workspace, null, count);
   }
 
   @Test(expected = NullPointerException.class)
   public void shouldThrowNullPointerExceptionIfConstructedWithoutADate() {
-    create(null, workspace, command, count);
+    create(null,tsStart, workspace, command, count);
   }
 
   @Test(expected = NullPointerException.class)
   public void shouldThrowNullPointerExceptionIfConstructedWithoutAWorkspace() {
-    create(date, null, command, count);
+    create(date,tsStart, null, command, count);
   }
 
   /**
-   * @see CommandData#CommandData(LocalDate, WorkspaceStorage, Command, int)
+   * @see CommandData#CommandData(LocalDate,Timestamp, WorkspaceStorage, Command, int)
    */
-  private CommandData create(LocalDate d,
+  private CommandData create(LocalDate d,Timestamp t,
                              WorkspaceStorage ws,
                              Command cmd,
                              int count) {
-    return new CommandData(d, ws, cmd, count);
+    return new CommandData(d,t, ws, cmd, count);
   }
 }

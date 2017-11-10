@@ -65,6 +65,7 @@ public enum DataStore implements IDataStore {
 
   @Override
   public File getDataFile(LocalDate date, IPath location) {
+	  System.out.print("Test 2: path" + location.toOSString());
     return location.append(id + "-" + date.toString("yyyy-MM"))
         .addFileExtension("xml").toFile();
   }

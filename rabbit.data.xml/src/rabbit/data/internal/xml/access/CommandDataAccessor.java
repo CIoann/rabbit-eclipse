@@ -32,6 +32,8 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Collection;
 
 /**
@@ -53,9 +55,13 @@ public class CommandDataAccessor extends
 
   @Override
   protected ICommandData createDataNode(
-      LocalDate date, WorkspaceStorage ws, CommandEventType type) throws Exception {
+		  //CALLED WHEN THE FIRST TIME A COMMAND WAS ADDRESSED
+      LocalDate date,  WorkspaceStorage ws, CommandEventType type) throws Exception {
     Command cmd = commandService().getCommand(type.getCommandId());
-    return new CommandData(date, ws, cmd, type.getCount());
+    //millisecond time
+    System.out.println("Test 2: command added");
+    Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
+    return new CommandData(date,ts, ws, cmd, type.getCount());
   }
 
   @Override
