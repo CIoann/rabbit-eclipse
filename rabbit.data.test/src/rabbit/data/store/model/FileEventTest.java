@@ -19,6 +19,8 @@ import rabbit.data.store.model.FileEvent;
 
 import static org.junit.Assert.assertEquals;
 
+import java.sql.Timestamp;
+
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.joda.time.Interval;
@@ -50,6 +52,7 @@ public class FileEventTest extends ContinuousEventTest {
    * @see FileEvent#FileEvent(Interval, IPath)
    */
   protected FileEvent createEvent(Interval interval, IPath filePath) {
-    return new FileEvent(interval, filePath);
+	  //Adding for fast test
+    return new FileEvent(interval,null,null, filePath);
   }
 }

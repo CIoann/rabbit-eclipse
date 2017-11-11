@@ -39,3 +39,33 @@ DataStore.java
 rabbit.data.xml/src/rabbit/data/internal/xml/DataStore.java
 
 ================================================================
+<<Important Decisions>>
+========================
+
+------------------------
+--> Discrete Events - CommandEvent
+------------------------
+	Type 1:
+	-------
+		-- Command A -- TimeStamp --
+		-- Command B -- TimeStamp --
+		-- Command C -- TimeStamp --
+		-- Command A -- TimeStamp --
+	
+	Type 2:
+	------
+		-- Count -- Command A -- Last TimeStamp	--
+		-- Count -- Command B -- Last TimeStamp --
+		
+------------------------
+--> Continuous Events - FileEvent
+------------------------
+	Type 1:
+	-------
+		-- FileName A - TimeStart - TimeEnd  - Duration
+		-- Filename B - Timestart - TimeEnd  - Duration
+	ex  -- Filename C - 14:05:03  - 15:06:07 - 5 min
+	
+------------------------
+--> Continuous Events - TaskEvent
+------------------------

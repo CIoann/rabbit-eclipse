@@ -30,6 +30,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.joda.time.Interval;
 
 import java.net.URI;
+import java.sql.Timestamp;
 
 /**
  * Tracks time spent on files.
@@ -53,7 +54,8 @@ public class FileTracker extends AbstractPartTracker<FileEvent> {
 
     if (part instanceof IEditorPart) {
       IEditorInput input = ((IEditorPart) part).getEditorInput();
-
+      Timestamp tsStart = new Timestamp(start);
+      Timestamp tsEnd = new Timestamp (end);
       /*
        * Order of this "if" statement is important.
        * 
@@ -67,13 +69,14 @@ public class FileTracker extends AbstractPartTracker<FileEvent> {
       if (input instanceof IFileEditorInput) {
         // Contains a file in the workspace
         IFile file = ((IFileEditorInput) input).getFile();
-        return new FileEvent(new Interval(start, end), file.getFullPath());
+  
+        return new FileEvent(new Interval(start, end), tsStart, tsEnd,file.getFullPath());
 
       } else if (input instanceof IURIEditorInput) {
         // A file outside of workspace
         URI uri = ((IURIEditorInput) input).getURI();
         IPath path = new Path(uri.getPath());
-        return new FileEvent(new Interval(start, end), path);
+        return new FileEvent(new Interval(start, end), tsStart, tsEnd, path);
       }
     }
     return null;

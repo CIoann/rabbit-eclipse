@@ -39,6 +39,10 @@ public class FileEventType
 
     @XmlAttribute(required = true)
     protected String filePath;
+    @XmlAttribute(required = true)
+    protected String tsStart;
+    @XmlAttribute(required = true)
+    protected String tsEnd;
 
     /**
      * Gets the value of the filePath property.
@@ -63,5 +67,21 @@ public class FileEventType
     public void setFilePath(String value) {
         this.filePath = value;
     }
+
+	public String getTsStart() {
+		return tsStart;
+	}
+
+	public void setTsStart(String tsStart) {
+		this.tsStart = tsStart;
+	}
+
+	public String getTsEnd() {
+		return tsEnd;
+	}
+
+	public void setTsEnd(String tsEnd) {
+		this.tsEnd = tsEnd;
+	}
 
 }

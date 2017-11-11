@@ -17,6 +17,8 @@ package rabbit.data.store.model;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.sql.Timestamp;
+
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.mylyn.tasks.core.ITask;
 import org.joda.time.Interval;
@@ -37,7 +39,7 @@ public class TaskFileEvent extends FileEvent {
    * @throws NullPointerException If any of the arguments are null.
    */
   public TaskFileEvent(Interval interval, IPath filePath, ITask task) {
-    super(interval, filePath);
+    super(interval,null,null, filePath); //TEST 3: CHANGE THE FILE-EVENT one thing at a time
     this.task = checkNotNull(task);
   }
 

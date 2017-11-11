@@ -110,6 +110,7 @@ public class FileDataTest {
                           WorkspaceStorage workspace,
                           Duration duration,
                           IFile file) {
-    return new FileData(date, workspace, duration, file);
+	 //fast testing test3
+    return new FileData(date,null,null, workspace, duration, file);
   }
 }

@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import java.sql.Timestamp;
 
 import org.joda.time.Interval;
+import org.joda.time.format.DateTimeFormat;
 
 /**
  * An event that has a duration.
@@ -27,7 +28,7 @@ import org.joda.time.Interval;
 public class ContinuousEvent extends DiscreteEvent {
 
   private final Interval interval;
-  private final Timestamp start,end;
+  private final Timestamp tsStart,tsEnd;
 
   /**
    * Constructor.
@@ -38,19 +39,19 @@ public class ContinuousEvent extends DiscreteEvent {
   public ContinuousEvent(Interval interval) {
     super(checkNotNull(interval).getStart());
     this.interval = interval;
-    this.start= new Timestamp(0);
-    this.end= new Timestamp(0);
+    this.tsStart= new Timestamp(0);
+    this.tsEnd= new Timestamp(0);
   }
   
-  //! Test 0: Adding Timestamp
+  //! Test 3: Adding Timestamp
   /**
    * attempt to add start,end times
    */
-  public ContinuousEvent(Timestamp start, Timestamp end, Interval interval) {
+  public ContinuousEvent(Timestamp tsStart, Timestamp tsEnd, Interval interval) {
 	    super(checkNotNull(interval).getStart());
 	    this.interval = interval;
-	    this.start= start;
-	    this.end=end;
+	    this.tsStart= tsStart;
+	    this.tsEnd=tsEnd;
 	  }
 
 
@@ -63,10 +64,11 @@ public class ContinuousEvent extends DiscreteEvent {
     return interval;
   }
   public final Timestamp getStart() {
-	return start;
+	return tsStart;
 }
 
 public final Timestamp getEnd() {
-	return end;
+	return tsEnd;
 }
+
 }

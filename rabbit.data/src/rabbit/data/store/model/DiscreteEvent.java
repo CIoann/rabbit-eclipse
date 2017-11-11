@@ -53,8 +53,5 @@ public class DiscreteEvent {
   public final Timestamp getTs() {
 	    return ts;
 	  }
-  
-  public final String timestampAsString() {
-      return DateTimeFormat.forPattern("yyyyMMdd").print(ts.getTime());
-  }
+
 }

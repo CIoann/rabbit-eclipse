@@ -23,6 +23,7 @@ import org.eclipse.core.runtime.Path;
 import org.joda.time.Interval;
 
 import java.net.URI;
+import java.sql.Timestamp;
 
 /**
  * Represents a file event.
@@ -42,8 +43,10 @@ public class FileEvent extends ContinuousEvent {
    * @see Path#Path(String)
    * @see URI#getPath()
    */
-  public FileEvent(Interval interval, IPath filePath) {
-    super(interval);
+  
+  //TEST 3:  NEED TO PUT TIMESTAMP IN CONSTRUCTOR
+  public FileEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd, IPath filePath) {
+    super(tsStart,tsEnd,interval);
     this.filePath = checkNotNull(filePath);
   }
 

@@ -24,6 +24,8 @@ import rabbit.data.store.model.FileEvent;
 
 import com.google.common.base.Objects;
 
+import java.sql.Timestamp;
+
 import org.eclipse.core.runtime.Path;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
@@ -43,12 +45,18 @@ public class FileEventStorerTest extends
 
   @Override
   protected FileEvent createEvent(DateTime t) {
-    return new FileEvent(new Interval(t, t.plus(1)), new Path("/some"));
+	  //Adding for fast test
+	  Timestamp tsStart = new Timestamp(0);
+      Timestamp tsEnd = new Timestamp (1);
+    return new FileEvent(new Interval(t, t.plus(1)),tsStart, tsEnd, new Path("/some"));
   }
 
   @Override
   protected FileEvent createEventDiff(DateTime t) {
-    return new FileEvent(new Interval(t, t.plus(2)), new Path("/some/some"));
+	  //Adding for fast test
+	  Timestamp tsStart = new Timestamp(0);
+      Timestamp tsEnd = new Timestamp (1);
+    return new FileEvent(new Interval(t, t.plus(2)),tsStart, tsEnd, new Path("/some/some"));
   }
 
   @Override

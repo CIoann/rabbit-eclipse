@@ -30,6 +30,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.joda.time.Interval;
 import org.junit.Test;
 
+import java.sql.Timestamp;
 import java.util.Iterator;
 
 /**
@@ -75,7 +76,10 @@ public class FileTrackerTest extends AbstractPartTrackerTest<FileEvent> {
 
   @Override
   protected FileEvent createEvent() {
-    return new FileEvent(new Interval(0, 1),
+	  //Adding for fast test
+      Timestamp tsStart = new Timestamp(0);
+      Timestamp tsEnd = new Timestamp (1);
+    return new FileEvent(new Interval(0, 1), tsStart, tsEnd,
         Path.fromPortableString("/p/f/a.txt"));
   }
 

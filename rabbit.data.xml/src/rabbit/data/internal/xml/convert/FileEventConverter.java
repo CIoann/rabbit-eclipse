@@ -32,6 +32,8 @@ public class FileEventConverter extends
     FileEventType type = new FileEventType();
     type.setDuration(element.getInterval().toDurationMillis());
     type.setFilePath(element.getFilePath().toString());
+    type.setTsStart(element.getStart().toString());
+    type.setTsEnd(element.getEnd().toString());
     return type;
   }
 
