@@ -10,6 +10,7 @@ package rabbit.data.internal.xml.schema.events;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -34,6 +35,22 @@ import javax.xml.bind.annotation.XmlType;
 public class SessionEventType
     extends DurationEventType
 {
+	   @XmlAttribute(required = true)
+	    protected String tsStart;
+	    @XmlAttribute(required = true)
+	    protected String tsEnd;
+		public String getTsStart() {
+			return tsStart;
+		}
+		public void setTsStart(String tsStart) {
+			this.tsStart = tsStart;
+		}
+		public String getTsEnd() {
+			return tsEnd;
+		}
+		public void setTsEnd(String tsEnd) {
+			this.tsEnd = tsEnd;
+		}
 
 
 }

@@ -37,11 +37,11 @@ public class SessionEventConverterTest extends
 
   @Override
   public void testConvert() throws Exception {
-    SessionEvent event = new SessionEvent(new Interval(0, 1));
+    SessionEvent event = new SessionEvent(new Interval(0, 1),null,null);
     SessionEventType type = converter.convert(event);
     assertEquals(event.getInterval().toDurationMillis(), type.getDuration());
     
-    event = new SessionEvent(new Interval(0, 1));
+    event = new SessionEvent(new Interval(0, 1),null,null);
     type = converter.convert(event);
     assertEquals(event.getInterval().toDurationMillis(), type.getDuration());
   }

@@ -15,6 +15,8 @@
  */
 package rabbit.data.store.model;
 
+import java.sql.Timestamp;
+
 import org.joda.time.Interval;
 
 /**
@@ -28,7 +30,7 @@ public class SessionEvent extends ContinuousEvent {
    * @param interval The time interval.
    * @throws NullPointerException If time is null.
    */
-  public SessionEvent(Interval interval) {
-    super(interval);
+  public SessionEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd) {
+    super(tsStart, tsEnd, interval);
   }
 }

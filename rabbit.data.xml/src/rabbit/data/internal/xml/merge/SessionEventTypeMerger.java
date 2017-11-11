@@ -35,6 +35,11 @@ public class SessionEventTypeMerger extends AbstractMerger<SessionEventType> {
   protected SessionEventType doMerge(SessionEventType t1, SessionEventType t2) {
     SessionEventType type = new SessionEventType();
     type.setDuration(t1.getDuration() + t2.getDuration());
+    type.setTsEnd(t2.getTsEnd());
+    type.setTsStart(t1.getTsStart());
+    System.out.println("Test 5: Getting Duration for Session");
+    System.out.println("Test 5: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
+
     return type;
   }
 

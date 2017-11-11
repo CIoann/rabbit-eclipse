@@ -28,6 +28,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.joda.time.Interval;
 
+import java.sql.Timestamp;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -57,7 +58,10 @@ public class SessionTracker extends AbstractTracker<SessionEvent> {
         Record<Object> r = recorder.getLastRecord();
         long start = r.getStartTimeMillis();
         long end = r.getEndTimeMillis();
-        addData(new SessionEvent(new Interval(start, end)));
+        Timestamp tsStart = new Timestamp(start);
+        Timestamp tsEnd = new Timestamp (end);
+
+        addData(new SessionEvent(new Interval(start, end),tsStart, tsEnd));
       }
     }
   };

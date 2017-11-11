@@ -176,7 +176,7 @@ public class SessionTrackerTest extends AbstractTrackerTest<SessionEvent> {
 
   @Override
   protected SessionEvent createEvent() {
-    return new SessionEvent(new Interval(10, 2000));
+    return new SessionEvent(new Interval(10, 2000),null,null);
   }
 
   @Override

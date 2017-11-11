@@ -35,12 +35,12 @@ public class SessionEventStorerTest extends
 
   @Override
   protected SessionEvent createEvent(DateTime dateTime) throws Exception {
-    return new SessionEvent(new Interval(dateTime, dateTime.plus(1)));
+    return new SessionEvent(new Interval(dateTime, dateTime.plus(1)),null,null);
   }
 
   @Override
   protected SessionEvent createEventDiff(DateTime dateTime) throws Exception {
-    return new SessionEvent(new Interval(dateTime, dateTime.plus(2)));
+    return new SessionEvent(new Interval(dateTime, dateTime.plus(2)),null,null);
   }
 
   @Override

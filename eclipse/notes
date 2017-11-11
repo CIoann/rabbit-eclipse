@@ -69,3 +69,18 @@ rabbit.data.xml/src/rabbit/data/internal/xml/DataStore.java
 ------------------------
 --> Continuous Events - TaskEvent
 ------------------------
+	Type 1:
+	-------
+		-- Filename A -- TimeStart - TimeEnd - Duration - TaskID - TaskCreationDate
+		-- Filename B -- TimeStart - TimeEnd - Duration - TaskID - TaskCreationDate
+		
+------------------------
+--> Continuous Events - SessionEvent - I don't get what is a new session but added timestamps anw
+------------------------
+	Type 1:
+	-------
+		-- TimeStart - TimeEnd - Duration 
+
+------------------------
+--> Continuous Events - PerspectiveEvent
+------------------------

@@ -27,6 +27,6 @@ public class SessionEventTest extends ContinuousEventTest {
 
   @Override
   protected ContinuousEvent createEvent(Interval interval) {
-    return new SessionEvent(interval);
+    return new SessionEvent(interval, null,null);
   }
 }

@@ -94,6 +94,7 @@ public class SessionDataTest {
    * @see SessionData#SessionData(LocalDate, WorkspaceStorage, Duration)
    */
   private SessionData create(LocalDate d, WorkspaceStorage ws, Duration dur) {
-    return new SessionData(d, ws, dur);
+    //fast testing
+	  return new SessionData(d,null,null, ws, dur);
   }
 }

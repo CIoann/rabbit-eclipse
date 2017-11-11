@@ -15,6 +15,8 @@
  */
 package rabbit.data.access.model;
 
+import java.sql.Timestamp;
+
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
@@ -37,6 +39,14 @@ public interface ISessionData extends IData {
    * Key for the workspace.
    */
   static final IKey<WorkspaceStorage> WORKSPACE = Keys.WORKSPACE;
+  /**
+   * Key for the tsStart.
+   */
+  static final IKey<Timestamp> TIMESTART = Keys.TIMESTART;
+  /**
+   * Key for the tsEnd.
+   */
+  static final IKey<Timestamp> TIMEND = Keys.TIMEND;
 
   /**
    * Key for the duration.

@@ -24,6 +24,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Map;
 
 import javax.annotation.Nullable;
@@ -46,12 +47,14 @@ public class SessionData implements ISessionData {
    * @throws NullPointerException If any of the arguments are null;
    */
   public SessionData(
-      LocalDate date, WorkspaceStorage workspace, Duration duration) {
+      LocalDate date,Timestamp tsStart, Timestamp tsEnd, WorkspaceStorage workspace, Duration duration) {
     
     data = new KeyMapBuilder()
         .put(DATE,      checkNotNull(date, "date"))
         .put(WORKSPACE, checkNotNull(workspace, "workspace"))
         .put(DURATION,  checkNotNull(duration, "duration"))
+        .put(TIMESTART, checkNotNull(tsStart, "timestart"))
+        .put(TIMEND, checkNotNull(tsEnd, "timend"))
         .build();
   }
 

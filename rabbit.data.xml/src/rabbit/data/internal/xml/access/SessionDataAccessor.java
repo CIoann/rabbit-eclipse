@@ -15,6 +15,7 @@ import com.google.inject.name.Named;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
@@ -37,7 +38,10 @@ public class SessionDataAccessor extends
   @Override
   protected ISessionData createDataNode(LocalDate cal, WorkspaceStorage ws,
       SessionEventType type) throws Exception {
-    return new SessionData(cal, ws, new Duration(type.getDuration()));
+	//CALLED ??
+	  System.out.println("Test 5: SessionDataAccessor: when?");
+	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
+	  return new SessionData(cal,ts,ts, ws, new Duration(type.getDuration()));
   }
 
   @Override
