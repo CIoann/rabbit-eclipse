@@ -26,6 +26,7 @@ import org.eclipse.core.resources.IFile;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Map;
 
 import javax.annotation.Nullable;
@@ -50,7 +51,7 @@ public class TaskData implements ITaskData {
    * @throws NullPointerException If any of the arguments are null;
    */
   public TaskData(
-      LocalDate date, 
+      LocalDate date, Timestamp tsStart, Timestamp tsEnd,
       WorkspaceStorage workspace,
       Duration duration, 
       IFile file,
@@ -60,6 +61,8 @@ public class TaskData implements ITaskData {
         .put(DATE,      checkNotNull(date, "date"))
         .put(WORKSPACE, checkNotNull(workspace, "workspace"))
         .put(DURATION,  checkNotNull(duration, "duration"))
+        .put(TIMESTART, checkNotNull(tsStart, "timestart"))
+        .put(TIMEND, checkNotNull(tsEnd, "timend"))
         .put(FILE,      checkNotNull(file, "file"))
         .put(TASK_ID,   checkNotNull(taskId, "taskId"))
         .build();

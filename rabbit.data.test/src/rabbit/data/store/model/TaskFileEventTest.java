@@ -35,7 +35,8 @@ public class TaskFileEventTest extends FileEventTest {
 
   @Test(expected = NullPointerException.class)
   public void testConstructor_taskNull() {
-    new TaskFileEvent(new Interval(0, 1), Path.fromPortableString("/p/a.txt"),
+	  //fast testing
+    new TaskFileEvent(new Interval(0, 1),null,null, Path.fromPortableString("/p/a.txt"),
         null);
   }
 
@@ -44,7 +45,8 @@ public class TaskFileEventTest extends FileEventTest {
     ITask task = new LocalTask("abc", "def");
     assertEquals(
         task,
-        new TaskFileEvent(new Interval(0, 1), Path
+        //fast testing
+        new TaskFileEvent(new Interval(0, 1), null,null,Path
             .fromPortableString("/p/a.txt"), task).getTask());
   }
 
@@ -55,6 +57,7 @@ public class TaskFileEventTest extends FileEventTest {
 
   protected TaskFileEvent createEvent(Interval interval, IPath filePath,
       ITask task) {
-    return new TaskFileEvent(interval, filePath, task);
+	  //fast testing
+    return new TaskFileEvent(interval,null,null, filePath, task);
   }
 }

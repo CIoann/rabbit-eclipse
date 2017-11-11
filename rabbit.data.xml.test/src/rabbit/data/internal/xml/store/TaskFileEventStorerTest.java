@@ -47,7 +47,7 @@ public class TaskFileEventStorerTest extends
   protected TaskFileEvent createEventDiff(DateTime dateTime) {
     LocalTask task = new LocalTask("taskId", "what?");
     task.setCreationDate(dateTime.toDate());
-    return new TaskFileEvent(new Interval(dateTime, dateTime.plus(1)),
+    return new TaskFileEvent(new Interval(dateTime, dateTime.plus(1)),null,null,
         new Path("/p/f/a"), task);
   }
 
@@ -55,7 +55,7 @@ public class TaskFileEventStorerTest extends
   protected TaskFileEvent createEvent(DateTime dateTime) {
     LocalTask task = new LocalTask("tas1kId", "what?1");
     task.setCreationDate(dateTime.toDate());
-    return new TaskFileEvent(new Interval(dateTime, dateTime.plus(2)),
+    return new TaskFileEvent(new Interval(dateTime, dateTime.plus(2)),null,null,
         new Path("/a/b/c"), task);
   }
 

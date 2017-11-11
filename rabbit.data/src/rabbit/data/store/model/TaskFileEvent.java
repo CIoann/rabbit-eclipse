@@ -38,8 +38,8 @@ public class TaskFileEvent extends FileEvent {
    * @param task The task that was working on.
    * @throws NullPointerException If any of the arguments are null.
    */
-  public TaskFileEvent(Interval interval, IPath filePath, ITask task) {
-    super(interval,null,null, filePath); //TEST 3: CHANGE THE FILE-EVENT one thing at a time
+  public TaskFileEvent(Interval interval,Timestamp tsStart, Timestamp tsEnd, IPath filePath, ITask task) {
+    super(interval,tsStart,tsEnd, filePath); //TEST 3: CHANGE THE FILE-EVENT one thing at a time
     this.task = checkNotNull(task);
   }
 

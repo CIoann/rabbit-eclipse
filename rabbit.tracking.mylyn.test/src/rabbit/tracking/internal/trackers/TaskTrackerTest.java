@@ -48,7 +48,8 @@ public class TaskTrackerTest extends AbstractPartTrackerTest<TaskFileEvent> {
 
   @Override
   protected TaskFileEvent createEvent() {
-    return new TaskFileEvent(new Interval(0, 1), new Path("/a/b/c"), task);
+	  //fast testing
+    return new TaskFileEvent(new Interval(0, 1),null,null, new Path("/a/b/c"), task);
   }
 
   @Override

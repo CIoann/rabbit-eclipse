@@ -35,6 +35,7 @@ import org.eclipse.core.runtime.Path;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Collection;
 
@@ -58,15 +59,17 @@ public class TaskDataAccessor extends
   @Override
   protected ITaskData createDataNode(LocalDate date, WorkspaceStorage ws,
       TaskFileEventType t) throws Exception {
-    Duration duration = new Duration(t.getDuration());
+	  System.out.println("Test 4: TaskDataAccessor: Called every file added to activated task and activated file");
+	  Duration duration = new Duration(t.getDuration());
     IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
     IFile file = root.getFile(new Path(t.getFilePath()));
+    Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
 
     String handleId = t.getTaskId().getHandleId();
     Calendar createDate = t.getTaskId().getCreationDate().toGregorianCalendar();
     TaskId taskId = new TaskId(handleId, createDate.getTime());
 
-    return new TaskData(date, ws, duration, file, taskId);
+    return new TaskData(date,ts,ts, ws, duration, file, taskId);
   }
 
   @Override

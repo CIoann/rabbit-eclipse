@@ -32,6 +32,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.joda.time.Interval;
 
 import java.net.URI;
+import java.sql.Timestamp;
 
 /**
  * Tracks task events.
@@ -66,16 +67,19 @@ public class TaskTracker extends AbstractPartTracker<TaskFileEvent> {
        * it only has a path to the actual file in the file system, like 
        * "C:/a.txt". We want workspace paths wherever possible.
        */
+      Timestamp tsStart = new Timestamp(start);
+      Timestamp tsEnd = new Timestamp(end);
       if (input instanceof IFileEditorInput) {
         // Contains a file in the workspace
         IFile file = ((IFileEditorInput) input).getFile();
-        return new TaskFileEvent(new Interval(start, end), file.getFullPath(), task);
+
+        return new TaskFileEvent(new Interval(start, end),tsStart,tsEnd, file.getFullPath(), task);
 
       } else if (input instanceof IURIEditorInput) {
         // A file outside of workspace
         URI uri = ((IURIEditorInput) input).getURI();
         IPath path = new Path(uri.getPath());
-        return new TaskFileEvent(new Interval(start, end), path, task);
+        return new TaskFileEvent(new Interval(start, end),tsStart,tsEnd, path, task);
       }
     }
     return null;

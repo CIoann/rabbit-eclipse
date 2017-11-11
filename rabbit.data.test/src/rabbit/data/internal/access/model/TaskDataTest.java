@@ -125,6 +125,7 @@ public class TaskDataTest {
    */
   private TaskData create(LocalDate date, WorkspaceStorage workspace,
       Duration duration, IFile file, TaskId taskId) {
-    return new TaskData(date, workspace, duration, file, taskId);
+	  //fast testing
+    return new TaskData(date,null,null, workspace, duration, file, taskId);
   }
 }

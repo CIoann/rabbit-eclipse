@@ -33,7 +33,6 @@ public class FileEventTypeMerger extends AbstractMerger<FileEventType> {
     result.setTsEnd(t2.getTsEnd());
     result.setTsStart(t1.getTsStart());
     System.out.println("Test 3: Getting Duration for file");
-
     System.out.println("Test 3: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
     return result;
   }

@@ -64,6 +64,11 @@ public class TaskFileEventTypeMerger extends AbstractMerger<TaskFileEventType> {
     result.setDuration(t1.getDuration() + t2.getDuration());
     result.setFilePath(t1.getFilePath());
     result.setTaskId(id);
+    System.out.println("Test 4: Getting Duration for task");
+    System.out.println("Test 4: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
+  
+    result.setTsStart(t1.getTsStart());
+    result.setTsEnd(t2.getTsEnd());
 
     return result;
   }

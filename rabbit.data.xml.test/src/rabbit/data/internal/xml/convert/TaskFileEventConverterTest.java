@@ -53,7 +53,7 @@ public class TaskFileEventConverterTest extends
     final ITask task = mock(ITask.class);
     given(task.getCreationDate()).willReturn(new Date());
     final TaskFileEvent event = new TaskFileEvent(
-        new Interval(0, 1), new Path("/a/b"), task);
+        new Interval(0, 1),null,null, new Path("/a/b"), task);
     final TaskFileEventType type = converter.convert(event);
     
     assertEquals(
@@ -90,7 +90,7 @@ public class TaskFileEventConverterTest extends
         DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar);
 
     final TaskFileEvent event = new TaskFileEvent(
-        new Interval(0, 1), new Path("/a/b"), task);
+        new Interval(0, 1),null,null, new Path("/a/b"), task);
     TaskFileEventType type = converter.convert(event);
     
     assertThat(type.getTaskId().getCreationDate(), is(expected));
