@@ -41,7 +41,7 @@ public class PartEventStorerTest extends
     try {
       IViewPart view = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
           .getActivePage().showView("org.eclipse.ui.views.TaskList");
-      return new PartEvent(new Interval(dateTime, dateTime.plus(1)), view);
+      return new PartEvent(new Interval(dateTime, dateTime.plus(1)),null,null, view);
 
     } catch (PartInitException e) {
       e.printStackTrace();
@@ -54,7 +54,7 @@ public class PartEventStorerTest extends
     try {
       IViewPart view = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
           .getActivePage().showView("org.eclipse.ui.navigator.ProjectExplorer");
-      return new PartEvent(new Interval(time, time.plus(2)), view);
+      return new PartEvent(new Interval(time, time.plus(2)),null,null, view);
 
     } catch (PartInitException e) {
       e.printStackTrace();

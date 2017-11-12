@@ -39,7 +39,10 @@ public class JavaEventType
 
     @XmlAttribute(required = true)
     protected String handleIdentifier;
-
+    @XmlAttribute(required = true)
+    protected String tsStart;
+    @XmlAttribute(required = true)
+    protected String tsEnd;
     /**
      * Gets the value of the handleIdentifier property.
      * 
@@ -52,7 +55,23 @@ public class JavaEventType
         return handleIdentifier;
     }
 
-    /**
+    public String getTsStart() {
+		return tsStart;
+	}
+
+	public void setTsStart(String tsStart) {
+		this.tsStart = tsStart;
+	}
+
+	public String getTsEnd() {
+		return tsEnd;
+	}
+
+	public void setTsEnd(String tsEnd) {
+		this.tsEnd = tsEnd;
+	}
+
+	/**
      * Sets the value of the handleIdentifier property.
      * 
      * @param value

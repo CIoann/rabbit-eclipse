@@ -25,6 +25,7 @@ import org.eclipse.jdt.core.IJavaElement;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Map;
 
 import javax.annotation.Nullable;
@@ -48,6 +49,8 @@ public class JavaData implements IJavaData {
    * @throws NullPointerException If any of the arguments are null.
    */
   public JavaData(LocalDate date,
+		  		  Timestamp tsStart,
+		  		  Timestamp tsEnd,
                   WorkspaceStorage workspace,
                   Duration duration, 
                   IJavaElement element) {
@@ -56,6 +59,8 @@ public class JavaData implements IJavaData {
         .put(DATE,      checkNotNull(date,      "date"))
         .put(WORKSPACE, checkNotNull(workspace, "workspace"))
         .put(DURATION,  checkNotNull(duration,  "duration"))
+        .put(TIMESTART, checkNotNull(tsStart, "timestart"))
+        .put(TIMEND, checkNotNull(tsEnd, "timend"))
         .put(JAVA_ELEMENT,   checkNotNull(element,   "handleId"))
         .build();
   }

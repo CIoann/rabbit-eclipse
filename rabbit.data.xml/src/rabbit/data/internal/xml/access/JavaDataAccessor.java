@@ -32,6 +32,7 @@ import org.eclipse.jdt.core.JavaCore;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
@@ -56,7 +57,10 @@ public class JavaDataAccessor extends
       JavaEventType type) throws Exception {
     Duration duration = new Duration(type.getDuration());
     IJavaElement element = JavaCore.create(type.getHandleIdentifier());
-    return new JavaData(date, ws, duration, element);
+    System.out.println("Test 7: JavaDataAccessor: Called??");
+	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
+
+    return new JavaData(date,ts,ts, ws, duration, element);
   }
 
   @Override

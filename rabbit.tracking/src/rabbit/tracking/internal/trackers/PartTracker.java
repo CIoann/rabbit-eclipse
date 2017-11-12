@@ -19,6 +19,8 @@ import rabbit.data.handler.DataHandler;
 import rabbit.data.store.IStorer;
 import rabbit.data.store.model.PartEvent;
 
+import java.sql.Timestamp;
+
 import org.eclipse.ui.IWorkbenchPart;
 import org.joda.time.Interval;
 
@@ -41,6 +43,9 @@ public class PartTracker extends AbstractPartTracker<PartEvent> {
 
   @Override
   protected PartEvent tryCreateEvent(long start, long end, IWorkbenchPart part) {
-    return new PartEvent(new Interval(start, end), part);
+	  Timestamp tsStart = new Timestamp(start);
+      Timestamp tsEnd = new Timestamp (end);
+    System.out.println("Test 8: PartTracker");
+    return new PartEvent(new Interval(start, end), tsStart, tsEnd, part);
   }
 }

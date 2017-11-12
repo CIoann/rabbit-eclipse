@@ -56,7 +56,15 @@ rabbit.data.xml/src/rabbit/data/internal/xml/DataStore.java
 	------
 		-- Count -- Command A -- Last TimeStamp	--
 		-- Count -- Command B -- Last TimeStamp --
-		
+
+==============================================================
+<commandEvent 
+	commandId="org.eclipse.jdt.ui.edit.text.java.toggle.comment"
+	tsStart="2017-11-12 12:04:42.402" 
+	count="1"
+/>
+==============================================================
+
 ------------------------
 --> Continuous Events - FileEvent
 ------------------------
@@ -65,7 +73,16 @@ rabbit.data.xml/src/rabbit/data/internal/xml/DataStore.java
 		-- FileName A - TimeStart - TimeEnd  - Duration
 		-- Filename B - Timestart - TimeEnd  - Duration
 	ex  -- Filename C - 14:05:03  - 15:06:07 - 5 min
-	
+
+==============================================================	
+<fileEvent 
+	filePath="/Shiploading/src/Key.java" 
+	tsStart="2017-11-12 12:00:13.103" 
+	tsEnd="2017-11-12 12:00:15.05" 
+	duration="1947"
+/>
+==============================================================
+
 ------------------------
 --> Continuous Events - TaskEvent
 ------------------------
@@ -84,3 +101,65 @@ rabbit.data.xml/src/rabbit/data/internal/xml/DataStore.java
 ------------------------
 --> Continuous Events - PerspectiveEvent
 ------------------------
+	Type 1:
+	-------
+		-- TimeStart - TimeEnd - Duration 
+		
+==============================================================
+<perspectiveEvent 
+	perspectiveId="org.eclipse.jdt.ui.JavaPerspective" 
+	tsStart="2017-11-12 11:57:53.21" 
+	tsEnd="2017-11-12 13:20:12.776" 
+	duration="651199"
+/>
+==============================================================
+
+------------------------
+--> Continuous Events - LaunchEvent
+------------------------
+	Type 1:
+	-------
+		-- TimeStart - TimeEnd - Duration 
+==============================================================
+<launchEvent 
+	name="ShipLoading" launchModeId="coverage" 
+	launchTypeId="org.eclipse.jdt.launching.localJavaApplication" 
+	totalDuration="2028" 
+	tsStart="2017-11-12 12:01:50.065" 
+	tsEnd="2017-11-12 12:03:37.547" 
+	count="3"
+/>
+==============================================================
+------------------------
+--> Continuous Events - JavaEvent
+------------------------
+	Type 1:
+	-------
+		-- TimeStart - TimeEnd - Duration 
+
+==============================================================
+<javaEvent 
+	handleIdentifier="=java/&lt;{HelloWorld.java[HelloWorld" 
+	tsStart="1970-01-01 01:00:00.0" 
+	tsEnd="1970-01-01 01:00:00.0" 
+	duration="15419"
+/>
+==============================================================
+------------------------
+--> Continuous Events - PartEvent
+------------------------
+	Type 1:
+	-------
+		-- TimeStart - TimeEnd - Duration 
+
+==============================================================
+<partEvent 
+	partId="org.eclipse.ui.internal.introview" 
+	tsStart="2017-11-12 19:09:42.844" 
+	tsEnd="2017-11-12 19:10:09.672" 
+	duration="26828"
+/>
+==============================================================
+
+
+Breakpoint + 

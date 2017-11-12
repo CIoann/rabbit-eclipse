@@ -78,7 +78,7 @@ public class PartTrackerTest extends AbstractPartTrackerTest<PartEvent> {
 
   @Override
   protected PartEvent createEvent() {
-    return new PartEvent(new Interval(0, 1),
+    return new PartEvent(new Interval(0, 1),null,null,
         WorkbenchUtil.getActiveWindow().getPartService().getActivePart());
   }
 

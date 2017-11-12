@@ -17,6 +17,8 @@ package rabbit.data.store.model;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.sql.Timestamp;
+
 import org.eclipse.ui.IWorkbenchPart;
 import org.joda.time.Interval;
 
@@ -34,8 +36,8 @@ public class PartEvent extends ContinuousEvent {
    * @param part The workbench part.
    * @throws NullPointerException If any of the arguments are null.
    */
-  public PartEvent(Interval interval, IWorkbenchPart part) {
-    super(interval);
+  public PartEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd, IWorkbenchPart part) {
+    super(tsStart, tsEnd,interval);
     this.workbenchPart = checkNotNull(part);
   }
 

@@ -28,6 +28,7 @@ import org.eclipse.ui.views.IViewRegistry;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Map;
 
 import javax.annotation.Nullable;
@@ -52,6 +53,8 @@ public class PartData implements IPartData {
    */
   public PartData(
       LocalDate date, 
+      Timestamp tsStart,
+      Timestamp tsEnd,
       WorkspaceStorage workspace, 
       Duration duration, 
       String partId) {
@@ -60,6 +63,8 @@ public class PartData implements IPartData {
         .put(DATE,      checkNotNull(date, "date"))
         .put(WORKSPACE, checkNotNull(workspace, "workspace"))
         .put(DURATION,  checkNotNull(duration, "duration"))
+        .put(TIMESTART, checkNotNull(tsStart, "timestart"))
+        .put(TIMEND, checkNotNull(tsEnd, "timend"))
         .put(PART_ID,   checkNotNull(partId, "partId"))
         .build();
   }

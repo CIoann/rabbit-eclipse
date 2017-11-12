@@ -31,6 +31,9 @@ public class JavaEventConverter extends AbstractConverter<JavaEvent, JavaEventTy
     JavaEventType type = new JavaEventType();
     type.setHandleIdentifier(event.getElement().getHandleIdentifier());
     type.setDuration(event.getInterval().toDurationMillis());
+    type.setTsStart(event.getStart().toString());
+    type.setTsEnd(event.getEnd().toString());
+
     return type;
   }
 

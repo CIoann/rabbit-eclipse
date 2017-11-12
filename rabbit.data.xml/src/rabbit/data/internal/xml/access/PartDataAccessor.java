@@ -30,6 +30,7 @@ import com.google.inject.name.Named;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
@@ -57,7 +58,10 @@ public class PartDataAccessor extends
   @Override
   protected IPartData createDataNode(LocalDate date, WorkspaceStorage ws,
       PartEventType t) throws Exception {
-    return new PartData(date, ws, new Duration(t.getDuration()), t.getPartId());
+	  //CALLED WHEN ?
+	  System.out.println("Test 8: PartDataAccessor: Called on?");
+	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
+    return new PartData(date,ts,ts, ws, new Duration(t.getDuration()), t.getPartId());
   }
 
   @Override

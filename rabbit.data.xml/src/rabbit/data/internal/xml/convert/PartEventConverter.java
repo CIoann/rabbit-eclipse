@@ -32,6 +32,9 @@ public class PartEventConverter extends
     PartEventType type = new PartEventType();
     type.setDuration(element.getInterval().toDurationMillis());
     type.setPartId(element.getWorkbenchPart().getSite().getId());
+    type.setTsStart(element.getStart().toString());
+    type.setTsEnd(element.getEnd().toString());
+ 
     return type;
   }
 

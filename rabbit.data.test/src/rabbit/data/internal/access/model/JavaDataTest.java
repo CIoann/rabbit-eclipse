@@ -110,6 +110,6 @@ public class JavaDataTest {
                           WorkspaceStorage ws,
                           Duration duration,
                           IJavaElement e) {
-    return new JavaData(date, ws, duration, e);
+    return new JavaData(date,null,null, ws, duration, e);
   }
 }

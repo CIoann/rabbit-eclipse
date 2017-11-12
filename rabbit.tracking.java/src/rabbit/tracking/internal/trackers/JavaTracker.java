@@ -191,6 +191,7 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
         	Timestamp start_time = new Timestamp(start);
         	Timestamp end_time = new Timestamp(end);
         	System.out.println("Test 0:\n Time start: " +start_time.toString() + "\nTime end: "+end_time.toString());
+        	System.out.println("Test 7: JavaEvent - JavaTracker");
         	addData(new JavaEvent(new Interval(start, end),start_time,end_time, element));
         //  addData(new JavaEvent(new Interval(start, end), element));
         }

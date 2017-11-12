@@ -38,7 +38,27 @@ public class PartEventType
 {
 
     @XmlAttribute(required = true)
-    protected String partId;
+    protected String partId;  
+    @XmlAttribute(required = true)
+    protected String tsStart;
+    public String getTsStart() {
+		return tsStart;
+	}
+
+	public void setTsStart(String tsStart) {
+		this.tsStart = tsStart;
+	}
+
+	public String getTsEnd() {
+		return tsEnd;
+	}
+
+	public void setTsEnd(String tsEnd) {
+		this.tsEnd = tsEnd;
+	}
+
+	@XmlAttribute(required = true)
+    protected String tsEnd;
 
     /**
      * Gets the value of the partId property.

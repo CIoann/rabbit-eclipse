@@ -36,6 +36,11 @@ public class PartEventTypeMerger extends AbstractMerger<PartEventType> {
     PartEventType result = new PartEventType();
     result.setPartId(t1.getPartId());
     result.setDuration(t1.getDuration() + t2.getDuration());
+    result.setTsEnd(t2.getTsEnd());
+    result.setTsStart(t1.getTsStart());
+    System.out.println("Test 7: PartEventMerger");
+    System.out.println("Test 7: Start/end");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
+
     return result;
   }
 
