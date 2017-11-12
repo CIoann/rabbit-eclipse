@@ -26,6 +26,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.joda.time.Interval;
 
+import java.sql.Timestamp;
 import java.util.Set;
 
 /**
@@ -58,10 +59,10 @@ public class LaunchEvent extends ContinuousEvent {
    * @throws NullPointerException If any of the parameters are null.
    * @see IResource#getFullPath()
    */
-  public LaunchEvent(Interval interval, ILaunch launch,
+  public LaunchEvent(Interval interval,Timestamp tsStart, Timestamp tsEnd, ILaunch launch,
       ILaunchConfiguration config, ILaunchConfigurationType type,
       Set<IPath> filePaths) {
-    super(interval);
+    super(tsStart, tsEnd,interval);
     this.type = checkNotNull(type, "type");
     this.config = checkNotNull(config, "config");
     this.launch = checkNotNull(launch, "launch");

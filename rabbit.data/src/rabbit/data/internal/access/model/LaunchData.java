@@ -29,6 +29,7 @@ import org.eclipse.core.resources.IFile;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Map;
 import java.util.Set;
 
@@ -56,6 +57,8 @@ public class LaunchData implements ILaunchData {
    * @throws IllegalArgumentException If {@code count < 1};
    */
   public LaunchData(LocalDate date,
+		  			Timestamp tsStart,
+		  			Timestamp tsEnd,
                     WorkspaceStorage workspace,
                     LaunchConfigurationDescriptor config,
                     int count,
@@ -70,6 +73,8 @@ public class LaunchData implements ILaunchData {
         .put(WORKSPACE,     checkNotNull(workspace, "workspace"))
         .put(LAUNCH_CONFIG, checkNotNull(config, "config"))
         .put(DURATION,      checkNotNull(duration, "duration"))
+        .put(TIMESTART, checkNotNull(tsStart, "timestart"))
+        .put(TIMEND, checkNotNull(tsEnd, "timend"))
         .put(FILES,         ImmutableSet.copyOf(checkNotNull(files, "files")))
         .build();
         

@@ -38,6 +38,7 @@ import org.eclipse.debug.core.model.IStackFrame;
 import org.eclipse.debug.core.model.IThread;
 import org.joda.time.Interval;
 
+import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
@@ -84,9 +85,11 @@ public class LaunchTracker extends AbstractTracker<LaunchEvent> {
         if (files == null) {
           files = Collections.emptySet();
         }
-        
+        Timestamp tsStart = new Timestamp(start);
+        Timestamp tsEnd = new Timestamp (end);
+       System.out.println("Test 6: Launch Tracker");
         Interval interval = new Interval(start, end);
-        addData(new LaunchEvent(interval, launch, config, type, files));
+        addData(new LaunchEvent(interval,tsStart,tsEnd, launch, config, type, files));
       }
     }
   };

@@ -17,6 +17,8 @@ package rabbit.data.store.model;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.sql.Timestamp;
+
 import org.eclipse.ui.IPerspectiveDescriptor;
 import org.joda.time.Interval;
 
@@ -34,8 +36,8 @@ public class PerspectiveEvent extends ContinuousEvent {
    * @param perspective The perspective.
    * @throws NullPointerException If any of the arguments are null.
    */
-  public PerspectiveEvent(Interval interval, IPerspectiveDescriptor perspective) {
-    super(interval);
+  public PerspectiveEvent(Timestamp tsStart, Timestamp tsEnd, Interval interval, IPerspectiveDescriptor perspective) {
+    super(tsStart, tsEnd,interval);
     this.perspective = checkNotNull(perspective);
   }
 

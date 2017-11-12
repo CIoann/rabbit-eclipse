@@ -30,6 +30,7 @@ import com.google.inject.name.Named;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
@@ -54,7 +55,9 @@ public class PerspectiveDataAccessor
   protected IPerspectiveData createDataNode(LocalDate date,
       WorkspaceStorage ws, PerspectiveEventType t) throws Exception {
     Duration duration = new Duration(t.getDuration());
-    return new PerspectiveData(date, ws, duration, t.getPerspectiveId());
+    System.out.println("Test 6: PerspectiveDataAccessor: Called ");
+	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
+    return new PerspectiveData(date,ts,ts,ws, duration, t.getPerspectiveId());
   }
 
   @Override

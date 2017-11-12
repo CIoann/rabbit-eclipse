@@ -38,7 +38,8 @@ public class PerspectiveEventConverterTest extends
 
   @Override
   public void testConvert() throws Exception {
-    PerspectiveEvent event = new PerspectiveEvent(new Interval(0, 1),
+	  //fast testing
+    PerspectiveEvent event = new PerspectiveEvent(null,null,new Interval(0, 1),
         getPerspective());
     PerspectiveEventType type = converter.convert(event);
     assertEquals(event.getInterval().toDurationMillis(), type.getDuration());

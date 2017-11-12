@@ -37,6 +37,7 @@ import org.eclipse.core.runtime.Path;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.Set;
 
@@ -73,7 +74,10 @@ public class LaunchDataAccessor extends
             + " - Invalid file path: str\n\t" + e.getMessage());
       }
     }
-    return new LaunchData(date, ws, config, type.getCount(), duration, files);
+    System.out.println("Test 5: LaunchDataAccessor: Called??");
+	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
+
+    return new LaunchData(date,ts,ts, ws, config, type.getCount(), duration, files);
   }
 
   @Override

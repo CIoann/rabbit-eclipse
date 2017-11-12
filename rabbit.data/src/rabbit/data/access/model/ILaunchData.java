@@ -19,6 +19,7 @@ import org.eclipse.core.resources.IFile;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Set;
 
 /**
@@ -45,6 +46,14 @@ public interface ILaunchData extends IData {
    * Key for the duration.
    */
   static final IKey<Duration> DURATION = Keys.DURATION;
+  /**
+   * Key for the tsStart.
+   */
+  static final IKey<Timestamp> TIMESTART = Keys.TIMESTART;
+  /**
+   * Key for the tsEnd.
+   */
+  static final IKey<Timestamp> TIMEND = Keys.TIMEND;
 
   /**
    * Key for the launch count.

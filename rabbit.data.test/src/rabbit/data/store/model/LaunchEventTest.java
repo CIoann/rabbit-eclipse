@@ -44,7 +44,7 @@ public class LaunchEventTest extends ContinuousEventTest {
     filePaths.add(new Path("/b"));
     filePaths.add(new Path("/c"));
     LaunchEvent event = new LaunchEvent(
-        new Interval(0, 1),
+        new Interval(0, 1), null,null,
         mock(ILaunch.class),
         mock(ILaunchConfiguration.class),
         mock(ILaunchConfigurationType.class),
@@ -57,7 +57,7 @@ public class LaunchEventTest extends ContinuousEventTest {
   @Test(expected = NullPointerException.class)
   public void constructorShouldThrowAnExceptionIfFilePathsAreNull() {
     new LaunchEvent(
-        new Interval(0, 1),
+        new Interval(0, 1),null,null,
         mock(ILaunch.class),
         mock(ILaunchConfiguration.class),
         mock(ILaunchConfigurationType.class),
@@ -67,7 +67,7 @@ public class LaunchEventTest extends ContinuousEventTest {
   @Test(expected = NullPointerException.class)
   public void constructorShouldThrowAnExceptionIfLaunchConfigurationIsNull() {
     new LaunchEvent(
-        new Interval(0, 1),
+        new Interval(0, 1),null,null,
         mock(ILaunch.class),
         null,
         mock(ILaunchConfigurationType.class),
@@ -77,7 +77,7 @@ public class LaunchEventTest extends ContinuousEventTest {
   @Test(expected = NullPointerException.class)
   public void constructorShouldThrowAnExceptionIfLaunchConfigurationTypeIsNull() {
     new LaunchEvent(
-        new Interval(0, 1),
+        new Interval(0, 1),null,null,
         mock(ILaunch.class),
         mock(ILaunchConfiguration.class),
         null,
@@ -87,7 +87,7 @@ public class LaunchEventTest extends ContinuousEventTest {
   @Test(expected = NullPointerException.class)
   public void constructorShouldThrowAnExceptionIfLaunchIsNull() {
     new LaunchEvent(
-        new Interval(0, 1),
+        new Interval(0, 1),null,null,
         null,
         mock(ILaunchConfiguration.class),
         mock(ILaunchConfigurationType.class),
@@ -97,7 +97,7 @@ public class LaunchEventTest extends ContinuousEventTest {
   @Test(expected = UnsupportedOperationException.class)
   public void getFilePathsShouldReturnAnUnmodifiableCollection() {
     LaunchEvent event = new LaunchEvent(
-        new Interval(0, 1),
+        new Interval(0, 1), null,null,
         mock(ILaunch.class),
         mock(ILaunchConfiguration.class),
         mock(ILaunchConfigurationType.class),
@@ -109,7 +109,7 @@ public class LaunchEventTest extends ContinuousEventTest {
   public void getLaunchShouldReturnTheLaunch() {
     ILaunch launch = mock(ILaunch.class);
     LaunchEvent event = new LaunchEvent(
-        new Interval(0, 1),
+        new Interval(0, 1),null,null,
         launch,
         mock(ILaunchConfiguration.class),
         mock(ILaunchConfigurationType.class),
@@ -122,7 +122,7 @@ public class LaunchEventTest extends ContinuousEventTest {
   public void getLaunchConfigurationShouldReturnTheLaunchConfiguration() {
     ILaunchConfiguration config = mock(ILaunchConfiguration.class);
     LaunchEvent event = new LaunchEvent(
-        new Interval(0, 1),
+        new Interval(0, 1),null,null,
         mock(ILaunch.class),
         config,
         mock(ILaunchConfigurationType.class),
@@ -135,7 +135,7 @@ public class LaunchEventTest extends ContinuousEventTest {
   public void getLaunchConfigurationTypeShouldReturnTheLaunchConfigurationType() {
     ILaunchConfigurationType type = mock(ILaunchConfigurationType.class);
     LaunchEvent event = new LaunchEvent(
-        new Interval(0, 1),
+        new Interval(0, 1),null,null,
         mock(ILaunch.class),
         mock(ILaunchConfiguration.class),
         type,

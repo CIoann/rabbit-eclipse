@@ -39,8 +39,27 @@ public class PerspectiveEventType
 
     @XmlAttribute(required = true)
     protected String perspectiveId;
+    @XmlAttribute(required = true)
+    protected String tsStart;
+    @XmlAttribute(required = true)
+    protected String tsEnd;
+    public String getTsStart() {
+		return tsStart;
+	}
 
-    /**
+	public void setTsStart(String tsStart) {
+		this.tsStart = tsStart;
+	}
+
+	public String getTsEnd() {
+		return tsEnd;
+	}
+
+	public void setTsEnd(String tsEnd) {
+		this.tsEnd = tsEnd;
+	}
+
+	/**
      * Gets the value of the perspectiveId property.
      * 
      * @return

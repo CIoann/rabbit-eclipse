@@ -53,6 +53,12 @@ public class LaunchEventTypeMerger extends AbstractMerger<LaunchEventType> {
     Set<String> fileIds = Sets.newLinkedHashSet(t1.getFilePath());
     fileIds.addAll(t2.getFilePath());
     result.getFilePath().addAll(fileIds);
+    result.setTsEnd(t2.getTsEnd());
+    result.setTsStart(t1.getTsStart());
+    System.out.println("Test 6: Getting Duration for launch");
+    System.out.println("Test 6: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
+
+    
     return result;
   }
 

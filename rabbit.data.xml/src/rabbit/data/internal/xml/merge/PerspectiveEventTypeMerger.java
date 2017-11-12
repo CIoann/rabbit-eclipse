@@ -38,7 +38,10 @@ public class PerspectiveEventTypeMerger extends
     PerspectiveEventType result = new PerspectiveEventType();
     result.setPerspectiveId(t1.getPerspectiveId());
     result.setDuration(t1.getDuration() + t2.getDuration());
-    System.out.println("Test 2: Perspectives!!");
+    result.setTsEnd(t2.getTsEnd());
+    result.setTsStart(t1.getTsStart());
+    System.out.println("Test 5: Perspectives!!");
+    System.out.println("Test 5, start/end usage of perspective");
     return result;
   }
 

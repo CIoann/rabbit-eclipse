@@ -32,6 +32,7 @@ import org.eclipse.ui.PerspectiveAdapter;
 import org.eclipse.ui.PlatformUI;
 import org.joda.time.Interval;
 
+import java.sql.Timestamp;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -69,7 +70,10 @@ public class PerspectiveTracker extends AbstractTracker<PerspectiveEvent> {
         long start = recorder.getLastRecord().getStartTimeMillis();
         long end = recorder.getLastRecord().getEndTimeMillis();
         IPerspectiveDescriptor p = recorder.getLastRecord().getUserData();
-        addData(new PerspectiveEvent(new Interval(start, end), p));
+        Timestamp tsStart = new Timestamp(start);
+        Timestamp tsEnd = new Timestamp (end);
+   
+        addData(new PerspectiveEvent(tsStart,tsEnd,new Interval(start, end), p));
       }
     }
   };

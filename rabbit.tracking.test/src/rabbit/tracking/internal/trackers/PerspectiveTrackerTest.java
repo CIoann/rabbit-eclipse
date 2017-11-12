@@ -281,7 +281,8 @@ public class PerspectiveTrackerTest extends
 
   @Override
   protected PerspectiveEvent createEvent() {
-    return new PerspectiveEvent(new Interval(0, 1), getActiveWindow()
+	  //fast testing
+    return new PerspectiveEvent(null,null,new Interval(0, 1), getActiveWindow()
         .getActivePage().getPerspective());
   }
 

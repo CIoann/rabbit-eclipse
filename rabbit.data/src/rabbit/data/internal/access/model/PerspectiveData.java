@@ -26,6 +26,7 @@ import org.eclipse.ui.PlatformUI;
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
+import java.sql.Timestamp;
 import java.util.Map;
 
 import javax.annotation.Nullable;
@@ -49,8 +50,8 @@ public class PerspectiveData implements IPerspectiveData {
    * @throws NullPointerException If any of the arguments are null.
    */
   public PerspectiveData(
-      LocalDate date, 
-      WorkspaceStorage workspace, 
+      LocalDate date, Timestamp tsStart,Timestamp tsEnd,
+      WorkspaceStorage workspace,  
       Duration duration, 
       String perspectiveId) {
     
@@ -58,6 +59,8 @@ public class PerspectiveData implements IPerspectiveData {
         .put(DATE,        checkNotNull(date, "date"))
         .put(WORKSPACE,   checkNotNull(workspace, "workspace"))
         .put(DURATION,    checkNotNull(duration, "duration"))
+        .put(TIMESTART, checkNotNull(tsStart, "timestart"))
+        .put(TIMEND, checkNotNull(tsEnd, "timend"))
         .put(PERSPECTIVE_ID, checkNotNull(perspectiveId, "perspectiveId"))
         .build();
   }

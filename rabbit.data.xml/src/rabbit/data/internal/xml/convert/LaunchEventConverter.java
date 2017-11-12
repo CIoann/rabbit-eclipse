@@ -39,6 +39,9 @@ public class LaunchEventConverter extends
     type.setLaunchTypeId(element.getLaunchConfigurationType().getIdentifier());
     type.setLaunchModeId(element.getLaunch().getLaunchMode());
     type.setCount(1);
+    type.setTsStart(element.getStart().toString());
+    type.setTsEnd(element.getEnd().toString());
+
 
     return type;
   }
