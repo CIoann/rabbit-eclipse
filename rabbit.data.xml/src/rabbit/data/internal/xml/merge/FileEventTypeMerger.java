@@ -39,7 +39,10 @@ public class FileEventTypeMerger extends AbstractMerger<FileEventType> {
 
   @Override
   public boolean doIsMergeable(FileEventType t1, FileEventType t2) {
-    return (t1.getFilePath() != null) && (t1.getFilePath().equals(t2.getFilePath()));
+	  //Even if they can be merged return false because we don't want them to be merged
+	  System.out.println("Test 10: FileEventTypeMerger - Keep Multiple Entries");
+	 return false;
+	  //return (t1.getFilePath() != null) && (t1.getFilePath().equals(t2.getFilePath()));
   }
 
 }

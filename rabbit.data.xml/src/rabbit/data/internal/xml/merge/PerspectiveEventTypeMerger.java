@@ -28,8 +28,10 @@ public class PerspectiveEventTypeMerger extends
   
   @Override
   protected boolean doIsMergeable(PerspectiveEventType t1, PerspectiveEventType t2) {
-    return (t1.getPerspectiveId() != null)
-        && (t1.getPerspectiveId().equals(t2.getPerspectiveId()));
+	  System.out.println("Test 10: PerspectiveEventTypeMerger - Keep Multiple Entries");
+		 return false;
+	  //    return (t1.getPerspectiveId() != null)
+//        && (t1.getPerspectiveId().equals(t2.getPerspectiveId()));
   }
 
   @Override

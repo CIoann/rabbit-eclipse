@@ -31,14 +31,16 @@ public class LaunchEventTypeMerger extends AbstractMerger<LaunchEventType> {
 
   @Override
   protected boolean doIsMergeable(LaunchEventType t1, LaunchEventType t2) {
-    return (t1.getName() != null)
-        && (t1.getName().equals(t2.getName()))
-        
-        && (t1.getLaunchModeId() != null)
-        && (t1.getLaunchModeId().equals(t2.getLaunchModeId()))
-        
-        && (t1.getLaunchTypeId() != null)
-        && (t1.getLaunchTypeId().equals(t2.getLaunchTypeId()));
+	  System.out.println("Test 10: LaunchEventTypeMerger - Keep Multiple Entries");
+		 return false;
+//    return (t1.getName() != null)
+//        && (t1.getName().equals(t2.getName()))
+//        
+//        && (t1.getLaunchModeId() != null)
+//        && (t1.getLaunchModeId().equals(t2.getLaunchModeId()))
+//        
+//        && (t1.getLaunchTypeId() != null)
+//        && (t1.getLaunchTypeId().equals(t2.getLaunchTypeId()));
   }
 
   @Override
@@ -55,8 +57,8 @@ public class LaunchEventTypeMerger extends AbstractMerger<LaunchEventType> {
     result.getFilePath().addAll(fileIds);
     result.setTsEnd(t2.getTsEnd());
     result.setTsStart(t1.getTsStart());
-    System.out.println("Test 6: Getting Duration for launch");
-    System.out.println("Test 6: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
+   // System.out.println("Test 6: Getting Duration for launch");
+   // System.out.println("Test 6: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
 
     
     return result;

@@ -10,7 +10,7 @@ AbstractTracker
 AbstractStorer implements IStorer
 Different for each one of the event types.
 Test 2: Time spend in perspectives -> increament using the merger achieved.
-
+ 
 --------------------------------------------------------------------------------
 => Fully understand how save works and updates. Achieved.
 
@@ -51,13 +51,7 @@ rabbit.data.xml/src/rabbit/data/internal/xml/DataStore.java
 		-- Command B -- TimeStamp --
 		-- Command C -- TimeStamp --
 		-- Command A -- TimeStamp --
-	
-	Type 2:
-	------
-		-- Count -- Command A -- Last TimeStamp	--
-		-- Count -- Command B -- Last TimeStamp --
-
-==============================================================
+=============================================================
 <commandEvent 
 	commandId="org.eclipse.jdt.ui.edit.text.java.toggle.comment"
 	tsStart="2017-11-12 12:04:42.402" 
@@ -160,6 +154,26 @@ rabbit.data.xml/src/rabbit/data/internal/xml/DataStore.java
 	duration="26828"
 />
 ==============================================================
+==============================================================
 
+Disco - process mining tool - dtu lisence
+connect with another plugin itrace.
+how can we combine the information from both plugins
+print the grades 
+==============================================================
+==============================================================
+Allow multiple entries DONE
+---------------------------
 
-Breakpoint + 
+--- Optional add a smart feature to recognise if command or 
+exchange between views was spam?
+
+Can we collect more information from the ide DONE
+-------------------------------------------------
+--> Recognise frustration between exchanging
+--> Change the system to hold info together commands for a specific file.
+--> Gather information for perspectives properties would that be helpful
+--> Gather information from a file how many errors/warnings/ ++ a file has
+
+==============================================================
+==============================================================

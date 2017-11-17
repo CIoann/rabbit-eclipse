@@ -27,7 +27,8 @@ public class JavaEventTypeMerger extends AbstractMerger<JavaEventType> {
 
   @Override
   protected boolean doIsMergeable(JavaEventType t1, JavaEventType t2) {
-    return t1.getHandleIdentifier().equals(t2.getHandleIdentifier());
+	  System.out.println("Test 10: JavaEventTypeMerger - Keep Multiple Entries");
+		 return false;//return t1.getHandleIdentifier().equals(t2.getHandleIdentifier());
   }
 
   @Override
@@ -37,8 +38,8 @@ public class JavaEventTypeMerger extends AbstractMerger<JavaEventType> {
     result.setDuration(t1.getDuration() + t2.getDuration());
     result.setTsEnd(t2.getTsEnd());
     result.setTsStart(t1.getTsStart());
-    System.out.println("Test 7: JavaEvent Merger");
-    System.out.println("Test 7: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
+   // System.out.println("Test 7: JavaEvent Merger");
+  //  System.out.println("Test 7: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
 
     
     return result;
