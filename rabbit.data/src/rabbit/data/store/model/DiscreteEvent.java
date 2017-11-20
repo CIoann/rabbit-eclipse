@@ -28,8 +28,8 @@ import org.joda.time.format.DateTimeFormat;
 public class DiscreteEvent {
 
   private final DateTime time;
-  private final Timestamp ts;
-
+  private final Timestamp tsStart;
+  private final Timestamp tsEnd;
   /**
    * Constructs a new event.
    * 
@@ -38,7 +38,9 @@ public class DiscreteEvent {
    */
   public DiscreteEvent(DateTime time) {
     this.time = checkNotNull(time);
-    this.ts = new Timestamp(time.getMillis());
+    this.tsStart = new Timestamp(time.getMillis());
+    this.tsEnd = new Timestamp(time.getMillis());
+
   }
 
   /**
@@ -50,8 +52,10 @@ public class DiscreteEvent {
     return time;
   }
   
-  public final Timestamp getTs() {
-	    return ts;
+  public final Timestamp getTsStart() {
+	    return tsStart;
 	  }
-
+  public final Timestamp getTsEnd() {
+	    return tsEnd;
+	  }
 }

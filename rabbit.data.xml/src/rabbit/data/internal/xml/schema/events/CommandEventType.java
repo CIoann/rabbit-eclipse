@@ -46,6 +46,8 @@ public class CommandEventType
     protected String commandId;
     @XmlAttribute(required = true)
     protected String tsStart;
+    @XmlAttribute(required = true)
+    protected String tsEnd;
     
   //  @XmlAttribute(required = true)
    // protected String ts = timestampAsString(ts1);
@@ -58,6 +60,7 @@ public class CommandEventType
 
 	public void setTimeStamp(String tsStart) {
 		this.tsStart = tsStart;
+		this.tsEnd = tsStart;
 	}
 
 	/**
