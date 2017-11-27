@@ -32,15 +32,15 @@ public class FileEventTypeMerger extends AbstractMerger<FileEventType> {
     result.setDuration(t1.getDuration() + t2.getDuration());
     result.setTsEnd(t2.getTsEnd());
     result.setTsStart(t1.getTsStart());
-    System.out.println("Test 3: Getting Duration for file");
-    System.out.println("Test 3: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
+   // System.out.println("Test 3: Getting Duration for file");
+   // System.out.println("Test 3: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
     return result;
   }
 
   @Override
   public boolean doIsMergeable(FileEventType t1, FileEventType t2) {
 	  //Even if they can be merged return false because we don't want them to be merged
-	  System.out.println("Test 10: FileEventTypeMerger - Keep Multiple Entries");
+	//  System.out.println("Test 10: FileEventTypeMerger - Keep Multiple Entries");
 	 return false;
 	  //return (t1.getFilePath() != null) && (t1.getFilePath().equals(t2.getFilePath()));
   }

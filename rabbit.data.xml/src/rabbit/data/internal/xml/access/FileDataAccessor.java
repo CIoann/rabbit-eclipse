@@ -57,9 +57,10 @@ public class FileDataAccessor extends
   protected IFileData createDataNode(LocalDate date, WorkspaceStorage ws,
       FileEventType type) throws Exception {
 	  //CALLED WHEN THE FIRST TIME A FILE is initiated? WAS ADDRESSED
-	  System.out.println("Test 3: FileDataAccessor: Called on every file opened in editor");
+	//  System.out.println("Test 3: FileDataAccessor: Called on every file opened in editor");
+	  int sid = -1;
 	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
-    return new FileData(date, ts,ts,ws, new Duration(type.getDuration()),
+    return new FileData(sid,date, ts,ts,ws, new Duration(type.getDuration()),
         workspaceRoot().getFile(new Path(type.getFilePath())));
   }
 

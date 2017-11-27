@@ -48,7 +48,7 @@ public class JavaData implements IJavaData {
    * @param element The Java element.
    * @throws NullPointerException If any of the arguments are null.
    */
-  public JavaData(LocalDate date,
+  public JavaData(int sid,LocalDate date,
 		  		  Timestamp tsStart,
 		  		  Timestamp tsEnd,
                   WorkspaceStorage workspace,
@@ -56,6 +56,7 @@ public class JavaData implements IJavaData {
                   IJavaElement element) {
     
     data = new KeyMapBuilder()
+    		.put(SID,      checkNotNull(sid,      "sid"))
         .put(DATE,      checkNotNull(date,      "date"))
         .put(WORKSPACE, checkNotNull(workspace, "workspace"))
         .put(DURATION,  checkNotNull(duration,  "duration"))

@@ -80,7 +80,7 @@ public class FileTrackerTest extends AbstractPartTrackerTest<FileEvent> {
       Timestamp tsStart = new Timestamp(0);
       Timestamp tsEnd = new Timestamp (1);
     return new FileEvent(new Interval(0, 1), tsStart, tsEnd,
-        Path.fromPortableString("/p/f/a.txt"));
+        Path.fromPortableString("/p/f/a.txt"),-1);
   }
 
   @Override

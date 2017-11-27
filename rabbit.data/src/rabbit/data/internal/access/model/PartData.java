@@ -51,7 +51,7 @@ public class PartData implements IPartData {
    * @param partId The workbench tool ID.
    * @throws NullPointerException If any of the arguments are null.
    */
-  public PartData(
+  public PartData( int sid,
       LocalDate date, 
       Timestamp tsStart,
       Timestamp tsEnd,
@@ -60,6 +60,7 @@ public class PartData implements IPartData {
       String partId) {
     
     data = new KeyMapBuilder()
+    		.put(SID,      checkNotNull(sid,      "sid"))
         .put(DATE,      checkNotNull(date, "date"))
         .put(WORKSPACE, checkNotNull(workspace, "workspace"))
         .put(DURATION,  checkNotNull(duration, "duration"))

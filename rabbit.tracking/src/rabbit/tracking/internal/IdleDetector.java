@@ -176,7 +176,7 @@ public final class IdleDetector extends Observable implements Listener {
    *          True to run, false to stop.
    */
   public synchronized void setRunning(boolean run) {
-    if (isRunning == run || display.isDisposed()) {
+	  if (isRunning == run || display.isDisposed()) {
       return;
     }
 

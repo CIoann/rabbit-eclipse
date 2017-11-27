@@ -114,6 +114,7 @@ public abstract class AbstractStorer<E extends DiscreteEvent, T, S extends Event
             getElements(mergeTo).addAll(getElements(mergeFrom));
 
           done = true;
+         // 	System.out.print(getElements(mergeTo).get(0));
           break;
         }
       }

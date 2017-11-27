@@ -39,6 +39,7 @@ import java.util.concurrent.TimeUnit;
 public class TrackingPlugin extends AbstractUIPlugin implements
     IWorkbenchListener {
 
+	public static int test_sid;
   // The plug-in ID
   public static final String PLUGIN_ID = "rabbit.tracking";
 
@@ -68,6 +69,7 @@ public class TrackingPlugin extends AbstractUIPlugin implements
   public TrackingPlugin() {
     long oneSec = TimeUnit.SECONDS.toMillis(1);
     long oneMin = TimeUnit.MINUTES.toMillis(1);
+    this.test_sid = 0;
     idleDetector = new IdleDetector(getWorkbench().getDisplay(), oneMin, oneSec);
     trackers = ImmutableSet.of();
   }
@@ -102,7 +104,8 @@ public class TrackingPlugin extends AbstractUIPlugin implements
    * All data will be saved and flushed from the trackers.
    */
   public void saveCurrentData() {
-	  System.out.println("Test0: Refresh button - update - saveCurrentData");
+	  test_sid++;
+	  System.out.println("Test0: Refresh button - change SID: "+test_sid);
     for (ITracker<?> tracker : trackers) {
    // 	System.out.println("Test 0: Tracker" + tracker.getID());
       tracker.setEnabled(false);
@@ -121,10 +124,10 @@ public class TrackingPlugin extends AbstractUIPlugin implements
 
     getWorkbench().addWorkbenchListener(this);
 
-    System.out.println("Test 1: Create Trackers!");
+  //  System.out.println("Test 1: Create Trackers!");
     trackers = createTrackers();
     setEnableTrackers(trackers, true);
-    System.out.println("Test 1: Trackers are Enabled. Start Tracking!");
+   /// System.out.println("Test 1: Trackers are Enabled. Start Tracking!");
 
     idleDetector.setRunning(true);
   }
@@ -145,7 +148,8 @@ public class TrackingPlugin extends AbstractUIPlugin implements
    * @return A list of tracker objects.
    */
   private ImmutableSet<ITracker<?>> createTrackers() {
-
+	  test_sid = 0;
+	  System.out.println("SID retrieve last value of sid");
     IConfigurationElement[] elements = Platform.getExtensionRegistry()
         .getConfigurationElementsFor(TRACKER_EXTENSION_ID);
 

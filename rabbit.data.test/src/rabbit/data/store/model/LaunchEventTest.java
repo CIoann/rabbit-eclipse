@@ -48,7 +48,7 @@ public class LaunchEventTest extends ContinuousEventTest {
         mock(ILaunch.class),
         mock(ILaunchConfiguration.class),
         mock(ILaunchConfigurationType.class),
-        filePaths);
+        filePaths,-1);
 
     filePaths.add(new Path("/Should not effect the collection in the event."));
     assertThat(event.getFilePaths(), not(equalTo(filePaths)));
@@ -61,7 +61,7 @@ public class LaunchEventTest extends ContinuousEventTest {
         mock(ILaunch.class),
         mock(ILaunchConfiguration.class),
         mock(ILaunchConfigurationType.class),
-        null);
+        null,-1);
   }
 
   @Test(expected = NullPointerException.class)
@@ -71,7 +71,7 @@ public class LaunchEventTest extends ContinuousEventTest {
         mock(ILaunch.class),
         null,
         mock(ILaunchConfigurationType.class),
-        Collections.<IPath> emptySet());
+        Collections.<IPath> emptySet(),-1);
   }
 
   @Test(expected = NullPointerException.class)
@@ -81,7 +81,7 @@ public class LaunchEventTest extends ContinuousEventTest {
         mock(ILaunch.class),
         mock(ILaunchConfiguration.class),
         null,
-        Collections.<IPath> emptySet());
+        Collections.<IPath> emptySet(),-1);
   }
 
   @Test(expected = NullPointerException.class)
@@ -91,7 +91,7 @@ public class LaunchEventTest extends ContinuousEventTest {
         null,
         mock(ILaunchConfiguration.class),
         mock(ILaunchConfigurationType.class),
-        Collections.<IPath> emptySet());
+        Collections.<IPath> emptySet(),-1);
   }
 
   @Test(expected = UnsupportedOperationException.class)
@@ -101,7 +101,7 @@ public class LaunchEventTest extends ContinuousEventTest {
         mock(ILaunch.class),
         mock(ILaunchConfiguration.class),
         mock(ILaunchConfigurationType.class),
-        new HashSet<IPath>());
+        new HashSet<IPath>(),-1);
     event.getFilePaths().add(new Path("/Should throw exception."));
   }
 
@@ -113,7 +113,7 @@ public class LaunchEventTest extends ContinuousEventTest {
         launch,
         mock(ILaunchConfiguration.class),
         mock(ILaunchConfigurationType.class),
-        Collections.<IPath> emptySet());
+        Collections.<IPath> emptySet(),-1);
 
     assertThat(event.getLaunch(), equalTo(launch));
   }
@@ -126,7 +126,7 @@ public class LaunchEventTest extends ContinuousEventTest {
         mock(ILaunch.class),
         config,
         mock(ILaunchConfigurationType.class),
-        Collections.<IPath> emptySet());
+        Collections.<IPath> emptySet(),-1);
 
     assertThat(event.getLaunchConfiguration(), equalTo(config));
   }
@@ -139,7 +139,7 @@ public class LaunchEventTest extends ContinuousEventTest {
         mock(ILaunch.class),
         mock(ILaunchConfiguration.class),
         type,
-        Collections.<IPath> emptySet());
+        Collections.<IPath> emptySet(),-1);
 
     assertThat(event.getLaunchConfigurationType(), equalTo(type));
   }

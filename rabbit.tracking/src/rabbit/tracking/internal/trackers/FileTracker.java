@@ -18,6 +18,7 @@ package rabbit.tracking.internal.trackers;
 import rabbit.data.handler.DataHandler;
 import rabbit.data.store.IStorer;
 import rabbit.data.store.model.FileEvent;
+import rabbit.tracking.internal.TrackingPlugin;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
@@ -70,13 +71,13 @@ public class FileTracker extends AbstractPartTracker<FileEvent> {
         // Contains a file in the workspace
         IFile file = ((IFileEditorInput) input).getFile();
   
-        return new FileEvent(new Interval(start, end), tsStart, tsEnd,file.getFullPath());
+        return new FileEvent(new Interval(start, end), tsStart, tsEnd,file.getFullPath(),TrackingPlugin.test_sid);
 
       } else if (input instanceof IURIEditorInput) {
         // A file outside of workspace
         URI uri = ((IURIEditorInput) input).getURI();
         IPath path = new Path(uri.getPath());
-        return new FileEvent(new Interval(start, end), tsStart, tsEnd, path);
+        return new FileEvent(new Interval(start, end), tsStart, tsEnd, path,TrackingPlugin.test_sid);
       }
     }
     return null;

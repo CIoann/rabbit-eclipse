@@ -31,7 +31,10 @@ import org.joda.time.LocalDate;
  * @noimplement
  */
 public interface IJavaData extends IData {
-
+	/**
+	   * Key for the date.
+	   */
+	  static final IKey<Integer> SID = Keys.SID;
   /**
    * Key for the date.
    */

@@ -34,6 +34,7 @@ public class FileEventConverter extends
     type.setFilePath(element.getFilePath().toString());
     type.setTsStart(element.getStart().toString());
     type.setTsEnd(element.getEnd().toString());
+    type.setSid(String.valueOf(element.getSid()));
     return type;
   }
 

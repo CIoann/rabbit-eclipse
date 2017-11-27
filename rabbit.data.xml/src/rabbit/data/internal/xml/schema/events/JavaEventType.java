@@ -38,12 +38,31 @@ public class JavaEventType
 {
 
     @XmlAttribute(required = true)
-    protected String handleIdentifier;
+    protected String id;
     @XmlAttribute(required = true)
     protected String tsStart;
     @XmlAttribute(required = true)
     protected String tsEnd;
-    /**
+    @XmlAttribute(required = true)
+    protected String sid;
+    
+    public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getSid() {
+		return sid;
+	}
+
+	public void setSid(String sid) {
+		this.sid = sid;
+	}
+
+	/**
      * Gets the value of the handleIdentifier property.
      * 
      * @return
@@ -52,7 +71,7 @@ public class JavaEventType
      *     
      */
     public String getHandleIdentifier() {
-        return handleIdentifier;
+        return id;
     }
 
     public String getTsStart() {
@@ -80,7 +99,7 @@ public class JavaEventType
      *     
      */
     public void setHandleIdentifier(String value) {
-        this.handleIdentifier = value;
+        this.id = value;
     }
 
 }

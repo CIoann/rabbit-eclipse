@@ -38,7 +38,7 @@ public class PartEventConverterTest extends
 
   @Override
   public void testConvert() throws Exception {
-    PartEvent event = new PartEvent(new Interval(0, 1),null,null, getWorkbenchPart());
+    PartEvent event = new PartEvent(new Interval(0, 1),null,null, getWorkbenchPart(),-1);
     PartEventType type = converter.convert(event);
     assertEquals(event.getInterval().toDurationMillis(), type.getDuration());
     assertEquals(event.getWorkbenchPart().getSite().getId(), type.getPartId());

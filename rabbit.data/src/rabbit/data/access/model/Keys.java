@@ -94,7 +94,11 @@ public class Keys {
    * Key for a task ID.
    */
   public static final IKey<TaskId> TASK_ID = Key.create();
-
+  /**
+   * Key for a session.
+   */
+  public static final IKey<Integer> SID = Key.create();
+  
   /**
    * Key for a workspace.
    */

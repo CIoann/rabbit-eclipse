@@ -57,10 +57,10 @@ public class JavaDataAccessor extends
       JavaEventType type) throws Exception {
     Duration duration = new Duration(type.getDuration());
     IJavaElement element = JavaCore.create(type.getHandleIdentifier());
-    System.out.println("Test 7: JavaDataAccessor: Called??");
+   // System.out.println("Test 7: JavaDataAccessor: Called??");
 	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
-
-    return new JavaData(date,ts,ts, ws, duration, element);
+	  int sid = -1;
+    return new JavaData(sid,date,ts,ts, ws, duration, element);
   }
 
   @Override

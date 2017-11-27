@@ -27,7 +27,7 @@ public class PartEventTypeMerger extends AbstractMerger<PartEventType> {
 
   @Override
   protected boolean doIsMergeable(PartEventType t1, PartEventType t2) {
-	  System.out.println("Test 10: PartEventTypeMerger - Keep Multiple Entries");
+	//  System.out.println("Test 10: PartEventTypeMerger - Keep Multiple Entries");
 		 return false;
 //    return (t1.getPartId() != null)
 //        && (t1.getPartId().equals(t2.getPartId()));
@@ -40,8 +40,8 @@ public class PartEventTypeMerger extends AbstractMerger<PartEventType> {
     result.setDuration(t1.getDuration() + t2.getDuration());
     result.setTsEnd(t2.getTsEnd());
     result.setTsStart(t1.getTsStart());
-    System.out.println("Test 7: PartEventMerger");
-    System.out.println("Test 7: Start/end");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
+ //   System.out.println("Test 7: PartEventMerger");
+ //   System.out.println("Test 7: Start/end");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
 
     return result;
   }

@@ -38,13 +38,31 @@ public class FileEventType
 {
 
     @XmlAttribute(required = true)
-    protected String filePath;
+    protected String id;
     @XmlAttribute(required = true)
     protected String tsStart;
     @XmlAttribute(required = true)
     protected String tsEnd;
+    @XmlAttribute(required = true)
+    protected String sid;
+    
+    public String getId() {
+		return id;
+	}
 
-    /**
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getSid() {
+		return sid;
+	}
+
+	public void setSid(String sid) {
+		this.sid = sid;
+	}
+
+	/**
      * Gets the value of the filePath property.
      * 
      * @return
@@ -53,7 +71,7 @@ public class FileEventType
      *     
      */
     public String getFilePath() {
-        return filePath;
+        return id;
     }
 
     /**
@@ -65,7 +83,7 @@ public class FileEventType
      *     
      */
     public void setFilePath(String value) {
-        this.filePath = value;
+        this.id = value;
     }
 
 	public String getTsStart() {

@@ -187,12 +187,12 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
         IJavaElement element = recorder.getLastRecord().getUserData();
         if (element != null) {
         	// another test
-        	System.out.println("Test 0: Time to set Before filtering data");
+        	//System.out.println("Test 0: Time to set Before filtering data");
         	Timestamp start_time = new Timestamp(start);
         	Timestamp end_time = new Timestamp(end);
-        	System.out.println("Test 0:\n Time start: " +start_time.toString() + "\nTime end: "+end_time.toString());
-        	System.out.println("Test 7: JavaEvent - JavaTracker");
-        	addData(new JavaEvent(new Interval(start, end),start_time,end_time, element));
+        	//System.out.println("Test 0:\n Time start: " +start_time.toString() + "\nTime end: "+end_time.toString());
+        	//System.out.println("Test 7: JavaEvent - JavaTracker");
+        	addData(new JavaEvent(new Interval(start, end),start_time,end_time, element,TrackingPlugin.test_sid));
         //  addData(new JavaEvent(new Interval(start, end), element));
         }
       }

@@ -48,11 +48,12 @@ public class FileData implements IFileData {
    * @param file The workspace file.
    * @throws NullPointerException If any of the arguments are null;
    */
-  public FileData(
+  public FileData(int sid,
       LocalDate date,Timestamp tsStart,Timestamp tsEnd, WorkspaceStorage workspace, Duration duration, IFile file) {
     
     data = new KeyMapBuilder()
-        .put(DATE,      checkNotNull(date, "date"))
+    	.put(SID,      checkNotNull(sid,      "sid"))
+    	.put(DATE,      checkNotNull(date, "date"))
         .put(WORKSPACE, checkNotNull(workspace, "workspace"))
         .put(DURATION,  checkNotNull(duration, "duration"))
         .put(TIMESTART, checkNotNull(tsStart, "timestart"))

@@ -42,7 +42,7 @@ public class FileEventConverterTest extends
 	  //Adding for fast test
       Timestamp tsStart = new Timestamp(0);
       Timestamp tsEnd = new Timestamp (1);
-    FileEvent event = new FileEvent(new Interval(0, 1), tsStart, tsEnd, new Path("/file/acb"));
+    FileEvent event = new FileEvent(new Interval(0, 1), tsStart, tsEnd, new Path("/file/acb"),-1);
     FileEventType type = converter.convert(event);
     assertEquals(event.getFilePath().toString(), type.getFilePath());
     assertEquals(event.getInterval().toDurationMillis(), type.getDuration());

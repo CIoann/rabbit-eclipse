@@ -41,7 +41,7 @@ public class PerspectiveEventStorerTest
     IPerspectiveDescriptor p = PlatformUI.getWorkbench()
         .getPerspectiveRegistry().getPerspectives()[0];
     //fast testing
-    return new PerspectiveEvent(null,null,new Interval(dateTime, dateTime.plus(1)), p);
+    return new PerspectiveEvent(null,null,new Interval(dateTime, dateTime.plus(1)), p,-1);
   }
 
   @Override
@@ -49,7 +49,7 @@ public class PerspectiveEventStorerTest
     IPerspectiveDescriptor p = PlatformUI.getWorkbench()
         .getPerspectiveRegistry().getPerspectives()[1];
    //fast testing
-    return new PerspectiveEvent(null,null,new Interval(dateTime, dateTime.plus(2)), p);
+    return new PerspectiveEvent(null,null,new Interval(dateTime, dateTime.plus(2)), p,-1);
   }
 
   @Override

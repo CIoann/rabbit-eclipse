@@ -28,7 +28,7 @@ import org.joda.time.Interval;
 public class JavaEvent extends ContinuousEvent {
 
   private final IJavaElement element;
-
+  private final int sid;
   /**
    * Constructs a new event.
    * 
@@ -39,6 +39,7 @@ public class JavaEvent extends ContinuousEvent {
   public JavaEvent(Interval interval, IJavaElement element) {
     super(interval);
     this.element = checkNotNull(element);
+    this.sid = -1;
   }
   //! Test 0: Adding Timestamp
   /**
@@ -49,8 +50,9 @@ public class JavaEvent extends ContinuousEvent {
    * @param element The Java element of the event.
    * @throws NullPointerException If time is null, or element is null.
    */
-  public JavaEvent(Interval interval, Timestamp start, Timestamp end, IJavaElement element) {
+  public JavaEvent(Interval interval, Timestamp start, Timestamp end, IJavaElement element, int sid) {
     super(end,start,interval);
+    this.sid = sid;
     this.element = checkNotNull(element);
   }
   
@@ -63,4 +65,7 @@ public class JavaEvent extends ContinuousEvent {
   public final IJavaElement getElement() {
     return element;
   }
+public int getSid() {
+	return sid;
+}
 }

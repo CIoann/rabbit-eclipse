@@ -36,7 +36,7 @@ public class PerspectiveEventTest extends ContinuousEventTest {
   @Test(expected = NullPointerException.class)
   public void testConstructor_withPerspectiveNull() {
   //fast testing
-	  new PerspectiveEvent(null,null,new Interval(0, 1), null);
+	  new PerspectiveEvent(null,null,new Interval(0, 1), null,-1);
   }
 
   @Test
@@ -48,6 +48,6 @@ public class PerspectiveEventTest extends ContinuousEventTest {
   protected PerspectiveEvent createEvent(Interval interval) {
 	  //fast testing
 	  return new PerspectiveEvent(null,null,interval, PlatformUI.getWorkbench()
-        .getPerspectiveRegistry().getPerspectives()[1]);
+        .getPerspectiveRegistry().getPerspectives()[1],-1);
   }
 }

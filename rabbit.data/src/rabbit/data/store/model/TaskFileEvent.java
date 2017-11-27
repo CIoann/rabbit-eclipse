@@ -39,7 +39,7 @@ public class TaskFileEvent extends FileEvent {
    * @throws NullPointerException If any of the arguments are null.
    */
   public TaskFileEvent(Interval interval,Timestamp tsStart, Timestamp tsEnd, IPath filePath, ITask task) {
-    super(interval,tsStart,tsEnd, filePath); //TEST 3: CHANGE THE FILE-EVENT one thing at a time
+    super(interval,tsStart,tsEnd, filePath,-1); //TEST 3: CHANGE THE FILE-EVENT one thing at a time
     this.task = checkNotNull(task);
   }
 

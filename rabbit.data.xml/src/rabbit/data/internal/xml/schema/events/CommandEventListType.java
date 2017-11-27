@@ -37,14 +37,19 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "commandEventListType", propOrder = {
-    "commandEvent"
-})
+	    "event"
+	})
+//@XmlType(name = "commandEventListType", propOrder = {
+//    "commandEvent"
+//})
 public class CommandEventListType
     extends EventGroupType
 {
 
     @XmlElement(required = true)
-    protected List<CommandEventType> commandEvent;
+    protected List<CommandEventType> event;
+//    @XmlElement(required = true)
+//    protected List<CommandEventType> commandEvent;
 
     /**
      * Gets the value of the commandEvent property.
@@ -69,10 +74,10 @@ public class CommandEventListType
      * 
      */
     public List<CommandEventType> getCommandEvent() {
-        if (commandEvent == null) {
-            commandEvent = new ArrayList<CommandEventType>();
+        if (event == null) {
+            event = new ArrayList<CommandEventType>();
         }
-        return this.commandEvent;
+        return this.event;
     }
 
 }

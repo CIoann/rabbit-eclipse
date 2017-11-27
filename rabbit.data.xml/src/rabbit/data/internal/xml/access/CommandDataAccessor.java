@@ -55,13 +55,13 @@ public class CommandDataAccessor extends
 
   @Override
   protected ICommandData createDataNode(
-		  //CALLED WHEN THE FIRST TIME A COMMAND WAS ADDRESSED
+		  
       LocalDate date,  WorkspaceStorage ws, CommandEventType type) throws Exception {
     Command cmd = commandService().getCommand(type.getCommandId());
     //millisecond time
-    System.out.println("Test 2: command added");
+    int sid = 5 ;
     Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
-    return new CommandData(date,ts, ws, cmd, type.getCount());
+    return new CommandData(sid,date,ts, ws, cmd, type.getCount());
   }
 
   @Override

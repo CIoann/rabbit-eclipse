@@ -73,7 +73,7 @@ public class PerspectiveTracker extends AbstractTracker<PerspectiveEvent> {
         Timestamp tsStart = new Timestamp(start);
         Timestamp tsEnd = new Timestamp (end);
    
-        addData(new PerspectiveEvent(tsStart,tsEnd,new Interval(start, end), p));
+        addData(new PerspectiveEvent(tsStart,tsEnd,new Interval(start, end), p,TrackingPlugin.test_sid));
       }
     }
   };

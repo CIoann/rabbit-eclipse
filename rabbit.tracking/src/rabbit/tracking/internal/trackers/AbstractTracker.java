@@ -33,7 +33,6 @@ public abstract class AbstractTracker<T> implements ITracker<T> {
   /** Variable to indicate whether this tracker is activated. */
   private boolean isEnabled;
  // private int id;
-//Test 0 : insert id
   private Set<T> data;
 
   private IStorer<T> storer;

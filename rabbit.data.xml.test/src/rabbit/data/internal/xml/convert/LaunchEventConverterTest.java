@@ -70,7 +70,7 @@ public class LaunchEventConverterTest extends
     filePaths.add(new Path("/def"));
 
     LaunchEvent event = new LaunchEvent(new Interval(time.getMillis(),
-        time.getMillis() + duration),null,null, launch, config, configType, filePaths);
+        time.getMillis() + duration),null,null, launch, config, configType, filePaths,-1);
     LaunchEventType converted = converter.convert(event);
 
     assertThat(converted.getCount(), is(1));

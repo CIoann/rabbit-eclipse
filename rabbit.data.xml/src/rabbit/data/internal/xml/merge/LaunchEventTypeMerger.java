@@ -31,7 +31,7 @@ public class LaunchEventTypeMerger extends AbstractMerger<LaunchEventType> {
 
   @Override
   protected boolean doIsMergeable(LaunchEventType t1, LaunchEventType t2) {
-	  System.out.println("Test 10: LaunchEventTypeMerger - Keep Multiple Entries");
+	//  System.out.println("Test 10: LaunchEventTypeMerger - Keep Multiple Entries");
 		 return false;
 //    return (t1.getName() != null)
 //        && (t1.getName().equals(t2.getName()))

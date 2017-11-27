@@ -38,10 +38,29 @@ public class PartEventType
 {
 
     @XmlAttribute(required = true)
-    protected String partId;  
+    protected String id;  
     @XmlAttribute(required = true)
     protected String tsStart;
-    public String getTsStart() {
+    @XmlAttribute(required = true)
+    protected String sid;
+    
+    public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getSid() {
+		return sid;
+	}
+
+	public void setSid(String sid) {
+		this.sid = sid;
+	}
+
+	public String getTsStart() {
 		return tsStart;
 	}
 
@@ -69,7 +88,7 @@ public class PartEventType
      *     
      */
     public String getPartId() {
-        return partId;
+        return id;
     }
 
     /**
@@ -81,7 +100,7 @@ public class PartEventType
      *     
      */
     public void setPartId(String value) {
-        this.partId = value;
+        this.id = value;
     }
 
 }

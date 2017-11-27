@@ -59,9 +59,10 @@ public class PartDataAccessor extends
   protected IPartData createDataNode(LocalDate date, WorkspaceStorage ws,
       PartEventType t) throws Exception {
 	  //CALLED WHEN ?
-	  System.out.println("Test 8: PartDataAccessor: Called on?");
+	 // System.out.println("Test 8: PartDataAccessor: Called on?");
 	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
-    return new PartData(date,ts,ts, ws, new Duration(t.getDuration()), t.getPartId());
+	  int sid = -1;
+    return new PartData(sid,date,ts,ts, ws, new Duration(t.getDuration()), t.getPartId());
   }
 
   @Override

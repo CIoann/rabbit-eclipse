@@ -49,13 +49,14 @@ public class PerspectiveData implements IPerspectiveData {
    * @param perspectiveId The perspective ID.
    * @throws NullPointerException If any of the arguments are null.
    */
-  public PerspectiveData(
+  public PerspectiveData(int sid,
       LocalDate date, Timestamp tsStart,Timestamp tsEnd,
       WorkspaceStorage workspace,  
       Duration duration, 
       String perspectiveId) {
     
     data = new KeyMapBuilder()
+    		.put(SID,      checkNotNull(sid,      "sid"))
         .put(DATE,        checkNotNull(date, "date"))
         .put(WORKSPACE,   checkNotNull(workspace, "workspace"))
         .put(DURATION,    checkNotNull(duration, "duration"))

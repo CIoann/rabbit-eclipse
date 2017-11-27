@@ -37,14 +37,17 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "perspectiveEventListType", propOrder = {
-    "perspectiveEvent"
+    "event"
 })
+//@XmlType(name = "perspectiveEventListType", propOrder = {
+//	    "perspectiveEvent"
+//	})
 public class PerspectiveEventListType
     extends EventGroupType
 {
 
     @XmlElement(required = true)
-    protected List<PerspectiveEventType> perspectiveEvent;
+    protected List<PerspectiveEventType> event;
 
     /**
      * Gets the value of the perspectiveEvent property.
@@ -69,10 +72,10 @@ public class PerspectiveEventListType
      * 
      */
     public List<PerspectiveEventType> getPerspectiveEvent() {
-        if (perspectiveEvent == null) {
-            perspectiveEvent = new ArrayList<PerspectiveEventType>();
+        if (event == null) {
+        	event = new ArrayList<PerspectiveEventType>();
         }
-        return this.perspectiveEvent;
+        return this.event;
     }
 
 }

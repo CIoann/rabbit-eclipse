@@ -68,7 +68,7 @@ public class LaunchEventStorerTest extends
     fileIds.add(new Path("/ab1c"));
     fileIds.add(new Path("/d1ef"));
     return new LaunchEvent(new Interval(dateTime, dateTime.plus(duration)),null,null,
-        launch, config, type, fileIds);
+        launch, config, type, fileIds,-1);
   }
 
   @Override
@@ -87,7 +87,7 @@ public class LaunchEventStorerTest extends
     Set<IPath> fileIds = new HashSet<IPath>();
     fileIds.add(new Path("/1ab1c"));
     return new LaunchEvent(new Interval(dateTime, dateTime.plus(duration)),null,null,
-        launch, config, type, fileIds);
+        launch, config, type, fileIds,-1);
   }
 
   @Override

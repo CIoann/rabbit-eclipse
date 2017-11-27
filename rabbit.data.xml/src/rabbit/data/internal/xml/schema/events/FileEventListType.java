@@ -37,14 +37,17 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "fileEventListType", propOrder = {
-    "fileEvent"
+    "event"
 })
+//@XmlType(name = "fileEventListType", propOrder = {
+//	    "fileEvent"
+//	})
 public class FileEventListType
     extends EventGroupType
 {
 
     @XmlElement(required = true)
-    protected List<FileEventType> fileEvent;
+    protected List<FileEventType> event;
 
     /**
      * Gets the value of the fileEvent property.
@@ -69,10 +72,10 @@ public class FileEventListType
      * 
      */
     public List<FileEventType> getFileEvent() {
-        if (fileEvent == null) {
-            fileEvent = new ArrayList<FileEventType>();
+        if (event == null) {
+        	event = new ArrayList<FileEventType>();
         }
-        return this.fileEvent;
+        return this.event;
     }
 
 }

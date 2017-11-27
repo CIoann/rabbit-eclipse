@@ -127,6 +127,6 @@ public class PartDataTest {
    */
   private PartData create(
       LocalDate date, WorkspaceStorage ws, Duration dur, String partId) {
-    return new PartData(date,null,null, ws, dur, partId);
+    return new PartData(1,date,null,null, ws, dur, partId);
   }
 }

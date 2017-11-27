@@ -48,7 +48,7 @@ public class FileEventStorerTest extends
 	  //Adding for fast test
 	  Timestamp tsStart = new Timestamp(0);
       Timestamp tsEnd = new Timestamp (1);
-    return new FileEvent(new Interval(t, t.plus(1)),tsStart, tsEnd, new Path("/some"));
+    return new FileEvent(new Interval(t, t.plus(1)),tsStart, tsEnd, new Path("/some"),-1);
   }
 
   @Override
@@ -56,7 +56,7 @@ public class FileEventStorerTest extends
 	  //Adding for fast test
 	  Timestamp tsStart = new Timestamp(0);
       Timestamp tsEnd = new Timestamp (1);
-    return new FileEvent(new Interval(t, t.plus(2)),tsStart, tsEnd, new Path("/some/some"));
+    return new FileEvent(new Interval(t, t.plus(2)),tsStart, tsEnd, new Path("/some/some"),-1);
   }
 
   @Override

@@ -53,6 +53,6 @@ public class FileEventTest extends ContinuousEventTest {
    */
   protected FileEvent createEvent(Interval interval, IPath filePath) {
 	  //Adding for fast test
-    return new FileEvent(interval,null,null, filePath);
+    return new FileEvent(interval,null,null, filePath,-1);
   }
 }

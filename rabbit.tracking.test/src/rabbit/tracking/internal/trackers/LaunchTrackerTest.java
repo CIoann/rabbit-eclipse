@@ -488,7 +488,7 @@ public class LaunchTrackerTest extends AbstractTrackerTest<LaunchEvent> {
     ILaunch launch = mock(ILaunch.class);
     given(launch.getLaunchMode()).willReturn("run");
     return new LaunchEvent(new Interval(0, 1), null,null,launch, config, type,
-        new HashSet<IPath>(Arrays.asList(new Path("/1"), new Path("/2"))));
+        new HashSet<IPath>(Arrays.asList(new Path("/1"), new Path("/2"))),-1);
   }
 
   @Override

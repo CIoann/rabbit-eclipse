@@ -60,8 +60,23 @@ public class LaunchEventType
     protected String tsStart;
     @XmlAttribute(required = true)
     protected String tsEnd;
+    @XmlAttribute(required = true)
+    protected String sid;
+    
 
-    public String getTsStart() {
+    public String getSid() {
+		return sid;
+	}
+
+	public void setSid(String sid) {
+		this.sid = sid;
+	}
+
+	public void setFilePath(List<String> filePath) {
+		this.filePath = filePath;
+	}
+
+	public String getTsStart() {
 		return tsStart;
 	}
 

@@ -30,7 +30,10 @@ import org.joda.time.LocalDate;
  * @noimplement
  */
 public interface IFileData extends IData {
-
+	/**
+	   * Key for the date.
+	   */
+	  static final IKey<Integer> SID = Keys.SID;
   /**
    * Key for the date.
    */

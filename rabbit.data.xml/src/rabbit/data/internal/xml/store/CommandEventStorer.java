@@ -57,11 +57,14 @@ public final class CommandEventStorer extends
 
   @Override
   protected List<CommandEventListType> getCategories(EventListType events) {
+	 // System.out.println("The size of this list " +events.getCommandEvents().size());
+	//  System.out.println("Event something specific" + events.getCommandEvents().get(0).getCommandEvent().get(0).getCommandId());;
     return events.getCommandEvents();
   }
 
   @Override
   protected List<CommandEventType> getElements(CommandEventListType list) {
+	//  System.out.println("The size of this list " +list.getCommandEvent().size());
     return list.getCommandEvent();
   }
 

@@ -53,7 +53,7 @@ public class PartEventTest extends ContinuousEventTest {
 
   @Test(expected = NullPointerException.class)
   public void testContructor_withPartNull() {
-    new PartEvent(new Interval(0, 1), null,null, null);
+    new PartEvent(new Interval(0, 1), null,null, null,-1);
   }
 
   @Test
@@ -69,6 +69,6 @@ public class PartEventTest extends ContinuousEventTest {
   @Override
   protected PartEvent createEvent(Interval interval) {
     return new PartEvent(interval,null,null, getWorkbenchWindow().getPartService()
-        .getActivePart());
+        .getActivePart(),-1);
   }
 }

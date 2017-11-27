@@ -28,7 +28,7 @@ import org.joda.time.Interval;
 public class PerspectiveEvent extends ContinuousEvent {
 
   private final IPerspectiveDescriptor perspective;
-
+  private final int sid;
   /**
    * Constructs a perspective event.
    * 
@@ -36,9 +36,10 @@ public class PerspectiveEvent extends ContinuousEvent {
    * @param perspective The perspective.
    * @throws NullPointerException If any of the arguments are null.
    */
-  public PerspectiveEvent(Timestamp tsStart, Timestamp tsEnd, Interval interval, IPerspectiveDescriptor perspective) {
+  public PerspectiveEvent(Timestamp tsStart, Timestamp tsEnd, Interval interval, IPerspectiveDescriptor perspective, int sid) {
     super(tsStart, tsEnd,interval);
     this.perspective = checkNotNull(perspective);
+    this.sid=sid;
   }
 
   /**
@@ -49,4 +50,10 @@ public class PerspectiveEvent extends ContinuousEvent {
   public final IPerspectiveDescriptor getPerspective() {
     return perspective;
   }
+
+public int getSid() {
+	return sid;
+}
+
+
 }

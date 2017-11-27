@@ -118,6 +118,6 @@ public class PerspectiveDataTest {
    */
   private PerspectiveData create(
       LocalDate d, WorkspaceStorage ws, Duration dur, String perspectiveId) {
-    return new PerspectiveData(d,null,null, ws, dur, perspectiveId);
+    return new PerspectiveData(1,d,null,null, ws, dur, perspectiveId);
   }
 }

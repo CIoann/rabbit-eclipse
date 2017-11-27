@@ -56,7 +56,7 @@ public class LaunchData implements ILaunchData {
    * @throws NullPointerException If any of the arguments are null.
    * @throws IllegalArgumentException If {@code count < 1};
    */
-  public LaunchData(LocalDate date,
+  public LaunchData(int sid,LocalDate date,
 		  			Timestamp tsStart,
 		  			Timestamp tsEnd,
                     WorkspaceStorage workspace,
@@ -68,6 +68,7 @@ public class LaunchData implements ILaunchData {
     checkArgument(count >= 1, "count < 1");
     
     data = new KeyMapBuilder()
+    		.put(SID,      checkNotNull(sid,      "sid"))
         .put(COUNT,  count)
         .put(DATE,          checkNotNull(date, "date"))
         .put(WORKSPACE,     checkNotNull(workspace, "workspace"))

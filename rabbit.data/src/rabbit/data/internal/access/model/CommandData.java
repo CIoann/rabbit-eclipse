@@ -49,7 +49,7 @@ public class CommandData implements ICommandData {
    * @throws NullPointerException If any of the arguments are null;
    * @throws IllegalArgumentException If {@code count < 1}.
    */
-  public CommandData(LocalDate date, Timestamp tsStart,
+  public CommandData(Integer sid, LocalDate date, Timestamp tsStart,
                      WorkspaceStorage workspace, 
                      Command command, 
                      int count) {
@@ -57,6 +57,7 @@ public class CommandData implements ICommandData {
     checkArgument(count >= 1, "count < 1");
     
     data = new KeyMapBuilder()
+    	.put(SID,      checkNotNull(sid,      "sid"))
         .put(DATE,      checkNotNull(date,      "date"))
         .put(TIMESTART, checkNotNull(tsStart, "tstart"))
         .put(WORKSPACE, checkNotNull(workspace, "workspace"))

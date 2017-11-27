@@ -35,7 +35,7 @@ import java.util.Set;
 public class LaunchEvent extends ContinuousEvent {
 
   private final ILaunch launch;
-
+  private final int sid;
   private final ILaunchConfiguration config;
 
   /** Unmodifiable set of file paths. */
@@ -61,8 +61,9 @@ public class LaunchEvent extends ContinuousEvent {
    */
   public LaunchEvent(Interval interval,Timestamp tsStart, Timestamp tsEnd, ILaunch launch,
       ILaunchConfiguration config, ILaunchConfigurationType type,
-      Set<IPath> filePaths) {
+      Set<IPath> filePaths, int sid) {
     super(tsStart, tsEnd,interval);
+    this.sid = sid;
     this.type = checkNotNull(type, "type");
     this.config = checkNotNull(config, "config");
     this.launch = checkNotNull(launch, "launch");
@@ -101,4 +102,9 @@ public class LaunchEvent extends ContinuousEvent {
   public final ILaunchConfiguration getLaunchConfiguration() {
     return config;
   }
+
+public int getSid() {
+	return sid;
+}
+
 }

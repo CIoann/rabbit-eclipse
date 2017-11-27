@@ -18,6 +18,7 @@ package rabbit.tracking.internal.trackers;
 import rabbit.data.handler.DataHandler;
 import rabbit.data.store.IStorer;
 import rabbit.data.store.model.CommandEvent;
+import rabbit.tracking.internal.TrackingPlugin;
 
 import java.sql.Timestamp;
 
@@ -71,10 +72,11 @@ public class CommandTracker extends AbstractTracker<CommandEvent> implements
   @Override
   public void postExecuteSuccess(String commandId, Object returnValue) {
     if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId)) {
-      addData(new CommandEvent(new DateTime(), lastEvent));
+    	//THE SID SHOULD BE GENERATED 
+      addData(new CommandEvent(new DateTime(), lastEvent,TrackingPlugin.test_sid));
   //    System.out.println("Test 0: CommandTracker, new command entered" );//+ lastEvent.);
    //   System.out.println("Test 1: CommandTracker - dates " + new Timestamp(new DateTime().getMillis()));
-      System.out.println("Test 10: CommandTraker - Keep Multiple Entries");
+    //  System.out.println("Test 10: CommandTraker - Keep Multiple Entries");
     }
   }
 

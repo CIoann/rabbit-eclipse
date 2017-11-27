@@ -55,9 +55,10 @@ public class PerspectiveDataAccessor
   protected IPerspectiveData createDataNode(LocalDate date,
       WorkspaceStorage ws, PerspectiveEventType t) throws Exception {
     Duration duration = new Duration(t.getDuration());
-    System.out.println("Test 6: PerspectiveDataAccessor: Called ");
+  //  System.out.println("Test 6: PerspectiveDataAccessor: Called ");
+    int sid=-1;
 	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
-    return new PerspectiveData(date,ts,ts,ws, duration, t.getPerspectiveId());
+    return new PerspectiveData(sid,date,ts,ts,ws, duration, t.getPerspectiveId());
   }
 
   @Override

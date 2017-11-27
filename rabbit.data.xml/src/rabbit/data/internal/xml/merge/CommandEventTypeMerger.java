@@ -40,17 +40,17 @@ public class CommandEventTypeMerger extends AbstractMerger<CommandEventType> {
   @Override
   public boolean doIsMergeable(CommandEventType t1, CommandEventType t2) {
 	  //Even if they can be merged return false because we don't want them to be merged
-	  System.out.println("Test 10: CommandEventMerger - Keep Multiple Entries");
-	  if ((t1.getCommandId()!=null) && (t1.getCommandId().equals(t2.getCommandId()))){
-		  System.out.println("result t1: "+ t1.getTimeStamp() + "  result t2: " + t2.getTimeStamp());
-		  Timestamp ts1 = java.sql.Timestamp.valueOf(t1.getTimeStamp());
-		  Timestamp ts2 = java.sql.Timestamp.valueOf(t2.getTimeStamp());
-		  long tsTime1 = ts1.getTime();
-		  long tsTime2 = ts2.getTime();
-		  System.out.println("The time " +tsTime2 + "the other time" + tsTime1);
+//	  System.out.println("Test 10: CommandEventMerger - Keep Multiple Entries");
+//	  if ((t1.getCommandId()!=null) && (t1.getCommandId().equals(t2.getCommandId()))){
+//		  System.out.println("result t1: "+ t1.getTimeStamp() + "  result t2: " + t2.getTimeStamp());
+//		  Timestamp ts1 = java.sql.Timestamp.valueOf(t1.getTimeStamp());
+//		  Timestamp ts2 = java.sql.Timestamp.valueOf(t2.getTimeStamp());
+//		  long tsTime1 = ts1.getTime();
+//		  long tsTime2 = ts2.getTime();
+//		  System.out.println("The time " +tsTime2 + "the other time" + tsTime1);
 		  
 		  
-	  }
+	//  }
     return false;// (t1.getCommandId() != null)
         //&& (t1.getCommandId().equals(t2.getCommandId()));
   }

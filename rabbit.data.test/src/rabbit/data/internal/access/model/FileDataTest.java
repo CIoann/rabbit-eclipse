@@ -111,6 +111,6 @@ public class FileDataTest {
                           Duration duration,
                           IFile file) {
 	 //fast testing test3
-    return new FileData(date,null,null, workspace, duration, file);
+    return new FileData(1,date,null,null, workspace, duration, file);
   }
 }

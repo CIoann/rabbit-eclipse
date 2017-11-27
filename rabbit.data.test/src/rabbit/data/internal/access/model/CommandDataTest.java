@@ -125,6 +125,6 @@ public class CommandDataTest {
                              WorkspaceStorage ws,
                              Command cmd,
                              int count) {
-    return new CommandData(d,t, ws, cmd, count);
+    return new CommandData(1,d,t, ws, cmd, count);
   }
 }

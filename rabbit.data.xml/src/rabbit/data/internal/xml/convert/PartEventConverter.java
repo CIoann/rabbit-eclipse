@@ -34,7 +34,8 @@ public class PartEventConverter extends
     type.setPartId(element.getWorkbenchPart().getSite().getId());
     type.setTsStart(element.getStart().toString());
     type.setTsEnd(element.getEnd().toString());
- 
+    type.setSid(String.valueOf(element.getSid()));
+
     return type;
   }
 

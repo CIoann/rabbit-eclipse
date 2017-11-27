@@ -41,14 +41,14 @@ import javax.xml.bind.annotation.XmlType;
 public class CountEventType {
 
     @XmlAttribute(required = true)
-    protected int count;
+    protected int duration;
 
     /**
      * Gets the value of the count property.
      * 
      */
     public int getCount() {
-        return count;
+        return duration;
     }
 
     /**
@@ -56,7 +56,7 @@ public class CountEventType {
      * 
      */
     public void setCount(int value) {
-        this.count = value;
+        this.duration = value;
     }
 
 }

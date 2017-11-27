@@ -43,8 +43,12 @@ public class CommandEventType
 
   //  protected Timestamp  ts1= new Timestamp(71885418);
     @XmlAttribute(required = true)
-    protected String commandId;
+    protected String id;
     @XmlAttribute(required = true)
+    protected String sid;
+    
+
+	@XmlAttribute(required = true)
     protected String tsStart;
     @XmlAttribute(required = true)
     protected String tsEnd;
@@ -72,7 +76,7 @@ public class CommandEventType
      *     
      */
     public String getCommandId() {
-        return commandId;
+        return id;
     }
 
     /**
@@ -84,9 +88,16 @@ public class CommandEventType
      *     
      */
     public void setCommandId(String value) {
-        this.commandId = value;
+        this.id = value;
     }
-  
+
+    public String getSid() {
+		return sid;
+	}
+
+	public void setSid(String sid) {
+		this.sid = sid;
+	}
    
 
 }

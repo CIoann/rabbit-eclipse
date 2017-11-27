@@ -164,6 +164,6 @@ public class LaunchDataTest {
       LaunchConfigurationDescriptor config, 
       int count, Duration duration, 
       Set<IFile> files) {
-    return new LaunchData(date, null,null,workspace, config, count, duration, files);
+    return new LaunchData(1,date, null,null,workspace, config, count, duration, files);
   }
 }

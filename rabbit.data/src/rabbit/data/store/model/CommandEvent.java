@@ -26,7 +26,7 @@ import org.joda.time.DateTime;
 public class CommandEvent extends DiscreteEvent {
 
   private final ExecutionEvent event;
-
+  private final int sid;
   /**
    * Constructs a new event.
    * 
@@ -36,8 +36,17 @@ public class CommandEvent extends DiscreteEvent {
    */
   public CommandEvent(DateTime time, ExecutionEvent event) {
     super(time);
+    this.sid = -1;
     this.event = checkNotNull(event);
   }
+  public int getSid() {
+	return sid;
+}
+public CommandEvent(DateTime time, ExecutionEvent event, int sid) {
+	    super(time);
+	    this.sid = sid;
+	    this.event = checkNotNull(event);
+	  }
 
   /**
    * Gets the execution event.

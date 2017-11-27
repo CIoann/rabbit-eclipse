@@ -18,6 +18,7 @@ package rabbit.tracking.internal.trackers;
 import rabbit.data.handler.DataHandler;
 import rabbit.data.store.IStorer;
 import rabbit.data.store.model.LaunchEvent;
+import rabbit.tracking.internal.TrackingPlugin;
 import rabbit.tracking.internal.util.Recorder;
 
 import com.google.common.collect.Maps;
@@ -89,7 +90,7 @@ public class LaunchTracker extends AbstractTracker<LaunchEvent> {
         Timestamp tsEnd = new Timestamp (end);
        System.out.println("Test 6: Launch Tracker");
         Interval interval = new Interval(start, end);
-        addData(new LaunchEvent(interval,tsStart,tsEnd, launch, config, type, files));
+        addData(new LaunchEvent(interval,tsStart,tsEnd, launch, config, type, files,TrackingPlugin.test_sid));
       }
     }
   };

@@ -30,6 +30,7 @@ public class DiscreteEvent {
   private final DateTime time;
   private final Timestamp tsStart;
   private final Timestamp tsEnd;
+
   /**
    * Constructs a new event.
    * 
@@ -37,11 +38,13 @@ public class DiscreteEvent {
    * @throws NullPointerException If time is null.
    */
   public DiscreteEvent(DateTime time) {
+	 
     this.time = checkNotNull(time);
     this.tsStart = new Timestamp(time.getMillis());
     this.tsEnd = new Timestamp(time.getMillis());
 
   }
+ 
 
   /**
    * Gets the time the event occurred.

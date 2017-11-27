@@ -31,7 +31,10 @@ import java.util.Set;
  * @noimplement
  */
 public interface ILaunchData extends IData {
-
+	/**
+	   * Key for the date.
+	   */
+	  static final IKey<Integer> SID = Keys.SID;
   /**
    * Key for the date.
    */

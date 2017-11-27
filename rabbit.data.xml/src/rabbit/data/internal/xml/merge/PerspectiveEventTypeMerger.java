@@ -28,7 +28,7 @@ public class PerspectiveEventTypeMerger extends
   
   @Override
   protected boolean doIsMergeable(PerspectiveEventType t1, PerspectiveEventType t2) {
-	  System.out.println("Test 10: PerspectiveEventTypeMerger - Keep Multiple Entries");
+	//  System.out.println("Test 10: PerspectiveEventTypeMerger - Keep Multiple Entries");
 		 return false;
 	  //    return (t1.getPerspectiveId() != null)
 //        && (t1.getPerspectiveId().equals(t2.getPerspectiveId()));
@@ -42,8 +42,8 @@ public class PerspectiveEventTypeMerger extends
     result.setDuration(t1.getDuration() + t2.getDuration());
     result.setTsEnd(t2.getTsEnd());
     result.setTsStart(t1.getTsStart());
-    System.out.println("Test 5: Perspectives!!");
-    System.out.println("Test 5, start/end usage of perspective");
+   // System.out.println("Test 5: Perspectives!!");
+  //  System.out.println("Test 5, start/end usage of perspective");
     return result;
   }
 

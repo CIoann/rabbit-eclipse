@@ -31,6 +31,7 @@ import java.sql.Timestamp;
 public class FileEvent extends ContinuousEvent {
 
   private final IPath filePath;
+  private final int sid;
 
   /**
    * Constructs a new event.
@@ -45,12 +46,17 @@ public class FileEvent extends ContinuousEvent {
    */
   
   //TEST 3:  NEED TO PUT TIMESTAMP IN CONSTRUCTOR
-  public FileEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd, IPath filePath) {
+  public FileEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd, IPath filePath, int sid) {
     super(tsStart,tsEnd,interval);
+    this.sid=sid;
     this.filePath = checkNotNull(filePath);
   }
 
-  /**
+  public int getSid() {
+	return sid;
+}
+
+/**
    * Gets the file path.
    * 
    * @return The file path, never null.

@@ -52,6 +52,14 @@ public class SessionTracker extends AbstractTracker<SessionEvent> {
           PlatformUI.getWorkbench().getDisplay().syncExec(startRecorder);
         } else {
           recorder.stop();
+          //Trying to save when user is IDLE
+          Record<Object> r = recorder.getLastRecord();
+          long start = r.getStartTimeMillis();
+          long end = r.getEndTimeMillis();
+          Timestamp tsStart = new Timestamp(start);
+          Timestamp tsEnd = new Timestamp (end);
+          System.out.println("When user went IDLE");
+          addData(new SessionEvent(new Interval(start, end),tsStart, tsEnd));
         }
 
       } else if (o == recorder) {
@@ -60,7 +68,9 @@ public class SessionTracker extends AbstractTracker<SessionEvent> {
         long end = r.getEndTimeMillis();
         Timestamp tsStart = new Timestamp(start);
         Timestamp tsEnd = new Timestamp (end);
-
+       // upon refresh this is called therefore upon new refresh a new session?
+        
+        System.out.println("When the new session is saved");
         addData(new SessionEvent(new Interval(start, end),tsStart, tsEnd));
       }
     }

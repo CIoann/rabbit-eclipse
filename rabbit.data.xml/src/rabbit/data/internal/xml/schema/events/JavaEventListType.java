@@ -37,14 +37,17 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "javaEventListType", propOrder = {
-    "javaEvent"
+    "event"
 })
+//@XmlType(name = "javaEventListType", propOrder = {
+//	    "javaEvent"
+//	})
 public class JavaEventListType
     extends EventGroupType
 {
 
     @XmlElement(required = true)
-    protected List<JavaEventType> javaEvent;
+    protected List<JavaEventType> event;
 
     /**
      * Gets the value of the javaEvent property.
@@ -69,10 +72,10 @@ public class JavaEventListType
      * 
      */
     public List<JavaEventType> getJavaEvent() {
-        if (javaEvent == null) {
-            javaEvent = new ArrayList<JavaEventType>();
+        if (event == null) {
+        	event = new ArrayList<JavaEventType>();
         }
-        return this.javaEvent;
+        return this.event;
     }
 
 }

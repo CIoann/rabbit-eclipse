@@ -27,7 +27,7 @@ public class JavaEventTypeMerger extends AbstractMerger<JavaEventType> {
 
   @Override
   protected boolean doIsMergeable(JavaEventType t1, JavaEventType t2) {
-	  System.out.println("Test 10: JavaEventTypeMerger - Keep Multiple Entries");
+//	  System.out.println("Test 10: JavaEventTypeMerger - Keep Multiple Entries");
 		 return false;//return t1.getHandleIdentifier().equals(t2.getHandleIdentifier());
   }
 

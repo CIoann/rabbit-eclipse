@@ -74,10 +74,10 @@ public class LaunchDataAccessor extends
             + " - Invalid file path: str\n\t" + e.getMessage());
       }
     }
-    System.out.println("Test 5: LaunchDataAccessor: Called??");
+   // System.out.println("Test 5: LaunchDataAccessor: Called??");
 	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
-
-    return new LaunchData(date,ts,ts, ws, config, type.getCount(), duration, files);
+int sid= -1;
+    return new LaunchData(sid,date,ts,ts, ws, config, type.getCount(), duration, files);
   }
 
   @Override
