@@ -26,6 +26,7 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IExecutionListener;
 import org.eclipse.core.commands.NotHandledException;
+import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 import org.joda.time.DateTime;
@@ -73,6 +74,14 @@ public class CommandTracker extends AbstractTracker<CommandEvent> implements
   public void postExecuteSuccess(String commandId, Object returnValue) {
     if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId)) {
     	//THE SID SHOULD BE GENERATED 
+    	try {
+			System.out.println("Test " + lastEvent.getCommand().getName() + "\n AppContext: " +
+								//	lastEvent.getApplicationContext().getClass().getName() +"\n Category: "+
+								lastEvent.getCommand().getCategory().getName());
+		} catch (NotDefinedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
       addData(new CommandEvent(new DateTime(), lastEvent,TrackingPlugin.test_sid));
   //    System.out.println("Test 0: CommandTracker, new command entered" );//+ lastEvent.);
    //   System.out.println("Test 1: CommandTracker - dates " + new Timestamp(new DateTime().getMillis()));

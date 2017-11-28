@@ -41,12 +41,30 @@ public class CommandEventType
     extends CountEventType
 {
 
-  //  protected Timestamp  ts1= new Timestamp(71885418);
     @XmlAttribute(required = true)
     protected String id;
     @XmlAttribute(required = true)
     protected String sid;
-    
+    @XmlAttribute(required = true)
+    protected String category;
+    @XmlAttribute(required = true)
+    protected String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 	@XmlAttribute(required = true)
     protected String tsStart;

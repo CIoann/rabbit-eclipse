@@ -15,6 +15,8 @@
  */
 package rabbit.data.internal.xml.convert;
 
+import org.eclipse.core.commands.common.NotDefinedException;
+
 import rabbit.data.internal.xml.schema.events.CommandEventType;
 import rabbit.data.store.model.CommandEvent;
 
@@ -31,6 +33,13 @@ public class CommandEventConverter extends
   protected CommandEventType doConvert(CommandEvent element) {
     CommandEventType type = new CommandEventType();
     type.setCommandId(element.getExecutionEvent().getCommand().getId());
+    try {
+		type.setCategory(element.getExecutionEvent().getCommand().getCategory().getName());
+		type.setName(element.getExecutionEvent().getCommand().getName());
+	} catch (NotDefinedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
     type.setTimeStamp(element.getTsStart().toString());
     type.setSid(String.valueOf(element.getSid()));
    // System.out.println("Test 2: Timestamp Control Action :ts: " + element.getTs().toString());
