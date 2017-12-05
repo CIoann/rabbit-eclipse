@@ -38,6 +38,11 @@ public class JavaEventTypeMerger extends AbstractMerger<JavaEventType> {
     result.setDuration(t1.getDuration() + t2.getDuration());
     result.setTsEnd(t2.getTsEnd());
     result.setTsStart(t1.getTsStart());
+    result.setFilename(t2.getFilename());
+    result.setName(t2.getName());
+    result.setParent(t2.getParent());
+    result.setType(t2.getType());
+    result.setSid(t1.getSid());
    // System.out.println("Test 7: JavaEvent Merger");
   //  System.out.println("Test 7: Setting start and end\n");// +" :Start: " +result.getTsStart().toString() +" :End: " +result.getTsEnd().toString());
 

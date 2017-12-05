@@ -36,13 +36,15 @@ public class LaunchEventConverter extends
     }
     type.setTotalDuration(element.getInterval().toDurationMillis());
     type.setName(element.getLaunchConfiguration().getName());
-    type.setLaunchTypeId(element.getLaunchConfigurationType().getIdentifier());
-    type.setLaunchModeId(element.getLaunch().getLaunchMode());
+   // type.setLaunchTypeId(element.getLaunchConfigurationType().getIdentifier());
+   // type.setLaunchModeId(element.getLaunch().getLaunchMode());
     type.setCount(1);
+    System.out.println(""+element.getLaunchConfiguration().getName());
     type.setTsStart(element.getStart().toString());
     type.setTsEnd(element.getEnd().toString());
     type.setSid(String.valueOf(element.getSid()));
 
+    type.setCategory("");
 
     return type;
   }

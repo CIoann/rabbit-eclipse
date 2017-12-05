@@ -46,8 +46,8 @@ public class LaunchEventTypeMerger extends AbstractMerger<LaunchEventType> {
   @Override
   protected LaunchEventType doMerge(LaunchEventType t1, LaunchEventType t2) {
     LaunchEventType result = new LaunchEventType();
-    result.setLaunchModeId(t1.getLaunchModeId());
-    result.setLaunchTypeId(t1.getLaunchTypeId());
+   // result.setLaunchModeId(t1.getLaunchModeId());
+   // result.setLaunchTypeId(t1.getLaunchTypeId());
     result.setName(t1.getName());
     result.setCount(t1.getCount() + t2.getCount());
     result.setTotalDuration(t1.getTotalDuration() + t2.getTotalDuration());

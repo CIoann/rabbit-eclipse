@@ -40,6 +40,18 @@ public class PartEventType
     @XmlAttribute(required = true)
     protected String id;  
     @XmlAttribute(required = true)
+    protected String category;
+    @XmlAttribute(required = true)
+    protected String name;
+    public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	@XmlAttribute(required = true)
     protected String tsStart;
     @XmlAttribute(required = true)
     protected String sid;
@@ -101,6 +113,14 @@ public class PartEventType
      */
     public void setPartId(String value) {
         this.id = value;
+    }
+
+	public void setName(String title) {
+		this.name= title;// TODO Auto-generated method stub
+		
+	}
+    public String getName() {
+        return name;
     }
 
 }

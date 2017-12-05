@@ -77,6 +77,7 @@ public class FileTracker extends AbstractPartTracker<FileEvent> {
         // A file outside of workspace
         URI uri = ((IURIEditorInput) input).getURI();
         IPath path = new Path(uri.getPath());
+        
         return new FileEvent(new Interval(start, end), tsStart, tsEnd, path,TrackingPlugin.test_sid);
       }
     }

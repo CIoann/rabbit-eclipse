@@ -37,14 +37,14 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "launchEventListType", propOrder = {
-    "launchEvent"
+    "event"
 })
 public class LaunchEventListType
     extends EventGroupType
 {
 
     @XmlElement(required = true)
-    protected List<LaunchEventType> launchEvent;
+    protected List<LaunchEventType> event;
 
     /**
      * Gets the value of the launchEvent property.
@@ -69,10 +69,10 @@ public class LaunchEventListType
      * 
      */
     public List<LaunchEventType> getLaunchEvent() {
-        if (launchEvent == null) {
-            launchEvent = new ArrayList<LaunchEventType>();
+        if (event == null) {
+        	event = new ArrayList<LaunchEventType>();
         }
-        return this.launchEvent;
+        return this.event;
     }
 
 }

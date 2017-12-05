@@ -32,6 +32,10 @@ public class PerspectiveEventConverter extends
     PerspectiveEventType type = new PerspectiveEventType();
     type.setDuration(element.getInterval().toDurationMillis());
     type.setPerspectiveId(element.getPerspective().getId());
+
+    type.setName(element.getPerspective().getId());
+    type.setCategory(element.getPerspective().getId());
+    
     type.setTsStart(element.getStart().toString());
     type.setTsEnd(element.getEnd().toString());
 type.setSid(String.valueOf(element.getSid()));

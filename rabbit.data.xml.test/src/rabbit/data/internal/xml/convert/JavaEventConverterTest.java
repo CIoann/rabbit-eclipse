@@ -37,7 +37,7 @@ public class JavaEventConverterTest extends AbstractConverterTest<JavaEvent, Jav
 
   @Override
   public void testConvert() throws Exception {
-    JavaEvent event = new JavaEvent(new Interval(0, 1), JavaCore.create("=Enfo/src<enfo{EnfoPlugin.java"));
+    JavaEvent event = new JavaEvent(new Interval(0, 1),null,null,JavaCore.create("=Enfo/src<enfo{EnfoPlugin.java"),1);
     JavaEventType type = converter.convert(event);
     assertEquals(event.getInterval().toDurationMillis(), type.getDuration());
     assertEquals(event.getElement().getHandleIdentifier(), type.getHandleIdentifier());

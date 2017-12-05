@@ -34,6 +34,19 @@ public class JavaEventConverter extends AbstractConverter<JavaEvent, JavaEventTy
     type.setTsStart(event.getStart().toString());
     type.setTsEnd(event.getEnd().toString());
     type.setSid(String.valueOf(event.getSid()));
+    type.setFilename(event.getElement().getPath().lastSegment());
+    type.setName(event.getElement().getElementName());
+    type.setParent(event.getElement().getParent().getElementName());
+    type.setType(String.valueOf(event.getElement().getElementType()));
+
+    //System.out.println("Time to register" + type.getTsEnd());
+    
+    //    
+//	System.out.print("These data are for JAVA Events>> Name >> " + event.getElement().getElementName()+ " Type >> " +
+//			event.getElement().getElementType()
+//			+ ">> class >>" + event.getElement().getParent().getElementName() + ">> file >> " + event.getElement().getPath().lastSegment()
+//			
+//			);
 
     return type;
   }

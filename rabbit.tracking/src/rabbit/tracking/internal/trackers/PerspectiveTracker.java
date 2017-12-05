@@ -72,7 +72,7 @@ public class PerspectiveTracker extends AbstractTracker<PerspectiveEvent> {
         IPerspectiveDescriptor p = recorder.getLastRecord().getUserData();
         Timestamp tsStart = new Timestamp(start);
         Timestamp tsEnd = new Timestamp (end);
-   
+    
         addData(new PerspectiveEvent(tsStart,tsEnd,new Interval(start, end), p,TrackingPlugin.test_sid));
       }
     }

@@ -24,9 +24,13 @@ import rabbit.tracking.internal.util.Recorder;
 import rabbit.tracking.internal.util.WorkbenchUtil;
 
 import com.google.common.collect.Sets;
+import com.google.inject.spi.Element;
+
 import java.lang.Object;
 import java.util.Date;
 import java.sql.Timestamp;
+
+import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.ITypeRoot;
@@ -192,7 +196,17 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
         	Timestamp end_time = new Timestamp(end);
         	//System.out.println("Test 0:\n Time start: " +start_time.toString() + "\nTime end: "+end_time.toString());
         	//System.out.println("Test 7: JavaEvent - JavaTracker");
-        	addData(new JavaEvent(new Interval(start, end),start_time,end_time, element,TrackingPlugin.test_sid));
+        	// type >> method/class/project/
+        	// name, parent name, file name
+//        	System.out.print("These data are for JAVA Events>> Name >> " + element.getElementName()+ " Type >> " +
+//        			element.getElementType()
+//        			+ ">> class >>" + element.getParent().getElementName() + ">> file >> " + element.getPath().lastSegment()
+//        			
+//        			);
+        		//System.out.println("Java Element: " + element.getElementName() + "and the command >> " + cmdtr.getLastEvent().toString());
+			
+        	
+        	addData(new JavaEvent(new Interval(start, end),start_time,end_time, element,TrackingPlugin.test_sid ));
         //  addData(new JavaEvent(new Interval(start, end), element));
         }
       }
@@ -214,7 +228,8 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
       checkStart();
     }
   };
-
+//Try to keep information for commands
+ // private CommandTracker cmdtr;
   /**
    * Constructor.
    */
@@ -222,6 +237,8 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
     super();
     registeredWidgets = Sets.newHashSet();
     recorder.addObserver(observer);
+   // cmdtr = new CommandTracker();
+    
   }
 
   @Override
@@ -365,7 +382,7 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
       if (!e.exists()) {
         for (; !e.exists() && !(e instanceof ITypeRoot); e = e.getParent());
         
-        filteredData.add(new JavaEvent(event.getInterval(), e));
+        filteredData.add(new JavaEvent(event.getInterval(),event.getStart(), event.getEnd(), e,event.getSid()));
 
       } else {
         IJavaElement actual = null;
@@ -380,7 +397,7 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
           filteredData.add(event);
         } else {
         
-          filteredData.add(new JavaEvent(event.getInterval(), actual));
+          filteredData.add(new JavaEvent(event.getInterval(),event.getStart(),event.getEnd(), actual,event.getSid()));
         }
       }
     }

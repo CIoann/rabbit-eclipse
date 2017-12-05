@@ -34,14 +34,14 @@ public class JavaEventStorerTest extends
 
   @Override
   protected JavaEvent createEvent(DateTime dateTime) throws Exception {
-    return new JavaEvent(new Interval(dateTime, dateTime.plus(1)),
-        JavaCore.create("=Enfo/src<enfo{EnfoPlugin.java"));
+    return new JavaEvent(new Interval(dateTime, dateTime.plus(1)),null,null,
+        JavaCore.create("=Enfo/src<enfo{EnfoPlugin.java"),1);
   }
 
   @Override
   protected JavaEvent createEventDiff(DateTime dateTime) throws Exception {
-    return new JavaEvent(new Interval(dateTime, dateTime.plus(2)),
-        JavaCore.create("=Proj/src<pkg{File.java"));
+    return new JavaEvent(new Interval(dateTime, dateTime.plus(2)),null,null,
+        JavaCore.create("=Proj/src<pkg{File.java"),1);
   }
 
   @Override

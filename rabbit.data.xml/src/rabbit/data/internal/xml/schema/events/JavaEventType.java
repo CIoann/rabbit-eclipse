@@ -45,8 +45,48 @@ public class JavaEventType
     protected String tsEnd;
     @XmlAttribute(required = true)
     protected String sid;
+    @XmlAttribute(required = true)
+    protected String filename;
+    @XmlAttribute(required = true)
+    protected String name;
+    @XmlAttribute(required = true)
+    protected String type;
+    @XmlAttribute(required = true)
+    protected String parent;
     
-    public String getId() {
+    public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getParent() {
+		return parent;
+	}
+
+	public void setParent(String parent) {
+		this.parent = parent;
+	}
+
+	public String getId() {
 		return id;
 	}
 

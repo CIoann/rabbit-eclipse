@@ -40,11 +40,32 @@ public class PerspectiveEventType
     @XmlAttribute(required = true)
     protected String id;
     @XmlAttribute(required = true)
+    protected String sid;
+    @XmlAttribute(required = true)
+    protected String category;
+    @XmlAttribute(required = true)
+    protected String name;
+    public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@XmlAttribute(required = true)
     protected String tsStart;
     @XmlAttribute(required = true)
     protected String tsEnd;
-    @XmlAttribute(required = true)
-    protected String sid;
+
     
     public String getId() {
 		return id;
@@ -101,5 +122,7 @@ public class PerspectiveEventType
     public void setPerspectiveId(String value) {
         this.id = value;
     }
+
+	
 
 }

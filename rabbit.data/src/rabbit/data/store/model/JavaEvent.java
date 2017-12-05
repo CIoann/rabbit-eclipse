@@ -36,11 +36,11 @@ public class JavaEvent extends ContinuousEvent {
    * @param element The Java element of the event.
    * @throws NullPointerException If time is null, or element is null.
    */
-  public JavaEvent(Interval interval, IJavaElement element) {
-    super(interval);
-    this.element = checkNotNull(element);
-    this.sid = -1;
-  }
+//  public JavaEvent(Interval interval, IJavaElement element) {
+//    super(interval);
+//    this.element = checkNotNull(element);
+//    this.sid = -1;
+//  }
   //! Test 0: Adding Timestamp
   /**
    * Constructs a new event, with start/end time.

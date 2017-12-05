@@ -56,7 +56,15 @@ public class CommandTracker extends AbstractTracker<CommandEvent> implements
    */
   private ExecutionEvent lastEvent;
   
-  /** Constructor. */
+  public ExecutionEvent getLastEvent() {
+	return lastEvent;
+}
+
+public void setLastEvent(ExecutionEvent lastEvent) {
+	this.lastEvent = lastEvent;
+}
+
+/** Constructor. */
   public CommandTracker() {
     super();
     lastEvent = null;
@@ -74,20 +82,24 @@ public class CommandTracker extends AbstractTracker<CommandEvent> implements
   public void postExecuteSuccess(String commandId, Object returnValue) {
     if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId)) {
     	//THE SID SHOULD BE GENERATED 
-    	try {
-			System.out.println("Test " + lastEvent.getCommand().getName() + "\n AppContext: " +
-								//	lastEvent.getApplicationContext().getClass().getName() +"\n Category: "+
-								lastEvent.getCommand().getCategory().getName());
-		} catch (NotDefinedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//    	try {
+//			System.out.println("Test " + lastEvent.getCommand().getName() + "\n AppContext: " +
+//								//	lastEvent.getApplicationContext().getClass().getName() +"\n Category: "+
+//								lastEvent.getCommand().getCategory().getName());
+//		} catch (NotDefinedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+
+  //  	System.out.println("Command Element: ");
       addData(new CommandEvent(new DateTime(), lastEvent,TrackingPlugin.test_sid));
   //    System.out.println("Test 0: CommandTracker, new command entered" );//+ lastEvent.);
    //   System.out.println("Test 1: CommandTracker - dates " + new Timestamp(new DateTime().getMillis()));
     //  System.out.println("Test 10: CommandTraker - Keep Multiple Entries");
     }
   }
+  
+
 
   @Override
   public void preExecute(String commandId, ExecutionEvent event) {

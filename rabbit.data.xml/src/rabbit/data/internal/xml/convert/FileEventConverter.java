@@ -35,6 +35,11 @@ public class FileEventConverter extends
     type.setTsStart(element.getStart().toString());
     type.setTsEnd(element.getEnd().toString());
     type.setSid(String.valueOf(element.getSid()));
+    type.setName(element.getFilePath().lastSegment());
+    
+
+    type.setCategory("");
+  //  System.out.println("The path NAME" +element.getFilePath().lastSegment());
 //gives out where this class is implemented
     //    System.out.println("The name of file event "+ element.getClass().getName().toString());
     return type;

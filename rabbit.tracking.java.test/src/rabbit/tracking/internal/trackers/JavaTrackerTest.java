@@ -62,6 +62,8 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import junit.runner.TestRunListener;
+
 import static java.lang.String.format;
 
 import java.lang.reflect.Field;
@@ -84,6 +86,7 @@ public class JavaTrackerTest extends AbstractTrackerTest<JavaEvent> {
   public static void afterClass() {
     PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().closeAllEditors(
         false);
+
   }
 
   @BeforeClass
@@ -1133,8 +1136,8 @@ public class JavaTrackerTest extends AbstractTrackerTest<JavaEvent> {
 
   @Override
   protected JavaEvent createEvent() {
-    return new JavaEvent(new Interval(0, 1),
-        JavaCore.create("=Enfo/src<enfo{EnfoPlugin.java"));
+    return new JavaEvent(new Interval(0, 1),null,null,
+        JavaCore.create("=Enfo/src<enfo{EnfoPlugin.java"),1);
   }
 
   @Override

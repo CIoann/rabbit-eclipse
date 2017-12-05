@@ -49,10 +49,21 @@ public class LaunchEventType
 
     protected List<String> filePath;
     @XmlAttribute(required = true)
+    protected String category;
+    @XmlAttribute(required = true)
     protected String name;
-    @XmlAttribute(required = true)
+
+    public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	@XmlAttribute(required = false)
     protected String launchModeId;
-    @XmlAttribute(required = true)
+    @XmlAttribute(required = false)
     protected String launchTypeId;
     @XmlAttribute(required = true)
     protected long totalDuration;
@@ -156,27 +167,27 @@ public class LaunchEventType
     public String getLaunchModeId() {
         return launchModeId;
     }
-
-    /**
-     * Sets the value of the launchModeId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
+//
+//    /**
+//     * Sets the value of the launchModeId property.
+//     * 
+//     * @param value
+//     *     allowed object is
+//     *     {@link String }
+//     *     
+//     */
     public void setLaunchModeId(String value) {
         this.launchModeId = value;
     }
-
-    /**
-     * Gets the value of the launchTypeId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
+//
+//    /**
+//     * Gets the value of the launchTypeId property.
+//     * 
+//     * @return
+//     *     possible object is
+//     *     {@link String }
+//     *     
+//     */
     public String getLaunchTypeId() {
         return launchTypeId;
     }

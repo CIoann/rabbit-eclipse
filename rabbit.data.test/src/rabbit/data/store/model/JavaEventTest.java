@@ -47,6 +47,6 @@ public class JavaEventTest extends ContinuousEventTest {
    * @see JavaEvent#JavaEvent(Interval, IJavaElement)
    */
   protected JavaEvent createEvent(Interval interval, IJavaElement element) {
-    return new JavaEvent(interval, element);
+    return new JavaEvent(interval, null, null, element, 0);
   }
 }
