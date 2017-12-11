@@ -21,13 +21,18 @@ import rabbit.data.store.model.FileEvent;
 import rabbit.tracking.internal.TrackingPlugin;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.jface.text.IDocument;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IURIEditorInput;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.joda.time.Interval;
 
 import java.net.URI;
@@ -57,6 +62,12 @@ public class FileTracker extends AbstractPartTracker<FileEvent> {
       IEditorInput input = ((IEditorPart) part).getEditorInput();
       Timestamp tsStart = new Timestamp(start);
       Timestamp tsEnd = new Timestamp (end);
+      
+// System.out.println("I DONT KNOW " +   part.getSite()
+      //  System.out.println("active editor "+((IEditorPart) part).getEditorInput().getName());
+     // ((IEditorPart) part).getEditorSite().
+//      ((IEditorPart) part).getEditorSite()
+//      getActionBars().getMenuManager().addMenuListener();
       /*
        * Order of this "if" statement is important.
        * 
@@ -67,10 +78,10 @@ public class FileTracker extends AbstractPartTracker<FileEvent> {
        * it only has a path to the actual file in the file system, like
        * "C:/a.txt". We want workspace paths wherever possible.
        */
+      
       if (input instanceof IFileEditorInput) {
         // Contains a file in the workspace
         IFile file = ((IFileEditorInput) input).getFile();
-  
         return new FileEvent(new Interval(start, end), tsStart, tsEnd,file.getFullPath(),TrackingPlugin.test_sid);
 
       } else if (input instanceof IURIEditorInput) {
@@ -83,4 +94,5 @@ public class FileTracker extends AbstractPartTracker<FileEvent> {
     }
     return null;
   }
+ 
 }
