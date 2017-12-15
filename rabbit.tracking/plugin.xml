@@ -4,7 +4,7 @@
    <extension-point id="rabbit.tracking.trackers" name="Tracker Extensions" schema="schema/trackers.exsd"/>
    <extension
          point="rabbit.tracking.trackers">
-      <tracker
+     <tracker
             class="rabbit.tracking.internal.trackers.CommandTracker">
       </tracker>
       <tracker
@@ -21,6 +21,9 @@
       </tracker>
       <tracker
             class="rabbit.tracking.internal.trackers.SessionTracker">
+      </tracker>
+         <tracker
+            class="rabbit.tracking.internal.trackers.FCTracker">
       </tracker>
    </extension>
    <extension

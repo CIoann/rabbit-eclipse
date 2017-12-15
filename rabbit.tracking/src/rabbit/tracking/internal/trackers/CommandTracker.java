@@ -19,6 +19,7 @@ import rabbit.data.handler.DataHandler;
 import rabbit.data.store.IStorer;
 import rabbit.data.store.model.CommandEvent;
 import rabbit.tracking.internal.TrackingPlugin;
+import rabbit.tracking.internal.util.WorkbenchUtil;
 
 import java.sql.Timestamp;
 
@@ -90,10 +91,15 @@ public void setLastEvent(ExecutionEvent lastEvent) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-
+    	getActivePart();
   //  	System.out.println("Command Element: ");
       addData(new CommandEvent(new DateTime(), lastEvent,TrackingPlugin.test_sid));
-  //    System.out.println("Test 0: CommandTracker, new command entered" );//+ lastEvent.);
+      try {
+		System.out.println("Test phase 1: CommandTracker, new command entered" + lastEvent.getCommand().getName() + "on file"+ getActivePart() ) ;
+	} catch (NotDefinedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}//+ lastEvent.);
    //   System.out.println("Test 1: CommandTracker - dates " + new Timestamp(new DateTime().getMillis()));
     //  System.out.println("Test 10: CommandTraker - Keep Multiple Entries");
     }
@@ -121,6 +127,9 @@ public void setLastEvent(ExecutionEvent lastEvent) {
     getCommandService().addExecutionListener(this);
   }
 
+  private String getActivePart() {
+	 return WorkbenchUtil.getActivePart().getSite().getPage().getActiveEditor().getTitle();
+  }
   private ICommandService getCommandService() {
     return (ICommandService) PlatformUI.getWorkbench().getService(
         ICommandService.class);

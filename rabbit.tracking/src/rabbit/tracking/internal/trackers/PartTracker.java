@@ -46,9 +46,8 @@ public class PartTracker extends AbstractPartTracker<PartEvent> {
   protected PartEvent tryCreateEvent(long start, long end, IWorkbenchPart part) {
 	  Timestamp tsStart = new Timestamp(start);
       Timestamp tsEnd = new Timestamp (end);
-   // System.out.println("Test 8: PartTracker" + part.getTitle());
-    
-    
+    System.out.println("Test 8: PartTracker active"+   part.getSite().getPage().getActiveEditor().getTitle());
+ //   System.out.println("Test 8: PartTracker"+ part.getTitle());
     
     return new PartEvent(new Interval(start, end), tsStart, tsEnd, part,TrackingPlugin.test_sid);
   }

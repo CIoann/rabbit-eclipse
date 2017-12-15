@@ -49,7 +49,6 @@ public final class WorkbenchUtil {
       @Override
       public void run() {
         win[0] = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-        
       }
     });
     return win[0];

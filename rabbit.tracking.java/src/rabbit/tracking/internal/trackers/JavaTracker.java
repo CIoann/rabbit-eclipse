@@ -198,15 +198,16 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
         	//System.out.println("Test 7: JavaEvent - JavaTracker");
         	// type >> method/class/project/
         	// name, parent name, file name
-    
-        	
-        
-        		System.out.println("Java Element: " + element.getElementName());
-        		
-        		
+//        	System.out.print("These data are for JAVA Events>> Name >> " + element.getElementName()+ " Type >> " +
+//        			element.getElementType()
+//        			+ ">> class >>" + element.getParent().getElementName() + ">> file >> " + element.getPath().lastSegment()
+//        			
+//        			);
+        		//System.out.println("Java Element: " + element.getElementName() + "and the command >> " + cmdtr.getLastEvent().toString());
 			
         	
         	addData(new JavaEvent(new Interval(start, end),start_time,end_time, element,TrackingPlugin.test_sid ));
+        //  addData(new JavaEvent(new Interval(start, end), element));
         }
       }
     }
@@ -299,8 +300,6 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
    */
   private void checkStart(final IWorkbenchPart activePart) {
     if (!(activePart instanceof JavaEditor)) {
-    	
-    	System.out.println("INSTANCE OF JAVA EDITOR");
       return;
     }
 
@@ -397,7 +396,7 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
         if (actual == null) {
           filteredData.add(event);
         } else {
-         
+        
           filteredData.add(new JavaEvent(event.getInterval(),event.getStart(),event.getEnd(), actual,event.getSid()));
         }
       }
@@ -451,6 +450,7 @@ public class JavaTracker extends AbstractTracker<JavaEvent> {
       case IJavaElement.COMPILATION_UNIT:
       case IJavaElement.CLASS_FILE:
         return element;
+
       default:
         return filterElement(element.getParent());
     }

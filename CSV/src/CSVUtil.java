@@ -16,11 +16,11 @@ public class CSVUtil {
 
     public static void main(String[] args) throws Exception {
     	 List<Developer> developers = new ArrayList<Developer>();
-    	 String csvFile = "/Users/connie/csv/test.csv";
+    	 String csvFile = "/Users/ConnieZalo/Desktop/TestData/test.csv";
          FileWriter writer = new FileWriter(csvFile);
          
          
-    	File inputFile = new File("/Users/connie/csv/mytest.txt");
+    	File inputFile = new File("/Users/ConnieZalo/Desktop/TestData/test.txt");
          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
          DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
          Document doc = dBuilder.parse(inputFile);

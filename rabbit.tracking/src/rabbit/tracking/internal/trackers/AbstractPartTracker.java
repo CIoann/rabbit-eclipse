@@ -20,6 +20,7 @@ import rabbit.tracking.internal.TrackingPlugin;
 import rabbit.tracking.internal.util.Recorder;
 import rabbit.tracking.internal.util.WorkbenchUtil;
 
+import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IPartService;
 import org.eclipse.ui.IWindowListener;
@@ -39,6 +40,15 @@ import javax.annotation.Nullable;
  */
 public abstract class AbstractPartTracker<E> extends AbstractTracker<E> {
 
+
+	  /**
+	   * Tracking changes in file
+	   */
+	private	FCTracker fcTrack;
+	
+	
+	
+	
   /**
    * A recorder for recording the time.
    */
@@ -130,7 +140,7 @@ public abstract class AbstractPartTracker<E> extends AbstractTracker<E> {
         long start = recorder.getLastRecord().getStartTimeMillis();
         long end = recorder.getLastRecord().getEndTimeMillis();
         IWorkbenchPart part = recorder.getLastRecord().getUserData();
-        System.out.println("Test 0: AbstratPartTracker triggered");
+
         E event = tryCreateEvent(start, end, part);
         if (event != null) {
           addData(event);
