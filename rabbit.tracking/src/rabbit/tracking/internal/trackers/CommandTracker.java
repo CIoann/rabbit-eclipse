@@ -18,16 +18,17 @@ package rabbit.tracking.internal.trackers;
 import rabbit.data.handler.DataHandler;
 import rabbit.data.store.IStorer;
 import rabbit.data.store.model.CommandEvent;
+import rabbit.tracking.internal.DeltaVis;
 import rabbit.tracking.internal.TrackingPlugin;
 import rabbit.tracking.internal.util.WorkbenchUtil;
 
-import java.sql.Timestamp;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IExecutionListener;
 import org.eclipse.core.commands.NotHandledException;
 import org.eclipse.core.commands.common.NotDefinedException;
+
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 import org.joda.time.DateTime;
@@ -56,6 +57,31 @@ public class CommandTracker extends AbstractTracker<CommandEvent> implements
    * {@link ExecutionEvent} parameter. This variable is null from the beginning.
    */
   private ExecutionEvent lastEvent;
+  private final String CMD_EDIT = "Edit";
+  private final String CMD_TEXTEDIT = "Text Editing";
+  private final String CMD_FILE = "File";
+  private final String CMD_UNCATEGORIZED = "Uncategorized";
+  
+  private final String CMD_NAVIGATE = "Navigate";
+  private final String CMD_SOURCE = "Source";
+  
+  private final String CMD_PROJECT = "Project";
+  private final String CMD_HELP = "Help";
+  private final String CMD_VIEW = "View";
+
+  private final String CMD_SEARCH = "Search";
+  private final String CMD_REFACTOR = "Refactor - Java";
+  private final String CMD_WINDOW = "Window";
+  
+  private final String CMD_RUN = "Run/Debug";
+  private final String CMD_PERSPECTIVE = "Perspectives";
+ 
+  private final String CMD_INVALID = "invalid";
+  private final int CMD_ON_FILE = 0;
+  private final int CMD_IGNORE = -1;
+  private final int CMD_ON_PROJECT = 1;
+  private final int CMD_NON_FILE = 2;
+  private final int CMD_ERROR = -2;
   
   public ExecutionEvent getLastEvent() {
 	return lastEvent;
@@ -81,31 +107,85 @@ public void setLastEvent(ExecutionEvent lastEvent) {
 
   @Override
   public void postExecuteSuccess(String commandId, Object returnValue) {
+	  int cmdHandle = CMD_ERROR;
     if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId)) {
-    	//THE SID SHOULD BE GENERATED 
+
+    	try {
+			String cmd_category = lastEvent.getCommand().getCategory().getName();
+			cmdHandle= defineHandle(cmd_category);
+		} catch (NotDefinedException e1) {
+			e1.printStackTrace();
+		}
 //    	try {
 //			System.out.println("Test " + lastEvent.getCommand().getName() + "\n AppContext: " +
 //								//	lastEvent.getApplicationContext().getClass().getName() +"\n Category: "+
 //								lastEvent.getCommand().getCategory().getName());
 //		} catch (NotDefinedException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-    	getActivePart();
-  //  	System.out.println("Command Element: ");
-      addData(new CommandEvent(new DateTime(), lastEvent,TrackingPlugin.test_sid));
-      try {
-		System.out.println("Test phase 1: CommandTracker, new command entered" + lastEvent.getCommand().getName() + "on file"+ getActivePart() ) ;
-	} catch (NotDefinedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}//+ lastEvent.);
-   //   System.out.println("Test 1: CommandTracker - dates " + new Timestamp(new DateTime().getMillis()));
-    //  System.out.println("Test 10: CommandTraker - Keep Multiple Entries");
-    }
+
+    	DateTime now = new DateTime();
+     // lastEvent.getCommand();
+      
+      
+  
+      if( getActivePart()!=null) {
+    		try {
+    			if (getActivePart().contains(".java")) {
+    				
+    				if (cmdHandle == CMD_ON_FILE) {
+    					System.out.println("CMD_ON_FILE: File was Edited by commands: "+ CMD_EDIT + " " + CMD_TEXTEDIT + " " + CMD_SOURCE +" " +  CMD_UNCATEGORIZED);
+    					addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,getActivePart()));
+    				}else if (cmdHandle == CMD_NON_FILE){
+    					System.out.println("CMD_NON_FILE: Must run list for refactor affected files" + lastEvent.getCommand().getName() + lastEvent.getCommand().getCategory().getName());
+    					//changed and removed files shall be considered for rename.
+    					// when a file is moved is removed from project
+    					if (!DeltaVis.getFueList().isEmpty()) {
+    						
+    			       	  	for (int i=0;i<DeltaVis.getFueList().size(); i++) {
+    			       	  		System.out.println("List : "+ DeltaVis.getFueList().get(i).getFileActivity().toString());
+    			       	  		
+    			       	  	} 
+
+    						System.out.println("Run the list and save for each file");
+    					}
+    				}else if (cmdHandle == CMD_IGNORE) {
+    					System.out.println("CMD_IGNORE: This commands should not be used for process mining on files");
+    					addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,CMD_INVALID));
+    				}else if (cmdHandle == CMD_ON_PROJECT) {
+    					 if (!DeltaVis.getFueList().isEmpty()) {
+    						 System.out.println("Not Empty");
+    						 System.out.println("Same Time" + DeltaVis.getfue().getFilePath() + getActivePart());
+    						 addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,DeltaVis.getfue().getFilePath().toString()));
+    					 }else {
+    						 addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,CMD_INVALID));
+    					 }
+    					System.out.println("CMD_ON_PROJECT: run/debug commands checked");
+    				}else {
+    					System.out.println("CMD_ERROR: unregistered command");
+    					addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,CMD_INVALID));
+    				}
+    			}else {
+      		      addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid));
+    			}
+				System.out.println("Test phase 1: CommandTracker, new command entered" + lastEvent.getCommand().getName() + "what is the type " + lastEvent.getCommand().getCategory().getName()+ "on file"+ getActivePart());
+			} catch (NotDefinedException e) {
+				e.printStackTrace();
+			}
+
+    	  
+    	  
+      }
+		  		
+		       	//	if (isSameChangeActive(DeltaVis.getfue().getFilePath().toString(), getActivePart())){
+		       			
+		       	//	}
+		       	
+
+      }
+    
   }
   
-
 
   @Override
   public void preExecute(String commandId, ExecutionEvent event) {
@@ -128,11 +208,39 @@ public void setLastEvent(ExecutionEvent lastEvent) {
   }
 
   private String getActivePart() {
-	 return WorkbenchUtil.getActivePart().getSite().getPage().getActiveEditor().getTitle();
+	  if(WorkbenchUtil.getActivePart().getSite().getPage().getActiveEditor()==null) {
+		  return null;
+	  }else
+		  return WorkbenchUtil.getActivePart().getSite().getPage().getActiveEditor().getTitle();
+	  
   }
   private ICommandService getCommandService() {
     return (ICommandService) PlatformUI.getWorkbench().getService(
         ICommandService.class);
   }
 
+  private boolean isSameChangeActive(String active, String changed) {
+	  if(active.equals(changed)) {
+		  return true;
+	  }
+	  return false;
+  }
+  private int defineHandle(String evaluate) {
+	if (evaluate.equals(CMD_HELP) || (evaluate.equals(CMD_WINDOW)) || evaluate.equals(CMD_VIEW)) {
+		return CMD_IGNORE;
+	}
+	else if (evaluate.equals(CMD_TEXTEDIT) || (evaluate.equals(CMD_EDIT) ) ||  (evaluate.equals(CMD_UNCATEGORIZED) || evaluate.equals(CMD_SOURCE))) {
+		return CMD_ON_FILE;
+		
+	}
+	else if( (evaluate.equals(CMD_PERSPECTIVE)) || (evaluate.equals(CMD_RUN)) || (evaluate.equals(CMD_PROJECT)) ) {
+		return CMD_ON_PROJECT;
+		
+	}else if((evaluate.equals(CMD_REFACTOR))|| (evaluate.equals(CMD_FILE)) || evaluate.equals(CMD_NAVIGATE) || (evaluate.equals(CMD_SEARCH))) {
+		return CMD_NON_FILE;
+	}else {
+		return CMD_ERROR;
+	}
+  }
+  
 }

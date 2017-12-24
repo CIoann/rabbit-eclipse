@@ -15,55 +15,62 @@
  */
 package rabbit.tracking.internal.startup;
 
+import java.util.ArrayList;
+
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.resources.team.IResourceTree;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.ui.IStartup;
+
+import rabbit.tracking.internal.util.WorkbenchUtil;
 
 /**
  * Starts up the plug-in to begin tracking.
  */
 public class Startup implements IStartup {
-	IWorkspace ws=  ResourcesPlugin.getWorkspace();
-	IResourceChangeListener fcl = new IResourceChangeListener() {
-		
-		@Override
-		public void resourceChanged(IResourceChangeEvent event) {
-			   IResource res = event.getResource();
-		         switch (event.getType()) {
-		            case IResourceChangeEvent.PRE_CLOSE:
-//		               System.out.print("Project ");
-//		               System.out.print(res.getFullPath());
-//		               System.out.println(" is about to close.");
-		               break;
-		            case IResourceChangeEvent.PRE_DELETE:
-//		               System.out.print("Project ");
-//		               System.out.print(res.getFullPath());
-//		               System.out.println(" is about to be deleted.");
-		               break;
-		            case IResourceChangeEvent.POST_CHANGE:
-		        //       System.out.println("Resources have changed.");
-				         try {
-								event.getDelta().accept(new DeltaVis());
-							} catch (CoreException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-		               break;
-		      
-		         }
-		       
-		      }
-			
-	};
+	IWorkspaceRoot myroot;
+	ArrayList<IProject> alProject;
+	IProject[] prj;
 
   @Override
   public void earlyStartup() {
-	  ws.addResourceChangeListener(fcl,IResourceChangeEvent.POST_CHANGE);	
-  }
+//	  myroot = ResourcesPlugin.getWorkspace().getRoot();
+//	  
+//	  alProject = new ArrayList<IProject>();
+//	 try {
+//		for (IResource s : myroot.members()) {
+//
+//			 System.out.println("ProjectName: "+s.getProject().members());
+//			for( IResource f: s.getProject().members()) {
+//				if (f.getName().equals("src")) {
+//						System.out.println("NAME FILES: ");
+//			
+//			}
+//		}
+//	 }
+//	  myroot.getProjects();
+//	  //for (IProject )
+//		IProject[] prjs = myroot.getProjects();
+//		
+//		IProject f = myroot.getProject("");
+//		IProjectDescription des = f.getDescription();
+//		//des.
+//		
+//				List<String> someList = new ArrayList<String>();
+//				// add "monkey", "donkey", "skeleton key" to someList
+//				for (String item : someList) {
+//				    System.out.println(item);
+//				}
+//}
+	
 
+}
 }

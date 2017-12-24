@@ -17,6 +17,7 @@ package rabbit.data.handler;
 
 import rabbit.data.access.model.ICommandData;
 import rabbit.data.access.model.IFileData;
+import rabbit.data.access.model.IFileUpdData;
 import rabbit.data.access.model.IJavaData;
 import rabbit.data.access.model.ILaunchData;
 import rabbit.data.access.model.IPartData;
@@ -25,6 +26,7 @@ import rabbit.data.access.model.ISessionData;
 import rabbit.data.access.model.ITaskData;
 import rabbit.data.store.model.CommandEvent;
 import rabbit.data.store.model.FileEvent;
+import rabbit.data.store.model.FileUpdEvent;
 import rabbit.data.store.model.JavaEvent;
 import rabbit.data.store.model.LaunchEvent;
 import rabbit.data.store.model.PartEvent;
@@ -51,6 +53,7 @@ public class DataHandlerTest {
     assertNotNull(DataHandler.getStorer(TaskFileEvent.class));
     assertNotNull(DataHandler.getStorer(LaunchEvent.class));
     assertNotNull(DataHandler.getStorer(JavaEvent.class));
+    assertNotNull(DataHandler.getStorer(FileUpdEvent.class));
   }
 
   @Test
@@ -63,5 +66,6 @@ public class DataHandlerTest {
     assertNotNull(DataHandler.getAccessor(ITaskData.class));
     assertNotNull(DataHandler.getAccessor(ILaunchData.class));
     assertNotNull(DataHandler.getAccessor(IJavaData.class));
+    assertNotNull(DataHandler.getAccessor(IFileUpdData.class));
   }
 }

@@ -27,6 +27,7 @@ public class CommandEvent extends DiscreteEvent {
 
   private final ExecutionEvent event;
   private final int sid;
+  private final String filename; 
   /**
    * Constructs a new event.
    * 
@@ -34,11 +35,19 @@ public class CommandEvent extends DiscreteEvent {
    * @param event The execution event.
    * @throws NullPointerException If any of the arguments is null.
    */
+  public CommandEvent(DateTime time,int sid) {
+	    super(time);
+	    this.sid =sid;
+	    this.event = null;
+	    this.filename = "-1";
+	  }
   public CommandEvent(DateTime time, ExecutionEvent event) {
     super(time);
     this.sid = -1;
     this.event = checkNotNull(event);
+    this.filename = "-1";
   }
+
   public int getSid() {
 	return sid;
 }
@@ -46,7 +55,18 @@ public CommandEvent(DateTime time, ExecutionEvent event, int sid) {
 	    super(time);
 	    this.sid = sid;
 	    this.event = checkNotNull(event);
+	    this.filename = "-1";
 	  }
+public CommandEvent(DateTime time, ExecutionEvent event, int sid, String filename) {
+    super(time);
+    this.sid = sid;
+    this.event = checkNotNull(event);
+    this.filename = filename;
+  }
+
+public final String getFilename() {
+	return this.filename;
+}
 
   /**
    * Gets the execution event.

@@ -39,7 +39,7 @@ public class SessionDataAccessor extends
   protected ISessionData createDataNode(LocalDate cal, WorkspaceStorage ws,
       SessionEventType type) throws Exception {
 	//CALLED ??
-	  System.out.println("Test 5: SessionDataAccessor: when?");
+	//  System.out.println("Test 5: SessionDataAccessor: when?");
 	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
 	  return new SessionData(cal,ts,ts, ws, new Duration(type.getDuration()));
   }

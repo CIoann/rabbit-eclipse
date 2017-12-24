@@ -45,7 +45,6 @@ public abstract class AbstractTracker<T> implements ITracker<T> {
     data = new LinkedHashSet<T>();
     storer = createDataStorer();
     Assert.isNotNull(storer);
-   // id = 5;
   }
 
   /**

@@ -41,6 +41,7 @@ public enum DataStore implements IDataStore {
   PART_STORE        ("partEvents"),
   PERSPECTIVE_STORE ("perspectiveEvents"),
   FILE_STORE        ("fileEvents"),
+  FILE_UPD_STORE		("fileUpdEvents"),
   TASK_STORE        ("taskEvents"),
   LAUNCH_STORE      ("launchEvents"),
   SESSION_STORE     ("sessionEvents"),
@@ -65,7 +66,7 @@ public enum DataStore implements IDataStore {
 
   @Override
   public File getDataFile(LocalDate date, IPath location) {
-	  System.out.print("Test 2: path" + location.toOSString());
+	 // System.out.print("Test 2: path" + location.toOSString());
     return location.append(id + "-" + date.toString("yyyy-MM"))
         .addFileExtension("xml").toFile();
   }

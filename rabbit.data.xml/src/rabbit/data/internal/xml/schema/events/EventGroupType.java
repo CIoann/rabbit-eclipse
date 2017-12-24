@@ -43,6 +43,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     PartEventListType.class,
     SessionEventListType.class,
     LaunchEventListType.class,
+    FileUpdEventListType.class,
     FileEventListType.class,
     PerspectiveEventListType.class
 })

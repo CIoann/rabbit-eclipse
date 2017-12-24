@@ -135,6 +135,10 @@ public class ObjectFactory {
     public FileEventListType createFileEventListType() {
         return new FileEventListType();
     }
+    
+    public FileUpdEventListType createFileUpdEventListType() {
+        return new FileUpdEventListType();
+    }
 
     /**
      * Create an instance of {@link TaskIdType }

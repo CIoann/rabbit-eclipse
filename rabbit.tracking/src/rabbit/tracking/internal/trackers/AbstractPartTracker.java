@@ -44,9 +44,7 @@ public abstract class AbstractPartTracker<E> extends AbstractTracker<E> {
 	  /**
 	   * Tracking changes in file
 	   */
-	private	FCTracker fcTrack;
-	
-	
+
 	
 	
   /**
@@ -96,6 +94,7 @@ public abstract class AbstractPartTracker<E> extends AbstractTracker<E> {
     @Override
     public void windowActivated(IWorkbenchWindow window) {
       checkStart(window.getPartService().getActivePart());
+
     }
 
     @Override
@@ -175,8 +174,11 @@ public abstract class AbstractPartTracker<E> extends AbstractTracker<E> {
       s.addPartListener(partListener);
     }
     IWorkbenchWindow win = WorkbenchUtil.getActiveWindow();
+
+	//System.out.println("Avtive Workbench" + WorkbenchUtil.getActiveWindow().getActivePage().getLabel());
+
     if (WorkbenchUtil.isActiveShell(win)) {
-      checkStart(win.getPartService().getActivePart());
+    	checkStart(win.getPartService().getActivePart());
     }
   }
 

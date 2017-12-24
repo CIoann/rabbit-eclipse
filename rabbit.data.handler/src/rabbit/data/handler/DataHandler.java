@@ -18,6 +18,7 @@ package rabbit.data.handler;
 import rabbit.data.access.IAccessor;
 import rabbit.data.access.model.ICommandData;
 import rabbit.data.access.model.IFileData;
+import rabbit.data.access.model.IFileUpdData;
 import rabbit.data.access.model.IJavaData;
 import rabbit.data.access.model.ILaunchData;
 import rabbit.data.access.model.IPartData;
@@ -27,6 +28,7 @@ import rabbit.data.access.model.ITaskData;
 import rabbit.data.store.IStorer;
 import rabbit.data.store.model.CommandEvent;
 import rabbit.data.store.model.FileEvent;
+import rabbit.data.store.model.FileUpdEvent;
 import rabbit.data.store.model.JavaEvent;
 import rabbit.data.store.model.LaunchEvent;
 import rabbit.data.store.model.PartEvent;
@@ -59,6 +61,7 @@ public class DataHandler {
    * <ul>
    * <li>{@link CommandEvent}</li>
    * <li>{@link FileEvent}</li>
+   * <li>{@link FileUpdEvent}</li>
    * <li>{@link PartEvent}</li>
    * <li>{@link PerspectiveEvent}</li>
    * <li>{@link LaunchEvent}</li>
@@ -89,6 +92,7 @@ public class DataHandler {
    * <ul>
    * <li>{@link ICommandData}</li>
    * <li>{@link IFileData}</li>
+   * <li>{@link IFileUpdData}</li>
    * <li>{@link IPartData}</li>
    * <li>{@link IPerspectiveData}</li>
    * <li>{@link ILaunchData}</li>

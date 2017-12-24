@@ -18,6 +18,7 @@ package rabbit.data.internal.xml.access;
 import rabbit.data.access.IAccessor;
 import rabbit.data.access.model.ICommandData;
 import rabbit.data.access.model.IFileData;
+import rabbit.data.access.model.IFileUpdData;
 import rabbit.data.access.model.IJavaData;
 import rabbit.data.access.model.ILaunchData;
 import rabbit.data.access.model.IPartData;
@@ -37,6 +38,7 @@ public class AccessorModule extends AbstractModule {
   protected void configure() {
     bind(new TypeLiteral<IAccessor<ICommandData>>() {})     .to(CommandDataAccessor.class);
     bind(new TypeLiteral<IAccessor<IFileData>>() {})        .to(FileDataAccessor.class);
+    bind(new TypeLiteral<IAccessor<IFileUpdData>>() {})        .to(FileUpdDataAccessor.class);
     bind(new TypeLiteral<IAccessor<IJavaData>>() {})        .to(JavaDataAccessor.class);
     bind(new TypeLiteral<IAccessor<ILaunchData>>() {})      .to(LaunchDataAccessor.class);
     bind(new TypeLiteral<IAccessor<IPartData>>() {})        .to(PartDataAccessor.class);

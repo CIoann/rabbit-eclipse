@@ -59,7 +59,7 @@ public class TrackingPlugin extends AbstractUIPlugin implements
   }
 
   private IdleDetector idleDetector;
-
+  
   /** An set of trackers. */
   private ImmutableSet<ITracker<?>> trackers;
 
@@ -71,6 +71,7 @@ public class TrackingPlugin extends AbstractUIPlugin implements
     long oneMin = TimeUnit.MINUTES.toMillis(1);
     this.test_sid = 0;
     idleDetector = new IdleDetector(getWorkbench().getDisplay(), oneMin, oneSec);
+  //  dv = new DeltaVis();
     trackers = ImmutableSet.of();
   }
 
@@ -105,7 +106,7 @@ public class TrackingPlugin extends AbstractUIPlugin implements
    */
   public void saveCurrentData() {
 	  test_sid++;
-	  System.out.println("Test0: Refresh button - change SID: "+test_sid);
+	//  System.out.println("Test0: Refresh button - change SID: "+test_sid);
     for (ITracker<?> tracker : trackers) {
    // 	System.out.println("Test 0: Tracker" + tracker.getID());
       tracker.setEnabled(false);
@@ -127,7 +128,6 @@ public class TrackingPlugin extends AbstractUIPlugin implements
   //  System.out.println("Test 1: Create Trackers!");
     trackers = createTrackers();
     setEnableTrackers(trackers, true);
-   /// System.out.println("Test 1: Trackers are Enabled. Start Tracking!");
 
     idleDetector.setRunning(true);
   }
@@ -149,7 +149,7 @@ public class TrackingPlugin extends AbstractUIPlugin implements
    */
   private ImmutableSet<ITracker<?>> createTrackers() {
 	  test_sid = 0;
-	  System.out.println("SID retrieve last value of sid");
+//	  System.out.println("SID retrieve last value of sid");
     IConfigurationElement[] elements = Platform.getExtensionRegistry()
         .getConfigurationElementsFor(TRACKER_EXTENSION_ID);
 

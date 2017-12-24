@@ -17,6 +17,7 @@ package rabbit.data.internal.xml.merge;
 
 import rabbit.data.internal.xml.schema.events.CommandEventType;
 import rabbit.data.internal.xml.schema.events.FileEventType;
+import rabbit.data.internal.xml.schema.events.FileUpdEventType;
 import rabbit.data.internal.xml.schema.events.JavaEventType;
 import rabbit.data.internal.xml.schema.events.LaunchEventType;
 import rabbit.data.internal.xml.schema.events.PartEventType;
@@ -38,6 +39,7 @@ public class MergerModule extends AbstractModule {
   protected void configure() {
     bind(new TypeLiteral<IMerger<CommandEventType>>     () {}).to(CommandEventTypeMerger.class);
     bind(new TypeLiteral<IMerger<FileEventType>>        () {}).to(FileEventTypeMerger.class);
+    bind(new TypeLiteral<IMerger<FileUpdEventType>>        () {}).to(FileUpdEventTypeMerger.class);
     bind(new TypeLiteral<IMerger<JavaEventType>>        () {}).to(JavaEventTypeMerger.class);
     bind(new TypeLiteral<IMerger<LaunchEventType>>      () {}).to(LaunchEventTypeMerger.class);
     bind(new TypeLiteral<IMerger<PartEventType>>        () {}).to(PartEventTypeMerger.class);

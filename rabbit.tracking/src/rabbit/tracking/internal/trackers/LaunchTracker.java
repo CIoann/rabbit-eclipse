@@ -88,7 +88,7 @@ public class LaunchTracker extends AbstractTracker<LaunchEvent> {
         }
         Timestamp tsStart = new Timestamp(start);
         Timestamp tsEnd = new Timestamp (end);
-       System.out.println("Test 6: Launch Tracker");
+      // System.out.println("Test 6: Launch Tracker");
         Interval interval = new Interval(start, end);
         
         addData(new LaunchEvent(interval,tsStart,tsEnd, launch, config, type, files,TrackingPlugin.test_sid));
@@ -183,6 +183,7 @@ public class LaunchTracker extends AbstractTracker<LaunchEvent> {
 
     ILaunch launch = thread.getLaunch();
     ILaunchConfiguration config = launch.getLaunchConfiguration();
+   // System.out.println("CONFIGURATIONS" + launch.getLaunchConfiguration().getName());
     if (config == null) {
       return;
     }

@@ -70,7 +70,7 @@ public class FileTracker extends AbstractPartTracker<FileEvent> {
       if (input instanceof IFileEditorInput) {
         // Contains a file in the workspace
         IFile file = ((IFileEditorInput) input).getFile();
-        System.out.println("File Tracker" + file.getName());
+  //      System.out.println("File Tracker" + file.getName());
   
         return new FileEvent(new Interval(start, end), tsStart, tsEnd,file.getFullPath(),TrackingPlugin.test_sid);
 

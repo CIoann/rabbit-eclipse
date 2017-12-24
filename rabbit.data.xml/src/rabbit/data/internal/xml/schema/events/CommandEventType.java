@@ -49,13 +49,22 @@ public class CommandEventType
     protected String category;
     @XmlAttribute(required = true)
     protected String name;
+    @XmlAttribute(required = true)
+    protected String filename;
 
 	public String getName() {
 		return name;
 	}
-
+	public String getFileName() {
+		return filename;
+	}
+	
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public void setFileName(String name) {
+		this.filename = name;
 	}
 
 	public String getCategory() {

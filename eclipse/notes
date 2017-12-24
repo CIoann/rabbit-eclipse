@@ -180,3 +180,9 @@ Can we collect more information from the ide DONE
 
 Changed naming for printing into the xml files to have easy conversion from xml to csv
 created a small program to read and change the type.
+===============================================================
+===============================================================
+===============================================================
+
+Inheritance or connected files are updated - changed if one connected file is accessed.
+

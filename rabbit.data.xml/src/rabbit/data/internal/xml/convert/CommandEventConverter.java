@@ -68,8 +68,9 @@ public class CommandEventConverter extends
     CommandEventType type = new CommandEventType();
     type.setCommandId(element.getExecutionEvent().getCommand().getId());
     try {
-		type.setCategory(classify(element.getExecutionEvent().getCommand().getCategory().getName()));
+		type.setCategory(element.getExecutionEvent().getCommand().getCategory().getName());
 		type.setName(element.getExecutionEvent().getCommand().getName());
+		type.setFileName(element.getFilename());
 	} catch (NotDefinedException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

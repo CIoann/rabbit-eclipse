@@ -46,6 +46,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "eventListType", propOrder = {
     "commandEvents",
     "partEvents",
+    "fileUpdEvents",
     "fileEvents",
     "perspectiveEvents",
     "taskFileEvents",
@@ -59,6 +60,8 @@ public class EventListType {
     protected List<CommandEventListType> commandEvents;
     @XmlElement(required = true)
     protected List<PartEventListType> partEvents;
+    @XmlElement(required = true)
+    protected List<FileUpdEventListType> fileUpdEvents;
     @XmlElement(required = true)
     protected List<FileEventListType> fileEvents;
     @XmlElement(required = true)
@@ -152,6 +155,13 @@ public class EventListType {
      * 
      * 
      */
+    
+    public List<FileUpdEventListType> getFileUpdEvents() {
+        if (fileUpdEvents == null) {
+            fileUpdEvents = new ArrayList<FileUpdEventListType>();
+        }
+        return this.fileUpdEvents;
+    }
     public List<FileEventListType> getFileEvents() {
         if (fileEvents == null) {
             fileEvents = new ArrayList<FileEventListType>();

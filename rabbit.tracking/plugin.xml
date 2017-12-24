@@ -22,8 +22,8 @@
       <tracker
             class="rabbit.tracking.internal.trackers.SessionTracker">
       </tracker>
-         <tracker
-            class="rabbit.tracking.internal.trackers.FCTracker">
+      <tracker
+            class="rabbit.tracking.internal.trackers.FileUpdTracker">
       </tracker>
    </extension>
    <extension

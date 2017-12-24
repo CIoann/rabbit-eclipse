@@ -64,6 +64,8 @@ public class Keys {
    */
   public static final IKey<IFile> FILE = Key.create();
   
+  public static final IKey<String> FILE_ACTIVITY = Key.create();
+  
   /**
    * Key for a set of files.
    */

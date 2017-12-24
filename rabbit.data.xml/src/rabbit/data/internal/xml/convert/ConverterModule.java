@@ -17,6 +17,7 @@ package rabbit.data.internal.xml.convert;
 
 import rabbit.data.internal.xml.schema.events.CommandEventType;
 import rabbit.data.internal.xml.schema.events.FileEventType;
+import rabbit.data.internal.xml.schema.events.FileUpdEventType;
 import rabbit.data.internal.xml.schema.events.JavaEventType;
 import rabbit.data.internal.xml.schema.events.LaunchEventType;
 import rabbit.data.internal.xml.schema.events.PartEventType;
@@ -25,6 +26,7 @@ import rabbit.data.internal.xml.schema.events.SessionEventType;
 import rabbit.data.internal.xml.schema.events.TaskFileEventType;
 import rabbit.data.store.model.CommandEvent;
 import rabbit.data.store.model.FileEvent;
+import rabbit.data.store.model.FileUpdEvent;
 import rabbit.data.store.model.JavaEvent;
 import rabbit.data.store.model.LaunchEvent;
 import rabbit.data.store.model.PartEvent;
@@ -49,6 +51,10 @@ public class ConverterModule extends AbstractModule {
 
     bind(new TypeLiteral<IConverter<FileEvent, FileEventType>>() {})
         .to(FileEventConverter.class);
+
+    bind(new TypeLiteral<IConverter<FileUpdEvent, FileUpdEventType>>() {})
+        .to(FileUpdEventConverter.class);
+
 
     bind(new TypeLiteral<IConverter<JavaEvent, JavaEventType>>() {})
         .to(JavaEventConverter.class);

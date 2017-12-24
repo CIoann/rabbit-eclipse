@@ -12,6 +12,7 @@
     <xs:sequence>
       <xs:element name="commandEvents" type="commandEventListType" maxOccurs="unbounded" />
       <xs:element name="partEvents" type="partEventListType" maxOccurs="unbounded" />
+      <xs:element name="fileUpdEvents" type="fileUpdEventListType" maxOccurs="unbounded" />
       <xs:element name="fileEvents" type="fileEventListType" maxOccurs="unbounded" />
       <xs:element name="perspectiveEvents" type="perspectiveEventListType" maxOccurs="unbounded" />
       <xs:element name="taskFileEvents" type="taskFileEventListType" maxOccurs="unbounded" />
@@ -71,6 +72,23 @@
     <xs:complexContent>
       <xs:extension base="durationEventType">
         <xs:attribute name="perspectiveId" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <!-- File Events: -->
+  <xs:complexType name="fileUpdEventListType">
+    <xs:complexContent>
+      <xs:extension base="eventGroupType">
+        <xs:sequence>
+          <xs:element name="fileUpdEvent" type="fileUpdEventType" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fileUpdEventType">
+    <xs:complexContent>
+      <xs:extension base="durationEventType">
+        <xs:attribute name="filePath" type="xs:string" use="required" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
