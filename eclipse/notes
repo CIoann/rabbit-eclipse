@@ -185,4 +185,7 @@ created a small program to read and change the type.
 ===============================================================
 
 Inheritance or connected files are updated - changed if one connected file is accessed.
-
+Refactoring doesn't have correct timing. list updates after the command is executed.
+=======
+REFACTORING NOW RECORDS CORRECTLY
+-- what happens with ADD/REMOVE

@@ -31,7 +31,9 @@ import java.sql.Timestamp;
 public class FileUpdEvent extends ContinuousEvent {
 
   private final IPath filePath;
-  private final int sid;
+  
+	private final String filename;
+	private final int sid;
   private final String fileActivity;
   /**
    * Constructs a new event.
@@ -46,12 +48,19 @@ public class FileUpdEvent extends ContinuousEvent {
    */
   
   //TEST 3:  NEED TO PUT TIMESTAMP IN CONSTRUCTOR
-  public FileUpdEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd, IPath filePath, int sid, String act) {
-    super(tsStart,tsEnd,interval);
-    this.sid=sid;
-    this.filePath = checkNotNull(filePath);
-    this.fileActivity = checkNotNull(act);
-  }
+//  public FileUpdEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd, IPath filePath, int sid, String act) {
+//    super(tsStart,tsEnd,interval);
+//    this.sid=sid;
+//    this.filePath = checkNotNull(filePath);
+//    this.fileActivity = checkNotNull(act);
+//  }
+  public FileUpdEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd,IPath filePath, String filename, int sid, String act) {
+	    super(tsStart,tsEnd,interval);
+	    this.sid=sid;
+	    this.filename = filename;
+	    this.filePath = checkNotNull(filePath);
+	    this.fileActivity = checkNotNull(act);
+	  }
 
   public String getFileActivity() {
 	  return this.fileActivity;
@@ -65,7 +74,10 @@ public class FileUpdEvent extends ContinuousEvent {
    * 
    * @return The file path, never null.
    */
-  public final IPath getFilePath() {
+  public final String getFileName() {
+	  return filename;
+  }
+ public final IPath getFilePath() {
     return filePath;
   }
 }

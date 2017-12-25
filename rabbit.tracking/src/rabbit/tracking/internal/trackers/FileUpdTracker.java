@@ -28,6 +28,8 @@ public class FileUpdTracker extends AbstractTracker<FileUpdEvent> {
 		               break;
 		            case IResourceChangeEvent.PRE_DELETE:
 		               break;
+		            case IResourceChangeEvent.PRE_BUILD:
+		            	
 		            case IResourceChangeEvent.POST_CHANGE:
 		            //   System.out.println("Resources have changed.");
 				         try {
