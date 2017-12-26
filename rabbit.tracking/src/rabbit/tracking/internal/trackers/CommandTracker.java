@@ -142,18 +142,9 @@ public void setLastEvent(ExecutionEvent lastEvent) {
     					System.out.println("CMD_ON_FILE: File was Edited by commands: "+ CMD_EDIT + " " + CMD_TEXTEDIT + " " + CMD_SOURCE +" " +  CMD_UNCATEGORIZED);
     					addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,getActivePart()));
     				}else if (cmdHandle == CMD_NON_FILE){
-    					
 		    					System.out.println("CMD_NON_FILE: Must run list for refactor affected files" + lastEvent.getCommand().getName() + lastEvent.getCommand().getCategory().getName());
-
 		    					System.out.println("SIZE OF FUE LIST : " + DeltaVis.getFueList().size() );
-//		    					if (!DeltaVis.getFueList().isEmpty()) {
-//		    						System.out.println(""+DeltaVis.getfue().getFilePath());
-//		    					
-//		    			       	  	for (int i=0;i<DeltaVis.getFueList().size(); i++) {
-//		    			       	  		System.out.println("List : "+ DeltaVis.getFueList().get(i).getFileName());
-//		    			       	  	} 
-		    						System.out.println("Run the list and save for each file");
-		    				//	}
+		    					addData(new CommandEvent(now, lastEvent, TrackingPlugin.test_sid, DeltaVis.getfue().getFileName()));
     				
     				}else if (cmdHandle == CMD_IGNORE) {
     					System.out.println("CMD_IGNORE: This commands should not be used for process mining on files");
@@ -191,19 +182,13 @@ public void setLastEvent(ExecutionEvent lastEvent) {
 
   @Override
   public void preExecute(String commandId, ExecutionEvent event) {
-
-		ArrayList<FileUpdEvent> fue = new ArrayList<FileUpdEvent>();
 		if (!DeltaVis.getFueList().isEmpty()) {
-			fue = DeltaVis.getFueListReduced();
-			
 			DateTime now = new DateTime(); 
+//			System.out.println("The files that have been refactored");
 			for (FileUpdEvent e : DeltaVis.getFueListReduced()) {
 				
-//				if (e.getFileActivity().equals(DeltaVis.FILE_REMOVED)) {
-
+//					System.out.println("The files: " + e.getFileName());
 					addData(new CommandEvent(now, lastEvent, TrackingPlugin.test_sid, e.getFileName()));
-		   	  		
-//				}	System.out.println("List : "+ e.getFileName());   	 
 			}
 	   	  	DeltaVis.getFueList().clear();
 		}
