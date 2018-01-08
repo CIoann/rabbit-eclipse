@@ -182,6 +182,8 @@ public void setLastEvent(ExecutionEvent lastEvent) {
 
   @Override
   public void preExecute(String commandId, ExecutionEvent event) {
+
+	  lastEvent = event;	
 		if (!DeltaVis.getFueList().isEmpty()) {
 			DateTime now = new DateTime(); 
 //			System.out.println("The files that have been refactored");

@@ -10,7 +10,8 @@ Require-Bundle: org.eclipse.ui,
  rabbit.data.handler;bundle-version="1.0.0",
  org.eclipse.ui.ide,
  rabbit.data;bundle-version="1.1.0",
- rabbit.common;bundle-version="1.0.0"
+ rabbit.common;bundle-version="1.0.0",
+ org.eclipse.jdt.core
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: rabbit.tracking,
@@ -19,3 +20,4 @@ Export-Package: rabbit.tracking,
  rabbit.tracking.internal.trackers;x-friends:="rabbit.tracking.mylyn,rabbit.tracking.java",
  rabbit.tracking.internal.util
 Eclipse-ExtensibleAPI: true
+Import-Package: org.eclipse.jface.text
