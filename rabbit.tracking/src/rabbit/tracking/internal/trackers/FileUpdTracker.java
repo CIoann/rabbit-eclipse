@@ -1,5 +1,9 @@
 package rabbit.tracking.internal.trackers;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import org.eclipse.core.internal.resources.File;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
@@ -9,7 +13,10 @@ import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.resources.team.IResourceTree;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.jdt.core.IClassFile;
 import org.eclipse.jdt.core.ICompilationUnit;
+import org.eclipse.jdt.core.IField;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IPackageFragment;
@@ -17,6 +24,19 @@ import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jdt.core.ToolFactory;
+import org.eclipse.jdt.core.compiler.IScanner;
+import org.eclipse.jdt.core.compiler.ITerminalSymbols;
+import org.eclipse.jdt.core.compiler.InvalidInputException;
+import org.eclipse.jdt.core.dom.AST;
+import org.eclipse.jdt.core.dom.ASTParser;
+import org.eclipse.jdt.core.dom.ASTVisitor;
+import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.SimpleName;
+import org.eclipse.jdt.core.dom.TypeDeclaration;
+import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
+import org.eclipse.jdt.internal.compiler.parser.JavadocParser;
+import org.eclipse.jdt.internal.core.search.matching.DeclarationOfAccessedFieldsPattern;
 import org.eclipse.jface.text.Document;
 
 import rabbit.data.handler.DataHandler;
@@ -25,7 +45,8 @@ import rabbit.data.store.model.FileUpdEvent;
 import rabbit.tracking.internal.DeltaVis;
 
 public class FileUpdTracker extends AbstractTracker<FileUpdEvent> {
-	IWorkspace ws;
+	IWorkspace ws= ResourcesPlugin.getWorkspace();
+	
 	IWorkspaceRoot root ;
 
 	IProject[] projects;
@@ -38,7 +59,7 @@ public class FileUpdTracker extends AbstractTracker<FileUpdEvent> {
 		@Override
 		public void resourceChanged(IResourceChangeEvent event) {
 			   IResource res = event.getResource();
-			   updateProjects();
+			 //  updateProjects();
 			  
 		         switch (event.getType()) {
 		   
@@ -72,12 +93,12 @@ public class FileUpdTracker extends AbstractTracker<FileUpdEvent> {
 	public FileUpdTracker() {
 		super();
 		dv = new DeltaVis();
-		updateProjects();
+		
+	//	updateProjects();
 
 	}
 	private void updateProjects() {
-		System.out.println("a change occurred! ");
-		ws = ResourcesPlugin.getWorkspace();
+		System.out.println("A change occurred! ");
 		root = ws.getRoot();
 		projects = root.getProjects();
 		accessProjects(); 
@@ -112,32 +133,86 @@ public class FileUpdTracker extends AbstractTracker<FileUpdEvent> {
 		for (IPackageFragment pkg : packages) {
 			if(pkg.getKind() == IPackageFragmentRoot.K_SOURCE) {
 				System.out.println("Package: " + pkg.getElementName());
-				  printICompilationUnitInfo(pkg);
+				printICompilationUnitInfo(pkg);
 			}
 		}
 		
 	}
 	
+	@SuppressWarnings("deprecation")
 	private void printICompilationUnitInfo(IPackageFragment pkg)     throws JavaModelException {
         for (ICompilationUnit unit : pkg.getCompilationUnits()) {
-            printCompilationUnitDetails(unit);
-
-        }
-		
+             printCompilationUnitDetails(unit);
+             // identify if its a class, or interface 
+             // new packages/ projects keep an array to compare are tracked before keep 
+           if(  unit.toString().contains("class")) {
+        	   System.out.println("CLASS" + unit.getElementName());
+           }
+           if(  unit.toString().contains("interface")) {
+        	   System.out.println("interface" + unit.getElementName());
+           }
+             
+//             ASTParser parser = ASTParser.newParser(AST.JLS9);
+//             parser.setKind(ASTParser.K_COMPILATION_UNIT);
+//             parser.setSource(unit);
+//             parser.setResolveBindings(true);
+//             CompilationUnit astRoot = (CompilationUnit) parser.createAST(null);
+//             
+//             astRoot.accept(new ASTVisitor() {
+//     	        	public boolean visit(TypeDeclaration node) {
+//     	        		
+//     	        		System.out.println(("" +node.getName().toString()));
+//     	        	//	System.out.println("" + node.get);
+//     	        		System.out.print("NODE INFO"  + node.toString());
+//     	        		return true;
+//         	    	   	
+//     	        }
+//     		});
+        	/*    	   	
+        	   	public boolean visit(TypeDeclaration node) {
+        	   		System.out.println("THE NAME I NEED " + node.getName());
+        	   		return true;
+        	   	}
+        	   	
+			});
+	        }*/
+	    }
 	}
 
 
 	private void printCompilationUnitDetails(ICompilationUnit unit) throws JavaModelException {
 		System.out.println("Source file " + unit.getElementName());
         Document doc = new Document(unit.getSource());
-  //  For now I don't need IMethods    printIMethods(unit);
+        System.out.println("" + unit.getElementType());
+        //IJavaElement.
+       
+    //  analyseSource(unit);
+     // printIMethods(unit);
 		
+	}
+	private void analyseSource(ICompilationUnit unit) throws JavaModelException {
+		IScanner sc = ToolFactory.createScanner(false, false, false, false);
+		sc.setSource(unit.getSource().toCharArray());
+		int token;
+		try {
+			token = sc.getNextToken();
+			while (token != ITerminalSymbols.TokenNameEOF) {
+			
+				sc.getCurrentTokenSource();
+					token = sc.getNextToken();
+			}
+		} catch (InvalidInputException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+		}
 	}
 
 	private void printIMethods(ICompilationUnit unit) throws JavaModelException {
 		IType[] allTypes = unit.getAllTypes();
         for (IType type : allTypes) {
             printIMethodDetails(type);
+            
+           
         }
 		
 	}

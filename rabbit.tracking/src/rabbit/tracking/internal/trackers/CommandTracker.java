@@ -23,8 +23,6 @@ import rabbit.tracking.internal.DeltaVis;
 import rabbit.tracking.internal.TrackingPlugin;
 import rabbit.tracking.internal.util.WorkbenchUtil;
 
-import java.util.ArrayList;
-
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -112,88 +110,96 @@ public void setLastEvent(ExecutionEvent lastEvent) {
   public void postExecuteSuccess(String commandId, Object returnValue) {
 	  int cmdHandle = CMD_ERROR;
 	  String cmd_category = CMD_INVALID;
-    if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId)) {
-
-    	try {
-			 cmd_category = lastEvent.getCommand().getCategory().getName();
-			cmdHandle= defineHandle(cmd_category);
-		} catch (NotDefinedException e1) {
-			e1.printStackTrace();
-		}
-//    	try {
-//			System.out.println("Test " + lastEvent.getCommand().getName() + "\n AppContext: " +
-//								//	lastEvent.getApplicationContext().getClass().getName() +"\n Category: "+
-//								lastEvent.getCommand().getCategory().getName());
-//		} catch (NotDefinedException e) {
-//			e.printStackTrace();
-//		}
-
-    	DateTime now = new DateTime();
-     // lastEvent.getCommand();
-      
-      
-  
-      if( getActivePart()!=null) {
-    		try {
-    			if (getActivePart().contains(".java")) {
-    				System.out.println("Test phase 1: CommandTracker, new command entered" + lastEvent.getCommand().getName() + "what is the type " + lastEvent.getCommand().getCategory().getName()+ "on file"+ getActivePart());
-
-    				if (cmdHandle == CMD_ON_FILE) {
-    					System.out.println("CMD_ON_FILE: File was Edited by commands: "+ CMD_EDIT + " " + CMD_TEXTEDIT + " " + CMD_SOURCE +" " +  CMD_UNCATEGORIZED);
-    					addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,getActivePart()));
-    				}else if (cmdHandle == CMD_NON_FILE){
-		    					System.out.println("CMD_NON_FILE: Must run list for refactor affected files" + lastEvent.getCommand().getName() + lastEvent.getCommand().getCategory().getName());
-		    					System.out.println("SIZE OF FUE LIST : " + DeltaVis.getFueList().size() );
-		    					addData(new CommandEvent(now, lastEvent, TrackingPlugin.test_sid, DeltaVis.getfue().getFileName()));
-    				
-    				}else if (cmdHandle == CMD_IGNORE) {
-    					System.out.println("CMD_IGNORE: This commands should not be used for process mining on files");
-    					addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,CMD_INVALID));
-    				//	DeltaVis.getFueList().clear();
-    				}else if (cmdHandle == CMD_ON_PROJECT) {
-    					 if (!DeltaVis.getFueList().isEmpty()) {
-    						 System.out.println("Not Empty");
-    						 System.out.println("Same Time" + DeltaVis.getfue().getFilePath() + getActivePart());
-    						 addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,DeltaVis.getfue().getFilePath().toString()));
-    					 }else {
-    						 addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,CMD_INVALID));
-    					 }
-    					System.out.println("CMD_ON_PROJECT: run/debug commands checked");
-    				}else {
-    					System.out.println("CMD_ERROR: unregistered command");
-    					addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid,CMD_INVALID));
-    				}
-    			}else {
-      		      addData(new CommandEvent(now, lastEvent,TrackingPlugin.test_sid));
-    			}
-			//	System.out.println("Test phase 1: CommandTracker, new command entered" + lastEvent.getCommand().getName() + "what is the type " + lastEvent.getCommand().getCategory().getName()+ "on file"+ getActivePart());
+	  DateTime now = new DateTime();
+	  String dsfile = CMD_INVALID;
+    
+	  if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId)) {
+		  ExecutionEvent lee = lastEvent;
+		  Command cmd = lee.getCommand();	
+				
+		  try {
+				cmd_category = cmd.getCategory().getName();
+				cmdHandle= defineHandle(cmd_category);
+			
 			} catch (NotDefinedException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
-    	  
-    	  
-      }
+			
 		
-      }
-    
+			if( getActivePart()!=null) {
+	    			if (getActivePart().contains(".java")) {
+	    				try {
+	    						System.out.println("COMMAND-TRACKER :" + lastEvent.getCommand().getName() + "what is the type " + lastEvent.getCommand().getCategory().getName()+ "on file "+ getActivePart());
+						//	System.out.println("Test phase 1: CommandTracker" +cmd.getName());
+						} catch (NotDefinedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+		    			if (cmdHandle == CMD_ON_FILE) {
+		  		    		dsfile = getActivePart();
+		    				
+		    			}else if (cmdHandle == CMD_IGNORE) {
+		    				dsfile= getActivePart();
+		    				
+		    			}else if(cmdHandle == CMD_ON_PROJECT) {
+		    				//if this is true for any reason then we need to use getactiveproject
+		    				dsfile = DeltaVis.getfue().getFileName();
+	        				 
+		    				if (!DeltaVis.getFueList().isEmpty()) {
+		    					 System.out.println("COMMAND-TRACKER: CMD_ON_PROJECT");
+		    				 }
+		    				//dsfile= getActiveProject();
+		    				
+		    			}else if(cmdHandle == CMD_NON_FILE) {
+		    				
+		    				if (!(DeltaVis.getfue() == null)) {
+			    				dsfile = DeltaVis.getfue().getFileName();	
+		    				}
+		    					//dsfile = getActivePart();
+
+		    		 //  	  	DeltaVis.getFueList().clear();
+		    				
+		    			}else{
+		    				dsfile = CMD_INVALID;
+		    			}
+		    			
+		    		}
+			}
+			addData(new CommandEvent(now, lee,TrackingPlugin.test_sid,dsfile));
+			
+    }
   }
+  
+
+	
+/* 
+  
+    
+//    			}else if (cmdHandle == CMD_NON_FILE){
+		    			//		System.out.println("CMD_NON_FILE: Must run list for refactor affected files" + lastEvent.getCommand().getName() + lastEvent.getCommand().getCategory().getName());
+		    		//			System.out.println("SIZE OF FUE LIST : " + DeltaVis.getFueList().size() );
+    					
+    					System.out.println("what happens if its not a .java file");
+		    					addData(new CommandEvent(now, lastEvent, TrackingPlugin.test_sid,DeltaVis.getfue().getFileName()));
+    				
+    		*/		
   
 
   @Override
   public void preExecute(String commandId, ExecutionEvent event) {
 
-	  lastEvent = event;	
+	// lastEvent = event;	
 		if (!DeltaVis.getFueList().isEmpty()) {
 			DateTime now = new DateTime(); 
-//			System.out.println("The files that have been refactored");
+			System.out.println("The files that have been refactored");
 			for (FileUpdEvent e : DeltaVis.getFueListReduced()) {
-				
-//					System.out.println("The files: " + e.getFileName());
+//				
+					System.out.println("The files: " + e.getFileName());
 					addData(new CommandEvent(now, lastEvent, TrackingPlugin.test_sid, e.getFileName()));
 			}
 	   	  	DeltaVis.getFueList().clear();
-		}
+	   	  	}
 		  lastEvent = event;	
   }
 
@@ -219,6 +225,11 @@ public void setLastEvent(ExecutionEvent lastEvent) {
 		  return WorkbenchUtil.getActivePart().getSite().getPage().getActiveEditor().getTitle();
 	  
   }
+  
+  
+  private String getActiveProject(){
+	  return "notdone";
+  }
   private ICommandService getCommandService() {
     return (ICommandService) PlatformUI.getWorkbench().getService(
         ICommandService.class);
@@ -230,6 +241,8 @@ public void setLastEvent(ExecutionEvent lastEvent) {
 	  }
 	  return false;
   }
+  
+
   private int defineHandle(String evaluate) {
 	if (evaluate.equals(CMD_HELP) || (evaluate.equals(CMD_WINDOW)) || evaluate.equals(CMD_VIEW)) {
 		return CMD_IGNORE;

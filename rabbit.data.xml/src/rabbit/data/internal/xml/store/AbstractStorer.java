@@ -145,7 +145,6 @@ public abstract class AbstractStorer<E extends DiscreteEvent, T, S extends Event
       commit();
       currentMonth = time.toLocalDate();
     }
-    System.out.println("Test 1: Inserting data!" + toXmlDate(event.getTime()));
     IMerger<T> merger = getMerger();
     T element = getConverter().convert(event);
     for (S category : data) {

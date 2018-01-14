@@ -7,6 +7,7 @@ import java.util.HashSet;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.joda.time.Interval;
@@ -22,6 +23,7 @@ public class DeltaVis  implements IResourceDeltaVisitor{
 	private static ArrayList<FileUpdEvent> updFiles;
 	private static FileUpdEvent fue; 
 	private static boolean listupd ;
+	IResource res ;
 	public DeltaVis() {
 		super();
 		updFiles = new ArrayList<FileUpdEvent>();
@@ -31,36 +33,27 @@ public class DeltaVis  implements IResourceDeltaVisitor{
 	@Override
 	public boolean visit(IResourceDelta delta) throws CoreException {
 		// TODO Auto-generated method stub
-	     IResource res = delta.getResource();
+	     res= delta.getResource();
 	     Timestamp ts = new Timestamp(System.currentTimeMillis());
          String str = res.getFullPath().lastSegment();
          IPath ipjf = res.getFullPath();
-         String filename = res.getFullPath().lastSegment();
+         String filename = res.getFullPath().toString();
+
+       
 	 	listupd = true;
 	       switch (delta.getKind()) {
 	          case IResourceDelta.ADDED:
-	        	  if (str!=null) {
-	            	 	if(str.contains("java")) {
-	            	 	//	System.out.println("Java File Added" +res.getFullPath());
-	            	 		 fue =new FileUpdEvent(new Interval(System.currentTimeMillis(),System.currentTimeMillis()),ts,ts,ipjf,filename,TrackingPlugin.test_sid,FILE_ADDED);
-	            	 		 updFiles.add(fue);
-	       	        	 	}
-	             }
-	             break;
-	          case IResourceDelta.REMOVED:
-	             if (str!=null) {
-	            	 	if(str.contains("java")) {
-	            	 	//	System.out.println("Java File Removed" +res.getFullPath());
-	            	 		 fue = new FileUpdEvent(new Interval(System.currentTimeMillis(),System.currentTimeMillis()),ts,ts,ipjf,filename,TrackingPlugin.test_sid,FILE_REMOVED);
-	            	 		 updFiles.add(fue);
-		       	        	 	
-	            	 	}
-	             }
+	        	  	configureResource(str, res, FILE_ADDED, ts, ipjf, filename);
+	        	  	break;
+	          case IResourceDelta.REMOVED:   
+
+		       //    	 System.out.println("remove" + filename);
+	        	  	configureResource(str, res, FILE_REMOVED, ts, ipjf, filename);
 	             break;
 	          case IResourceDelta.CHANGED:
 	             if (str!=null) {
-	            	 	if(str.contains("java")) {
-	            	 	//	System.out.println("Java File Changed" +res.getFullPath());
+	                 if(str.contains("java")) {
+	            	 		System.out.println("Java File Changed" +res.getFullPath());
 	            	 		 fue =new FileUpdEvent(new Interval(System.currentTimeMillis(),System.currentTimeMillis()),ts,ts,ipjf,filename,TrackingPlugin.test_sid,FILE_CHANGED);
 	            	 		 updFiles.add(fue);
 		       	        	 	
@@ -72,6 +65,61 @@ public class DeltaVis  implements IResourceDeltaVisitor{
 		return true;
 	}
 	
+	
+	private void configureResource(String lastSegment, IResource rest, String act, Timestamp ts, IPath ipjf, String filename) {
+			
+		if(isValidCreatedFile(filename)){
+				 
+			 System.out.println("add/remove" + filename);
+		
+			switch (rest.getType()) {
+	        case IResource.FILE:
+       
+	       	 	if (lastSegment!=null) {
+		            	 	if(lastSegment.contains("java")) {
+		            	 		 fue =new FileUpdEvent(new Interval(System.currentTimeMillis(),System.currentTimeMillis()),ts,ts,ipjf,filename,TrackingPlugin.test_sid,act);
+		            	 		 updFiles.add(fue);
+		       	        	 	}
+	       	 	}
+	       	 	break;
+	        case IResource.FOLDER:
+	        		if (lastSegment!=null) {
+	        		//	if (!(resPath.contains(".settings")) && (!(resPath.contains("bin")))){
+	       	 		 fue =new FileUpdEvent(new Interval(System.currentTimeMillis(),System.currentTimeMillis()),ts,ts,ipjf,filename,TrackingPlugin.test_sid,act);
+	       	 		 updFiles.add(fue);
+       	 	//	}
+	        		}
+	        		break;
+	        case IResource.PROJECT:
+	      	  			if (lastSegment!=null) {
+	      	  				fue =new FileUpdEvent(new Interval(System.currentTimeMillis(),System.currentTimeMillis()),ts,ts,ipjf,filename,TrackingPlugin.test_sid,act);
+		             	 	updFiles.add(fue);
+	      	  			}
+	      	  	break;
+	        case IResource.ROOT:
+		
+		    	 		System.out.println("it was a root");
+		       	 	break;
+		        }
+		}else {
+			
+		}
+	
+	}
+	
+	private boolean isValidCreatedFile(String resPath) {
+		if (		   (resPath.contains(".class"))
+				|| (resPath.contains("/bin/")) 
+				|| (resPath.contains("/bin"))
+				|| (resPath.contains(".settings")) 
+				|| (resPath.contains("/.settings/")) 
+				|| (resPath.contains(".project"))
+				){
+						return false;
+			}
+		return true;
+			
+	}
 	public static ArrayList<FileUpdEvent> getFueListReduced(){
 		int size = updFiles.size();
 		
@@ -97,6 +145,5 @@ public class DeltaVis  implements IResourceDeltaVisitor{
 	public static boolean  isListUpdate() {
 		return listupd;
 	}
-
 
 }

@@ -71,7 +71,7 @@ public class TrackingPlugin extends AbstractUIPlugin implements
     long oneMin = TimeUnit.MINUTES.toMillis(1);
     this.test_sid = 0;
     idleDetector = new IdleDetector(getWorkbench().getDisplay(), oneMin, oneSec);
-  //  dv = new DeltaVis();
+
     trackers = ImmutableSet.of();
   }
 
@@ -125,7 +125,6 @@ public class TrackingPlugin extends AbstractUIPlugin implements
 
     getWorkbench().addWorkbenchListener(this);
 
-  //  System.out.println("Test 1: Create Trackers!");
     trackers = createTrackers();
     setEnableTrackers(trackers, true);
 
