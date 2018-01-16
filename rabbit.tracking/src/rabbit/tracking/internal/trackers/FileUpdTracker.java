@@ -59,7 +59,7 @@ public class FileUpdTracker extends AbstractTracker<FileUpdEvent> {
 		@Override
 		public void resourceChanged(IResourceChangeEvent event) {
 			   IResource res = event.getResource();
-			 //  updateProjects();
+		//	   updateProjects();
 			  
 		         switch (event.getType()) {
 		   
@@ -97,138 +97,7 @@ public class FileUpdTracker extends AbstractTracker<FileUpdEvent> {
 	//	updateProjects();
 
 	}
-	private void updateProjects() {
-		System.out.println("A change occurred! ");
-		root = ws.getRoot();
-		projects = root.getProjects();
-		accessProjects(); 
-	}
 	
-	
-	private void accessProjects() {
-		for (IProject project: projects) {
-			try {
-				printProjectInfo(project);
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	private void printProjectInfo(IProject project) throws CoreException {
-		
-		System.out.println("Working in project" + project.getName());
-		if(project.isNatureEnabled(nature)) {
-			IJavaProject jp = JavaCore.create(project);
-			printPackageInfo(jp);
-			
-			
-		}
-	}
-	
-	
-	private void printPackageInfo(IJavaProject jp) throws JavaModelException {
-		IPackageFragment[] packages = jp.getPackageFragments();
-		for (IPackageFragment pkg : packages) {
-			if(pkg.getKind() == IPackageFragmentRoot.K_SOURCE) {
-				System.out.println("Package: " + pkg.getElementName());
-				printICompilationUnitInfo(pkg);
-			}
-		}
-		
-	}
-	
-	@SuppressWarnings("deprecation")
-	private void printICompilationUnitInfo(IPackageFragment pkg)     throws JavaModelException {
-        for (ICompilationUnit unit : pkg.getCompilationUnits()) {
-             printCompilationUnitDetails(unit);
-             // identify if its a class, or interface 
-             // new packages/ projects keep an array to compare are tracked before keep 
-           if(  unit.toString().contains("class")) {
-        	   System.out.println("CLASS" + unit.getElementName());
-           }
-           if(  unit.toString().contains("interface")) {
-        	   System.out.println("interface" + unit.getElementName());
-           }
-             
-//             ASTParser parser = ASTParser.newParser(AST.JLS9);
-//             parser.setKind(ASTParser.K_COMPILATION_UNIT);
-//             parser.setSource(unit);
-//             parser.setResolveBindings(true);
-//             CompilationUnit astRoot = (CompilationUnit) parser.createAST(null);
-//             
-//             astRoot.accept(new ASTVisitor() {
-//     	        	public boolean visit(TypeDeclaration node) {
-//     	        		
-//     	        		System.out.println(("" +node.getName().toString()));
-//     	        	//	System.out.println("" + node.get);
-//     	        		System.out.print("NODE INFO"  + node.toString());
-//     	        		return true;
-//         	    	   	
-//     	        }
-//     		});
-        	/*    	   	
-        	   	public boolean visit(TypeDeclaration node) {
-        	   		System.out.println("THE NAME I NEED " + node.getName());
-        	   		return true;
-        	   	}
-        	   	
-			});
-	        }*/
-	    }
-	}
-
-
-	private void printCompilationUnitDetails(ICompilationUnit unit) throws JavaModelException {
-		System.out.println("Source file " + unit.getElementName());
-        Document doc = new Document(unit.getSource());
-        System.out.println("" + unit.getElementType());
-        //IJavaElement.
-       
-    //  analyseSource(unit);
-     // printIMethods(unit);
-		
-	}
-	private void analyseSource(ICompilationUnit unit) throws JavaModelException {
-		IScanner sc = ToolFactory.createScanner(false, false, false, false);
-		sc.setSource(unit.getSource().toCharArray());
-		int token;
-		try {
-			token = sc.getNextToken();
-			while (token != ITerminalSymbols.TokenNameEOF) {
-			
-				sc.getCurrentTokenSource();
-					token = sc.getNextToken();
-			}
-		} catch (InvalidInputException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-		}
-	}
-
-	private void printIMethods(ICompilationUnit unit) throws JavaModelException {
-		IType[] allTypes = unit.getAllTypes();
-        for (IType type : allTypes) {
-            printIMethodDetails(type);
-            
-           
-        }
-		
-	}
-
-	private void printIMethodDetails(IType type) throws JavaModelException {
-		 IMethod[] methods = type.getMethods();
-	        for (IMethod method : methods) {
-
-	            System.out.println("Method name " + method.getElementName());
-	            System.out.println("Signature " + method.getSignature());
-	            System.out.println("Return Type " + method.getReturnType());
-
-	        }	 
-		
-	}
-
 
 	@Override
 	protected IStorer<FileUpdEvent> createDataStorer() {

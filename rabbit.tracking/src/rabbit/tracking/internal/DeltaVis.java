@@ -4,12 +4,26 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
+import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.jdt.core.ICompilationUnit;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IPackageFragment;
+import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jdt.core.ToolFactory;
+import org.eclipse.jdt.core.compiler.IScanner;
+import org.eclipse.jdt.core.compiler.ITerminalSymbols;
+import org.eclipse.jdt.core.compiler.InvalidInputException;
 import org.joda.time.Interval;
 
 import rabbit.data.store.model.FileUpdEvent;
@@ -19,15 +33,18 @@ public class DeltaVis  implements IResourceDeltaVisitor{
 	public static final String FILE_CHANGED = "changed";
 	public static final String FILE_ADDED = "added";
 	public static final String FILE_REMOVED = "removed";
-	
+ 
 	private static ArrayList<FileUpdEvent> updFiles;
 	private static FileUpdEvent fue; 
 	private static boolean listupd ;
+	
+	private JMHandle jmHandle;
 	IResource res ;
 	public DeltaVis() {
 		super();
 		updFiles = new ArrayList<FileUpdEvent>();
 		listupd = false;
+		jmHandle = new JMHandle();
 	}
 	
 	@Override
@@ -70,8 +87,8 @@ public class DeltaVis  implements IResourceDeltaVisitor{
 			
 		if(isValidCreatedFile(filename)){
 				 
-			 System.out.println("add/remove" + filename);
-		
+		//	 System.out.println("add/remove" + filename);
+		     jmHandle.checkClass(filename)	;	       
 			switch (rest.getType()) {
 	        case IResource.FILE:
        
@@ -120,6 +137,7 @@ public class DeltaVis  implements IResourceDeltaVisitor{
 		return true;
 			
 	}
+	
 	public static ArrayList<FileUpdEvent> getFueListReduced(){
 		int size = updFiles.size();
 		
@@ -145,5 +163,6 @@ public class DeltaVis  implements IResourceDeltaVisitor{
 	public static boolean  isListUpdate() {
 		return listupd;
 	}
+	
 
 }
