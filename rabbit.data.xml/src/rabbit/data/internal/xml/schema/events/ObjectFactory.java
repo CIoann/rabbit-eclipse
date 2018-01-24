@@ -13,6 +13,8 @@ import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
 
+import rabbit.data.store.model.FmEvent;
+
 
 /**
  * This object contains factory methods for each 
@@ -138,6 +140,10 @@ public class ObjectFactory {
     
     public FileUpdEventListType createFileUpdEventListType() {
         return new FileUpdEventListType();
+    }
+    
+    public FmEventListType createFmEventListType() {
+    	return new FmEventListType();
     }
 
     /**

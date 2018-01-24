@@ -1,5 +1,7 @@
 package rabbit.tracking.internal;
 
+import java.util.ArrayList;
+
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -29,34 +31,64 @@ public class JMHandle{
 	IWorkspaceRoot root ;
 
 	IProject[] projects;
+	private final int CLASS = 0;
+	private final int INTERFACE = 1;
+	private final int INVALID = -1;
 	
+	private JavaData jde;
+	private ArrayList<JavaData> jd;
 	private boolean isClass;
 	 String fileCheck="";
-	
+	 String fileFM ="";
+	 private boolean isSearch;
+	private boolean isCheck;
 	private final String nature = "org.eclipse.jdt.core.javanature";  
  
 	public JMHandle() {
-
+		jd = new ArrayList<JavaData>();
 		fileCheck = "";
+		fileFM = "";
+		isCheck = false;
+		isClass = false;
+		isSearch =false;
 		updateProjects();
 	}
 
 	
 	private void updateProjects() {
-	
-		System.out.println("A change occurred! ");
+		jd.clear();
+		// System.out.println("A change occurred! ");
 		root = ws.getRoot();
 		projects = root.getProjects();
 		accessProjects(); 
-
-		isClass = false;
+//		System.out.println("THE JAVA DATA JMHANDLE");
+//		for (JavaData event : jd) {
+//			System.out.println("COLLECTED" + event.getFiletype() + event.getMethodName() +
+//					event.getMethodSign() +event.getMethodType());
+//			
+//		}
+	
+		
 	}
 	
 	public boolean checkClass(String filename) {
-		System.out.println("filename ");
+		// System.out.println("Filename: Find Class or Interface : "+filename);
 		this.fileCheck=filename;
+		this.fileFM =filename;
+		isCheck = true;
+		isSearch = false;
 		updateProjects();
 		return isClass;
+	}
+	
+	public void findMethods(String filename) {
+		// System.out.println("Filename: Find Methods");
+		this.fileFM = filename;
+		this.fileCheck = filename;
+		isCheck = true;
+		isSearch =true;
+		updateProjects();
+		return;
 	}
 	public boolean isInterface(String filename) {
 		return true;
@@ -99,41 +131,63 @@ public class JMHandle{
 	private void printICompilationUnitInfo(IPackageFragment pkg)     throws JavaModelException {
         for (ICompilationUnit unit : pkg.getCompilationUnits()) {
 //             printCompilationUnitDetails(unit);
-        	if (fileCheck.equals(unit.getPath().toString())) {
-    	   		System.out.println("FILE NAME "+ fileCheck + " FILE UNIT " +unit.getPath().toString());
-    
-    	   		ASTParser parser = ASTParser.newParser(AST.JLS9);
-             parser.setKind(ASTParser.K_COMPILATION_UNIT);
-             parser.setSource(unit);
-             parser.setResolveBindings(true);
-             CompilationUnit astRoot = (CompilationUnit) parser.createAST(null);
-            
-             JavaSourceVisitor jsv = new JavaSourceVisitor();
-             astRoot.accept(jsv);
-             System.out.println("Visitor collected NODE INFO " +jsv.getNodeInfo());
-             if(  jsv.getNodeInfo().contains("class")) {
- 	   
- 	   			System.out.println("CLASS" + unit.getElementName());  		     		       
- 	   		}
-             if(  jsv.getNodeInfo().contains("interface")) {
-  	   			System.out.println("INTERFACE" + unit.getElementName());  		     		       
-  	   		}
-             
-
-        	}
+        	int result=INVALID;
+	        	if (isCheck) { 
+		        	if (fileCheck.equals(unit.getPath().toString())) {
+		        		
+		    	   	//	// System.out.println("FILE NAME "+ fileCheck + " FILE UNIT " +unit.getPath().toString());
+		    	   		result = interOrClass(unit);
+		    	   		
+		    	  
+		        	}
+	        	} 
+	        	
+	        	if (isSearch){
+	        	 	if (fileCheck.equals(unit.getPath().toString())) {
+		        		// System.out.println("FIND METHODS" +fileFM + " FILE UNIT" +unit.getPath().toString() );
+		        		printCompilationUnitDetails(unit, result);
+	        	 	}
+	        	}
         	}
        
 	}
 
 
-	private void printCompilationUnitDetails(ICompilationUnit unit) throws JavaModelException {
-		//System.out.println("Source file " + unit.getElementName());
+	private int interOrClass( ICompilationUnit unit) {
+		if (unit != null) {
+		 ASTParser parser = ASTParser.newParser(AST.JLS9);
+         parser.setKind(ASTParser.K_COMPILATION_UNIT);
+         parser.setSource(unit);
+         parser.setResolveBindings(true);
+         CompilationUnit astRoot = (CompilationUnit) parser.createAST(null);
+        
+         JavaSourceVisitor jsv = new JavaSourceVisitor();
+         astRoot.accept(jsv);
+         // System.out.println("Visitor collected NODE INFO " +jsv.getNodeInfo());
+         if(jsv.getNodeInfo()!=null) {
+             if(  jsv.getNodeInfo().contains("class")) {
+            	 	return CLASS;
+ 	   			//// System.out.println("CLASS" + unit.getElementName());  		     		       
+ 	   		}
+             if(  jsv.getNodeInfo().contains("interface")) {
+  	   			//// System.out.println("INTERFACE" + unit.getElementName());
+            	 	return INTERFACE;
+  	   		}
+         }else {
+        	 return INVALID;
+         }
+		}
+		return INVALID;
+	}
+	
+	private void printCompilationUnitDetails(ICompilationUnit unit, int result) throws JavaModelException {
+	//	// System.out.println("Source file " + unit.getElementName());
         Document doc = new Document(unit.getSource());
-      //  System.out.println("" + unit.getElementType());
+      //  // System.out.println("" + unit.getElementType());
         
      
-      analyseSource(unit);
-      printIMethods(unit);
+    //  analyseSource(unit);
+      printIMethods(unit, result);
 		
 	}
 	private void analyseSource(ICompilationUnit unit) throws JavaModelException {
@@ -153,26 +207,36 @@ public class JMHandle{
 		}
 	}
 
-	private void printIMethods(ICompilationUnit unit) throws JavaModelException {
+	private void printIMethods(ICompilationUnit unit, int result) throws JavaModelException {
 		IType[] allTypes = unit.getAllTypes();
+		// System.out.println("Methods");
         for (IType type : allTypes) {
-            printIMethodDetails(type);
+            printIMethodDetails(type, result);
             
            
         }
 		
 	}
 
-	private void printIMethodDetails(IType type) throws JavaModelException {
+	private void printIMethodDetails(IType type, int result) throws JavaModelException {
 		 IMethod[] methods = type.getMethods();
 	        for (IMethod method : methods) {
 
-	            System.out.println("Method name " + method.getElementName());
-	            System.out.println("Signature " + method.getSignature());
-	            System.out.println("Return Type " + method.getReturnType());
-
+		  		 jde = new JavaData(result+"", method.getElementName(), 
+		  				 method.getSignature(), method.getReturnType());
+		  		 jd.add(jde);
 	        }	 
 		
+	}
+
+
+	public ArrayList<JavaData> getJd() {
+		return jd;
+	}
+
+
+	public void setJd(ArrayList<JavaData> jd) {
+		this.jd = jd;
 	}
 
 }

@@ -2,6 +2,7 @@ package rabbit.data.internal.access.model;
 
 import rabbit.data.access.model.IFileUpdData;
 import rabbit.data.access.model.IKey;
+import rabbit.data.access.model.Keys;
 import rabbit.data.access.model.WorkspaceStorage;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -21,7 +22,7 @@ public class FileUpdData implements IFileUpdData{
   
 
   public FileUpdData(int sid,
-      LocalDate date,Timestamp tsStart,Timestamp tsEnd, WorkspaceStorage workspace, Duration duration, IFile file, String file_activity) {
+      LocalDate date,Timestamp tsStart,Timestamp tsEnd, WorkspaceStorage workspace, Duration duration, IFile file, String file_activity, String mname, String msign, String mtype, String ftype) {
     
     data = new KeyMapBuilder()
     	.put(SID,      checkNotNull(sid,      "sid"))
@@ -32,6 +33,14 @@ public class FileUpdData implements IFileUpdData{
         .put(TIMEND, checkNotNull(tsEnd, "timend"))
         .put(FILE,      checkNotNull(file, "file"))
         .put(FILE_ACTIVITY, checkNotNull(file_activity,"file_activity"))
+        .put(FM_MNAME, checkNotNull(mname,"mname"))
+        .put(FM_MTYPE, checkNotNull(mtype,"mtype"))
+        .put(FM_MSIGN, checkNotNull(msign,"msign"))
+        .put(FTYPE, checkNotNull(ftype,"ftype"))
+
+        
+        
+     
         .build();
   }
 

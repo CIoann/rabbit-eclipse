@@ -24,6 +24,8 @@ public class StoreNames {
   public static final String COMMAND_STORE     = "CommandStore";
   public static final String FILE_STORE        = "FileStore";
   public static final String FILE_UPD_STORE    = "FileUpdStore";
+
+  public static final String FM_STORE   		  = "FmStore";
   public static final String JAVA_STORE        = "JavaStore";
   public static final String LAUNCH_STORE      = "LaunchStore";
   public static final String PART_STORE        = "PartStore";

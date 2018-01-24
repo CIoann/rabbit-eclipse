@@ -73,7 +73,10 @@ public class FileUpdTracker extends AbstractTracker<FileUpdEvent> {
 		            //   System.out.println("Resources have changed.");
 				         try {
 				      			event.getDelta().accept(dv);
-				      			addData(DeltaVis.getfue());
+				      			
+				      			for (FileUpdEvent ev : DeltaVis.getFueList()) {
+				      				addData(ev);
+				      			}
 				      			//System.out.println("Fue" +DeltaVis.getfue().getFilePath());
 				        	  //	System.out.println("Size FUEL " + DeltaVis.getFueList().size());
 				      	//		for (int i=0;i<DeltaVis.getFueList().size(); i++) {

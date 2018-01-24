@@ -41,4 +41,10 @@ public interface IFileUpdData extends IData {
   static final IKey<IFile> FILE = Keys.FILE;
   
   static final IKey<String> FILE_ACTIVITY = Keys.FILE_ACTIVITY;
+  static final IKey<String> FTYPE = Keys.FTYPE;
+  
+  static final IKey<String> FM_MNAME = Keys.FM_MNAME;
+  static final IKey<String> FM_MTYPE = Keys.FM_MTYPE;
+  static final IKey<String> FM_MSIGN = Keys.FM_MSIGN;
+
 }

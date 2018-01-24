@@ -37,6 +37,10 @@ public class FileUpdEventConverter extends
     type.setSid(String.valueOf(element.getSid()));
     type.setName(element.getFilePath().lastSegment());
     type.setAct(element.getFileActivity());
+    type.setFtype(element.getFiletype().toString());
+    type.setMethodname(element.getMethodname().toString());
+    type.setMethodtype(element.getMethodtype().toString());
+    type.setMethodsign(element.getMethodsign().toString());
     
 
     type.setCategory("");

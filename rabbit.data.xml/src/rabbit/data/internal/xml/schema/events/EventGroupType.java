@@ -45,6 +45,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     LaunchEventListType.class,
     FileUpdEventListType.class,
     FileEventListType.class,
+    FmEventListType.class,
     PerspectiveEventListType.class
 })
 public class EventGroupType {

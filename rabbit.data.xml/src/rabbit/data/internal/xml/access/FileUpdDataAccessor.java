@@ -21,8 +21,8 @@ import rabbit.data.internal.access.model.FileUpdData;
 import rabbit.data.internal.xml.IDataStore;
 import rabbit.data.internal.xml.StoreNames;
 import rabbit.data.internal.xml.schema.events.EventListType;
-import rabbit.data.internal.xml.schema.events.FileEventListType;
-import rabbit.data.internal.xml.schema.events.FileEventType;
+import rabbit.data.internal.xml.schema.events.FileUpdEventListType;
+import rabbit.data.internal.xml.schema.events.FileUpdEventType;
 
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
@@ -40,7 +40,7 @@ import java.util.Collection;
  * Accesses file event data.
  */
 public class FileUpdDataAccessor extends
-    AbstractAccessor<IFileUpdData, FileEventType, FileEventListType> {
+    AbstractAccessor<IFileUpdData, FileUpdEventType, FileUpdEventListType> {
 
   /**
    * Constructor.
@@ -55,23 +55,23 @@ public class FileUpdDataAccessor extends
 
   @Override
   protected IFileUpdData createDataNode(LocalDate date, WorkspaceStorage ws,
-      FileEventType type) throws Exception {
+      FileUpdEventType type) throws Exception {
 	  //CALLED WHEN THE FIRST TIME A FILE is initiated? WAS ADDRESSED
 	//  System.out.println("Test 3: FileDataAccessor: Called on every file opened in editor");
 	  int sid = -1;
 	  Timestamp ts = new Timestamp(System.currentTimeMillis() % 1000);
     return new FileUpdData(sid,date, ts,ts,ws, new Duration(type.getDuration()),
-        workspaceRoot().getFile(new Path(type.getFilePath())),"inactive");
+        workspaceRoot().getFile(new Path(type.getFilePath())),"inactive","unknown","unknown","unknown","unknown");
   }
 
   @Override
-  protected Collection<FileEventType> getElements(FileEventListType list) {
-    return list.getFileEvent();
+  protected Collection<FileUpdEventType> getElements(FileUpdEventListType list) {
+    return list.getFileUpdEvent();
   }
 
   @Override
-  protected Collection<FileEventListType> getCategories(EventListType doc) {
-    return doc.getFileEvents();
+  protected Collection<FileUpdEventListType> getCategories(EventListType doc) {
+    return doc.getFileUpdEvents();
   }
 
   /**

@@ -66,6 +66,10 @@ public class Keys {
   
   public static final IKey<String> FILE_ACTIVITY = Key.create();
   
+  public static final IKey<String> FM_MNAME = Key.create();
+  public static final IKey<String> FM_MTYPE = Key.create();
+  public static final IKey<String> FM_MSIGN = Key.create();
+
   /**
    * Key for a set of files.
    */
@@ -91,6 +95,7 @@ public class Keys {
    * Key for a perspective ID.
    */
   public static final IKey<String> PERSPECTIVE_ID = Key.create();
+  public static final IKey<String> FTYPE = Key.create();
   
   /**
    * Key for a task ID.

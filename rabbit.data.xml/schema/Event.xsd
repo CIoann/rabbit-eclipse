@@ -14,6 +14,8 @@
       <xs:element name="partEvents" type="partEventListType" maxOccurs="unbounded" />
       <xs:element name="fileUpdEvents" type="fileUpdEventListType" maxOccurs="unbounded" />
       <xs:element name="fileEvents" type="fileEventListType" maxOccurs="unbounded" />
+      <xs:element name="fmEvents" type="fmEventListType" maxOccurs="unbounded" />
+      
       <xs:element name="perspectiveEvents" type="perspectiveEventListType" maxOccurs="unbounded" />
       <xs:element name="taskFileEvents" type="taskFileEventListType" maxOccurs="unbounded" />
       <xs:element name="launchEvents" type="launchEventListType" maxOccurs="unbounded" />
@@ -111,6 +113,25 @@
     </xs:complexContent>
   </xs:complexType>
 
+
+  <!-- File Method Events: -->
+  <xs:complexType name="fmEventListType">
+    <xs:complexContent>
+      <xs:extension base="eventGroupType">
+        <xs:sequence>
+          <xs:element name="fmEvent" type="fmEventType" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fmEventType">
+    <xs:complexContent>
+      <xs:extension base="durationEventType">
+        <xs:attribute name="filePath" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
   <!-- Task File Events: -->
   <xs:complexType name="taskFileEventListType">
     <xs:complexContent>

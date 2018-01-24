@@ -38,8 +38,47 @@ public class FileUpdEventType
     protected String category;
     @XmlAttribute(required = true)
     protected String name;
-    
     @XmlAttribute(required = true)
+    protected String ftype;
+    @XmlAttribute(required = true)
+    protected String methodtype;
+    @XmlAttribute(required = true)
+    protected String methodname;
+    @XmlAttribute(required = true)
+    protected String methodsign;
+    public String getFtype() {
+		return ftype;
+	}
+
+	public void setFtype(String ftype) {
+		this.ftype = ftype;
+	}
+
+	public String getMethodtype() {
+		return methodtype;
+	}
+
+	public void setMethodtype(String methodtype) {
+		this.methodtype = methodtype;
+	}
+
+	public String getMethodname() {
+		return methodname;
+	}
+
+	public void setMethodname(String methodname) {
+		this.methodname = methodname;
+	}
+
+	public String getMethodsign() {
+		return methodsign;
+	}
+
+	public void setMethodsign(String methodsign) {
+		this.methodsign = methodsign;
+	}
+
+	@XmlAttribute(required = true)
     protected String act;
     
     public String getAct() {

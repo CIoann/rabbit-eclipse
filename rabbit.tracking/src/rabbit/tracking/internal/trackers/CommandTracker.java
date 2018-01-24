@@ -196,7 +196,9 @@ public void setLastEvent(ExecutionEvent lastEvent) {
 			for (FileUpdEvent e : DeltaVis.getFueListReduced()) {
 //				
 					System.out.println("The files: " + e.getFileName());
-					addData(new CommandEvent(now, lastEvent, TrackingPlugin.test_sid, e.getFileName()));
+					if (lastEvent != null) {
+						addData(new CommandEvent(now, lastEvent, TrackingPlugin.test_sid, e.getFileName()));
+					}
 			}
 	   	  	DeltaVis.getFueList().clear();
 	   	  	}

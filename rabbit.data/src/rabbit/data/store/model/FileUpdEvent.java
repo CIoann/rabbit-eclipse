@@ -35,34 +35,46 @@ public class FileUpdEvent extends ContinuousEvent {
 	private final String filename;
 	private final int sid;
   private final String fileActivity;
-  /**
-   * Constructs a new event.
-   * 
-   * @param interval The interval of this event.
-   * @param filePath The path of the file.
-   * @throws NullPointerException If time is null or file path is null.
-   * 
-   * @see IResource#getFullPath()
-   * @see Path#Path(String)
-   * @see URI#getPath()
-   */
-  
-  //TEST 3:  NEED TO PUT TIMESTAMP IN CONSTRUCTOR
-//  public FileUpdEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd, IPath filePath, int sid, String act) {
-//    super(tsStart,tsEnd,interval);
-//    this.sid=sid;
-//    this.filePath = checkNotNull(filePath);
-//    this.fileActivity = checkNotNull(act);
-//  }
-  public FileUpdEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd,IPath filePath, String filename, int sid, String act) {
+
+	private final String filetype;
+	private final String methodname;
+	private final String methodsign;
+	private final String methodtype;
+  public FileUpdEvent(Interval interval, Timestamp tsStart, Timestamp tsEnd,IPath filePath, String filename, 
+		  int sid, String act,
+		  String ft, String mn, String ms, String mt) {
 	    super(tsStart,tsEnd,interval);
 	    this.sid=sid;
 	    this.filename = filename;
 	    this.filePath = checkNotNull(filePath);
 	    this.fileActivity = checkNotNull(act);
+	    this.filetype = ft;
+	    this.methodname = mn;
+	    this.methodsign = ms;
+	    this.methodtype = mt;
 	  }
 
-  public String getFileActivity() {
+  public String getFilename() {
+	return filename;
+}
+
+public String getFiletype() {
+	return filetype;
+}
+
+public String getMethodname() {
+	return methodname;
+}
+
+public String getMethodsign() {
+	return methodsign;
+}
+
+public String getMethodtype() {
+	return methodtype;
+}
+
+public String getFileActivity() {
 	  return this.fileActivity;
   }
   public int getSid() {

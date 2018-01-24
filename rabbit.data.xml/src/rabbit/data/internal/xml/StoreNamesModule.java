@@ -20,6 +20,11 @@ public class StoreNamesModule extends AbstractModule {
     bind(IDataStore.class)
     .annotatedWith(Names.named(StoreNames.FILE_UPD_STORE))
     .toInstance(DataStore.FILE_UPD_STORE); 
+    
+    bind(IDataStore.class)
+    .annotatedWith(Names.named(StoreNames.FM_STORE))
+    .toInstance(DataStore.FM_STORE); 
+//    
     bind(IDataStore.class)
         .annotatedWith(Names.named(StoreNames.JAVA_STORE))
         .toInstance(DataStore.JAVA_STORE);

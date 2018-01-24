@@ -109,6 +109,6 @@ public class FileUpdDataTest {
                           Duration duration,
                           IFile file) {
 	 //fast testing test3
-    return new FileUpdData(1,date,null,null, workspace, duration, file,"Edited");
+    return new FileUpdData(1,date,null,null, workspace, duration, file,"Edited","","","","");
   }
 }
